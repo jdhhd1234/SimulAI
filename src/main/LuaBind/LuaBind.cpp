@@ -1,0 +1,80 @@
+
+#include "src/main/LuaBind/LuaBind.hpp"
+#include "src/autoconfig/RootLua.hpp"
+#include "src/main/State/state.hpp"
+#include <random>
+
+bool LuaBinding::BernouliLua(double percentage)
+{
+    static std::random_device rd;
+    static std::mt19937 gen(rd());
+
+    double safe_percentage = std::clamp(percentage, 0.0, 100.0);
+
+    double r = safe_percentage / 100.0;
+
+    std::bernoulli_distribution bernoulli(r);
+
+    return bernoulli(gen);
+}
+
+bool LuaBinding::BernouliLuaRange(double first, double end)
+{
+    static std::random_device rd;
+    static std::mt19937 gen(rd());
+
+    std::uniform_real_distribution<double> dis(first, end);
+
+    return dis(gen);
+}
+
+RootConfig& LuaBinding::GetRoot(WorldState& WS, size_t index)
+{
+    return WS.Countries[1].Root.at(index);
+    WS.Countries[1].Root[0].uSA;
+}
+
+void LuaBinding::BindindToLua(std::string filepath, WorldState &worldstate, sol::state& lua)
+{
+    LuaAuto lua_auto;
+
+    lua.open_libraries(
+        sol::lib::base,
+        sol::lib::package,
+        sol::lib::string,
+        sol::lib::table,
+        sol::lib::math,
+        sol::lib::os,
+        sol::lib::io,
+        sol::lib::utf8,
+        sol::lib::coroutine
+    );
+
+    lua_auto.BindRootConfig(lua);
+
+    lua.set_function("BernouliLua", &LuaBinding::BernouliLua, this);
+    lua.set_function("BernouliLuaRange", &LuaBinding::BernouliLuaRange, this);
+    lua.set_function("GetRoot", &LuaBinding::GetRoot, this);
+
+    try
+    {
+        auto result = lua.script_file(filepath);
+    }
+    catch (const sol::error &e)
+    {
+        std::cout << "Lua Error: " << e.what() << std::endl;
+    }
+
+    sol::protected_function add_main_func = lua["MainRunningEvent"];
+    auto main_result = add_main_func(worldstate);
+
+    if (!main_result.valid())
+    {
+        sol::error err = main_result;
+        std::cout << "[Sol2 Error]: " << err.what() << std::endl;
+    }
+    else
+    {
+        std::cout << "[Sol2 Success] Run Success!." << std::endl;
+    }
+}

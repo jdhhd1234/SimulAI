@@ -1,0 +1,914 @@
+#pragma once
+#include <imgui.h>
+#include "src/autoconfig/Root.hpp"
+
+class RootConfigImGui {
+public:
+    void Draw(RootConfig& root)
+    {
+        if (ImGui::TreeNode("USA"))
+        {
+            if (ImGui::TreeNode("country"))
+            {
+                ImGui::Text("country_country_name: %s", root.uSA.country.country_name.c_str());
+                ImGui::Text("country_year: %d", root.uSA.country.year);
+                ImGui::Text("country_capital: %s", root.uSA.country.capital.c_str());
+                ImGui::Text("country_currency: %s", root.uSA.country.currency.c_str());
+                ImGui::Text("country_states: %d", root.uSA.country.states);
+                ImGui::Text("country_states_min: %.4f", root.uSA.country.states_min);
+                ImGui::Text("country_states_max: %.4f", root.uSA.country.states_max);
+                ImGui::Text("country_states_norm: %.4f", root.uSA.country.states_norm);
+                ImGui::Text("country_states_sigmoid: %.4f", root.uSA.country.states_sigmoid);
+                ImGui::Text("country_territories: %d", root.uSA.country.territories);
+                ImGui::Text("country_territories_min: %.4f", root.uSA.country.territories_min);
+                ImGui::Text("country_territories_max: %.4f", root.uSA.country.territories_max);
+                ImGui::Text("country_territories_norm: %.4f", root.uSA.country.territories_norm);
+                ImGui::Text("country_territories_sigmoid: %.4f", root.uSA.country.territories_sigmoid);
+                ImGui::Text("country_time_zones: %d", root.uSA.country.time_zones);
+                ImGui::Text("country_time_zones_min: %.4f", root.uSA.country.time_zones_min);
+                ImGui::Text("country_time_zones_max: %.4f", root.uSA.country.time_zones_max);
+                ImGui::Text("country_time_zones_norm: %.4f", root.uSA.country.time_zones_norm);
+                ImGui::Text("country_time_zones_sigmoid: %.4f", root.uSA.country.time_zones_sigmoid);
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("government_sigmoid_result"))
+            {
+                ImGui::Text("government_sigmoid_result_president: %s", root.uSA.government_sigmoid_result.president.c_str());
+                ImGui::Text("government_sigmoid_result_vice_president: %s", root.uSA.government_sigmoid_result.vice_president.c_str());
+                ImGui::Text("government_sigmoid_result_ruling_party: %s", root.uSA.government_sigmoid_result.ruling_party.c_str());
+                ImGui::Text("government_sigmoid_result_executive_departments: %d", root.uSA.government_sigmoid_result.executive_departments);
+                ImGui::Text("government_sigmoid_result_executive_departments_min: %.4f", root.uSA.government_sigmoid_result.executive_departments_min);
+                ImGui::Text("government_sigmoid_result_executive_departments_max: %.4f", root.uSA.government_sigmoid_result.executive_departments_max);
+                ImGui::Text("government_sigmoid_result_executive_departments_norm: %.4f", root.uSA.government_sigmoid_result.executive_departments_norm);
+                ImGui::Text("government_sigmoid_result_executive_departments_sigmoid: %.4f", root.uSA.government_sigmoid_result.executive_departments_sigmoid);
+                ImGui::Text("government_sigmoid_result_house_seats: %d", root.uSA.government_sigmoid_result.house_seats);
+                ImGui::Text("government_sigmoid_result_house_seats_min: %.4f", root.uSA.government_sigmoid_result.house_seats_min);
+                ImGui::Text("government_sigmoid_result_house_seats_max: %.4f", root.uSA.government_sigmoid_result.house_seats_max);
+                ImGui::Text("government_sigmoid_result_house_seats_norm: %.4f", root.uSA.government_sigmoid_result.house_seats_norm);
+                ImGui::Text("government_sigmoid_result_house_seats_sigmoid: %.4f", root.uSA.government_sigmoid_result.house_seats_sigmoid);
+                ImGui::Text("government_sigmoid_result_senate_seats: %d", root.uSA.government_sigmoid_result.senate_seats);
+                ImGui::Text("government_sigmoid_result_senate_seats_min: %.4f", root.uSA.government_sigmoid_result.senate_seats_min);
+                ImGui::Text("government_sigmoid_result_senate_seats_max: %.4f", root.uSA.government_sigmoid_result.senate_seats_max);
+                ImGui::Text("government_sigmoid_result_senate_seats_norm: %.4f", root.uSA.government_sigmoid_result.senate_seats_norm);
+                ImGui::Text("government_sigmoid_result_senate_seats_sigmoid: %.4f", root.uSA.government_sigmoid_result.senate_seats_sigmoid);
+                ImGui::Text("government_sigmoid_result_supreme_court_justices: %d", root.uSA.government_sigmoid_result.supreme_court_justices);
+                ImGui::Text("government_sigmoid_result_supreme_court_justices_min: %.4f", root.uSA.government_sigmoid_result.supreme_court_justices_min);
+                ImGui::Text("government_sigmoid_result_supreme_court_justices_max: %.4f", root.uSA.government_sigmoid_result.supreme_court_justices_max);
+                ImGui::Text("government_sigmoid_result_supreme_court_justices_norm: %.4f", root.uSA.government_sigmoid_result.supreme_court_justices_norm);
+                ImGui::Text("government_sigmoid_result_supreme_court_justices_sigmoid: %.4f", root.uSA.government_sigmoid_result.supreme_court_justices_sigmoid);
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("demography_highbest_sigmoid_result"))
+            {
+                ImGui::Text("demography_highbest_sigmoid_result_population: %d", root.uSA.demography_highbest_sigmoid_result.population);
+                ImGui::Text("demography_highbest_sigmoid_result_population_min: %.4f", root.uSA.demography_highbest_sigmoid_result.population_min);
+                ImGui::Text("demography_highbest_sigmoid_result_population_max: %.4f", root.uSA.demography_highbest_sigmoid_result.population_max);
+                ImGui::Text("demography_highbest_sigmoid_result_population_norm: %.4f", root.uSA.demography_highbest_sigmoid_result.population_norm);
+                ImGui::Text("demography_highbest_sigmoid_result_population_sigmoid: %.4f", root.uSA.demography_highbest_sigmoid_result.population_sigmoid);
+                ImGui::Text("demography_highbest_sigmoid_result_population_growth_rate: %.4f", root.uSA.demography_highbest_sigmoid_result.population_growth_rate);
+                ImGui::Text("demography_highbest_sigmoid_result_population_growth_rate_min: %.4f", root.uSA.demography_highbest_sigmoid_result.population_growth_rate_min);
+                ImGui::Text("demography_highbest_sigmoid_result_population_growth_rate_max: %.4f", root.uSA.demography_highbest_sigmoid_result.population_growth_rate_max);
+                ImGui::Text("demography_highbest_sigmoid_result_population_growth_rate_norm: %.4f", root.uSA.demography_highbest_sigmoid_result.population_growth_rate_norm);
+                ImGui::Text("demography_highbest_sigmoid_result_population_growth_rate_sigmoid: %.4f", root.uSA.demography_highbest_sigmoid_result.population_growth_rate_sigmoid);
+                ImGui::Text("demography_highbest_sigmoid_result_population_density: %.4f", root.uSA.demography_highbest_sigmoid_result.population_density);
+                ImGui::Text("demography_highbest_sigmoid_result_population_density_min: %.4f", root.uSA.demography_highbest_sigmoid_result.population_density_min);
+                ImGui::Text("demography_highbest_sigmoid_result_population_density_max: %.4f", root.uSA.demography_highbest_sigmoid_result.population_density_max);
+                ImGui::Text("demography_highbest_sigmoid_result_population_density_norm: %.4f", root.uSA.demography_highbest_sigmoid_result.population_density_norm);
+                ImGui::Text("demography_highbest_sigmoid_result_population_density_sigmoid: %.4f", root.uSA.demography_highbest_sigmoid_result.population_density_sigmoid);
+                ImGui::Text("demography_highbest_sigmoid_result_births: %d", root.uSA.demography_highbest_sigmoid_result.births);
+                ImGui::Text("demography_highbest_sigmoid_result_births_min: %.4f", root.uSA.demography_highbest_sigmoid_result.births_min);
+                ImGui::Text("demography_highbest_sigmoid_result_births_max: %.4f", root.uSA.demography_highbest_sigmoid_result.births_max);
+                ImGui::Text("demography_highbest_sigmoid_result_births_norm: %.4f", root.uSA.demography_highbest_sigmoid_result.births_norm);
+                ImGui::Text("demography_highbest_sigmoid_result_births_sigmoid: %.4f", root.uSA.demography_highbest_sigmoid_result.births_sigmoid);
+                ImGui::Text("demography_highbest_sigmoid_result_birth_rate: %.4f", root.uSA.demography_highbest_sigmoid_result.birth_rate);
+                ImGui::Text("demography_highbest_sigmoid_result_birth_rate_min: %.4f", root.uSA.demography_highbest_sigmoid_result.birth_rate_min);
+                ImGui::Text("demography_highbest_sigmoid_result_birth_rate_max: %.4f", root.uSA.demography_highbest_sigmoid_result.birth_rate_max);
+                ImGui::Text("demography_highbest_sigmoid_result_birth_rate_norm: %.4f", root.uSA.demography_highbest_sigmoid_result.birth_rate_norm);
+                ImGui::Text("demography_highbest_sigmoid_result_birth_rate_sigmoid: %.4f", root.uSA.demography_highbest_sigmoid_result.birth_rate_sigmoid);
+                ImGui::Text("demography_highbest_sigmoid_result_fertility_rate: %.4f", root.uSA.demography_highbest_sigmoid_result.fertility_rate);
+                ImGui::Text("demography_highbest_sigmoid_result_fertility_rate_min: %.4f", root.uSA.demography_highbest_sigmoid_result.fertility_rate_min);
+                ImGui::Text("demography_highbest_sigmoid_result_fertility_rate_max: %.4f", root.uSA.demography_highbest_sigmoid_result.fertility_rate_max);
+                ImGui::Text("demography_highbest_sigmoid_result_fertility_rate_norm: %.4f", root.uSA.demography_highbest_sigmoid_result.fertility_rate_norm);
+                ImGui::Text("demography_highbest_sigmoid_result_fertility_rate_sigmoid: %.4f", root.uSA.demography_highbest_sigmoid_result.fertility_rate_sigmoid);
+                ImGui::Text("demography_highbest_sigmoid_result_life_expectancy: %.4f", root.uSA.demography_highbest_sigmoid_result.life_expectancy);
+                ImGui::Text("demography_highbest_sigmoid_result_life_expectancy_min: %.4f", root.uSA.demography_highbest_sigmoid_result.life_expectancy_min);
+                ImGui::Text("demography_highbest_sigmoid_result_life_expectancy_max: %.4f", root.uSA.demography_highbest_sigmoid_result.life_expectancy_max);
+                ImGui::Text("demography_highbest_sigmoid_result_life_expectancy_norm: %.4f", root.uSA.demography_highbest_sigmoid_result.life_expectancy_norm);
+                ImGui::Text("demography_highbest_sigmoid_result_life_expectancy_sigmoid: %.4f", root.uSA.demography_highbest_sigmoid_result.life_expectancy_sigmoid);
+                ImGui::Text("demography_highbest_sigmoid_result_life_expectancy_male: %.4f", root.uSA.demography_highbest_sigmoid_result.life_expectancy_male);
+                ImGui::Text("demography_highbest_sigmoid_result_life_expectancy_male_min: %.4f", root.uSA.demography_highbest_sigmoid_result.life_expectancy_male_min);
+                ImGui::Text("demography_highbest_sigmoid_result_life_expectancy_male_max: %.4f", root.uSA.demography_highbest_sigmoid_result.life_expectancy_male_max);
+                ImGui::Text("demography_highbest_sigmoid_result_life_expectancy_male_norm: %.4f", root.uSA.demography_highbest_sigmoid_result.life_expectancy_male_norm);
+                ImGui::Text("demography_highbest_sigmoid_result_life_expectancy_male_sigmoid: %.4f", root.uSA.demography_highbest_sigmoid_result.life_expectancy_male_sigmoid);
+                ImGui::Text("demography_highbest_sigmoid_result_life_expectancy_female: %.4f", root.uSA.demography_highbest_sigmoid_result.life_expectancy_female);
+                ImGui::Text("demography_highbest_sigmoid_result_life_expectancy_female_min: %.4f", root.uSA.demography_highbest_sigmoid_result.life_expectancy_female_min);
+                ImGui::Text("demography_highbest_sigmoid_result_life_expectancy_female_max: %.4f", root.uSA.demography_highbest_sigmoid_result.life_expectancy_female_max);
+                ImGui::Text("demography_highbest_sigmoid_result_life_expectancy_female_norm: %.4f", root.uSA.demography_highbest_sigmoid_result.life_expectancy_female_norm);
+                ImGui::Text("demography_highbest_sigmoid_result_life_expectancy_female_sigmoid: %.4f", root.uSA.demography_highbest_sigmoid_result.life_expectancy_female_sigmoid);
+                ImGui::Text("demography_highbest_sigmoid_result_urban_population_pct: %.4f", root.uSA.demography_highbest_sigmoid_result.urban_population_pct);
+                ImGui::Text("demography_highbest_sigmoid_result_urban_population_pct_min: %.4f", root.uSA.demography_highbest_sigmoid_result.urban_population_pct_min);
+                ImGui::Text("demography_highbest_sigmoid_result_urban_population_pct_max: %.4f", root.uSA.demography_highbest_sigmoid_result.urban_population_pct_max);
+                ImGui::Text("demography_highbest_sigmoid_result_urban_population_pct_norm: %.4f", root.uSA.demography_highbest_sigmoid_result.urban_population_pct_norm);
+                ImGui::Text("demography_highbest_sigmoid_result_urban_population_pct_sigmoid: %.4f", root.uSA.demography_highbest_sigmoid_result.urban_population_pct_sigmoid);
+                ImGui::Text("demography_highbest_sigmoid_result_male_pct: %.4f", root.uSA.demography_highbest_sigmoid_result.male_pct);
+                ImGui::Text("demography_highbest_sigmoid_result_male_pct_min: %.4f", root.uSA.demography_highbest_sigmoid_result.male_pct_min);
+                ImGui::Text("demography_highbest_sigmoid_result_male_pct_max: %.4f", root.uSA.demography_highbest_sigmoid_result.male_pct_max);
+                ImGui::Text("demography_highbest_sigmoid_result_male_pct_norm: %.4f", root.uSA.demography_highbest_sigmoid_result.male_pct_norm);
+                ImGui::Text("demography_highbest_sigmoid_result_male_pct_sigmoid: %.4f", root.uSA.demography_highbest_sigmoid_result.male_pct_sigmoid);
+                ImGui::Text("demography_highbest_sigmoid_result_female_pct: %.4f", root.uSA.demography_highbest_sigmoid_result.female_pct);
+                ImGui::Text("demography_highbest_sigmoid_result_female_pct_min: %.4f", root.uSA.demography_highbest_sigmoid_result.female_pct_min);
+                ImGui::Text("demography_highbest_sigmoid_result_female_pct_max: %.4f", root.uSA.demography_highbest_sigmoid_result.female_pct_max);
+                ImGui::Text("demography_highbest_sigmoid_result_female_pct_norm: %.4f", root.uSA.demography_highbest_sigmoid_result.female_pct_norm);
+                ImGui::Text("demography_highbest_sigmoid_result_female_pct_sigmoid: %.4f", root.uSA.demography_highbest_sigmoid_result.female_pct_sigmoid);
+                ImGui::Text("demography_highbest_sigmoid_result_age_under_18_pct: %.4f", root.uSA.demography_highbest_sigmoid_result.age_under_18_pct);
+                ImGui::Text("demography_highbest_sigmoid_result_age_under_18_pct_min: %.4f", root.uSA.demography_highbest_sigmoid_result.age_under_18_pct_min);
+                ImGui::Text("demography_highbest_sigmoid_result_age_under_18_pct_max: %.4f", root.uSA.demography_highbest_sigmoid_result.age_under_18_pct_max);
+                ImGui::Text("demography_highbest_sigmoid_result_age_under_18_pct_norm: %.4f", root.uSA.demography_highbest_sigmoid_result.age_under_18_pct_norm);
+                ImGui::Text("demography_highbest_sigmoid_result_age_under_18_pct_sigmoid: %.4f", root.uSA.demography_highbest_sigmoid_result.age_under_18_pct_sigmoid);
+                ImGui::Text("demography_highbest_sigmoid_result_age_18_64_pct: %.4f", root.uSA.demography_highbest_sigmoid_result.age_18_64_pct);
+                ImGui::Text("demography_highbest_sigmoid_result_age_18_64_pct_min: %.4f", root.uSA.demography_highbest_sigmoid_result.age_18_64_pct_min);
+                ImGui::Text("demography_highbest_sigmoid_result_age_18_64_pct_max: %.4f", root.uSA.demography_highbest_sigmoid_result.age_18_64_pct_max);
+                ImGui::Text("demography_highbest_sigmoid_result_age_18_64_pct_norm: %.4f", root.uSA.demography_highbest_sigmoid_result.age_18_64_pct_norm);
+                ImGui::Text("demography_highbest_sigmoid_result_age_18_64_pct_sigmoid: %.4f", root.uSA.demography_highbest_sigmoid_result.age_18_64_pct_sigmoid);
+                ImGui::Text("demography_highbest_sigmoid_result_age_65_plus_pct: %.4f", root.uSA.demography_highbest_sigmoid_result.age_65_plus_pct);
+                ImGui::Text("demography_highbest_sigmoid_result_age_65_plus_pct_min: %.4f", root.uSA.demography_highbest_sigmoid_result.age_65_plus_pct_min);
+                ImGui::Text("demography_highbest_sigmoid_result_age_65_plus_pct_max: %.4f", root.uSA.demography_highbest_sigmoid_result.age_65_plus_pct_max);
+                ImGui::Text("demography_highbest_sigmoid_result_age_65_plus_pct_norm: %.4f", root.uSA.demography_highbest_sigmoid_result.age_65_plus_pct_norm);
+                ImGui::Text("demography_highbest_sigmoid_result_age_65_plus_pct_sigmoid: %.4f", root.uSA.demography_highbest_sigmoid_result.age_65_plus_pct_sigmoid);
+                ImGui::Text("demography_highbest_sigmoid_result_net_migration: %d", root.uSA.demography_highbest_sigmoid_result.net_migration);
+                ImGui::Text("demography_highbest_sigmoid_result_net_migration_min: %.4f", root.uSA.demography_highbest_sigmoid_result.net_migration_min);
+                ImGui::Text("demography_highbest_sigmoid_result_net_migration_max: %.4f", root.uSA.demography_highbest_sigmoid_result.net_migration_max);
+                ImGui::Text("demography_highbest_sigmoid_result_net_migration_norm: %.4f", root.uSA.demography_highbest_sigmoid_result.net_migration_norm);
+                ImGui::Text("demography_highbest_sigmoid_result_net_migration_sigmoid: %.4f", root.uSA.demography_highbest_sigmoid_result.net_migration_sigmoid);
+                ImGui::Text("demography_highbest_sigmoid_result_households: %d", root.uSA.demography_highbest_sigmoid_result.households);
+                ImGui::Text("demography_highbest_sigmoid_result_households_min: %.4f", root.uSA.demography_highbest_sigmoid_result.households_min);
+                ImGui::Text("demography_highbest_sigmoid_result_households_max: %.4f", root.uSA.demography_highbest_sigmoid_result.households_max);
+                ImGui::Text("demography_highbest_sigmoid_result_households_norm: %.4f", root.uSA.demography_highbest_sigmoid_result.households_norm);
+                ImGui::Text("demography_highbest_sigmoid_result_households_sigmoid: %.4f", root.uSA.demography_highbest_sigmoid_result.households_sigmoid);
+                ImGui::Text("demography_highbest_sigmoid_result_homeownership_rate: %.4f", root.uSA.demography_highbest_sigmoid_result.homeownership_rate);
+                ImGui::Text("demography_highbest_sigmoid_result_homeownership_rate_min: %.4f", root.uSA.demography_highbest_sigmoid_result.homeownership_rate_min);
+                ImGui::Text("demography_highbest_sigmoid_result_homeownership_rate_max: %.4f", root.uSA.demography_highbest_sigmoid_result.homeownership_rate_max);
+                ImGui::Text("demography_highbest_sigmoid_result_homeownership_rate_norm: %.4f", root.uSA.demography_highbest_sigmoid_result.homeownership_rate_norm);
+                ImGui::Text("demography_highbest_sigmoid_result_homeownership_rate_sigmoid: %.4f", root.uSA.demography_highbest_sigmoid_result.homeownership_rate_sigmoid);
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("demography_lowbest_sigmoid_result"))
+            {
+                ImGui::Text("demography_lowbest_sigmoid_result_deaths: %d", root.uSA.demography_lowbest_sigmoid_result.deaths);
+                ImGui::Text("demography_lowbest_sigmoid_result_deaths_min: %.4f", root.uSA.demography_lowbest_sigmoid_result.deaths_min);
+                ImGui::Text("demography_lowbest_sigmoid_result_deaths_max: %.4f", root.uSA.demography_lowbest_sigmoid_result.deaths_max);
+                ImGui::Text("demography_lowbest_sigmoid_result_deaths_norm: %.4f", root.uSA.demography_lowbest_sigmoid_result.deaths_norm);
+                ImGui::Text("demography_lowbest_sigmoid_result_deaths_sigmoid: %.4f", root.uSA.demography_lowbest_sigmoid_result.deaths_sigmoid);
+                ImGui::Text("demography_lowbest_sigmoid_result_death_rate: %.4f", root.uSA.demography_lowbest_sigmoid_result.death_rate);
+                ImGui::Text("demography_lowbest_sigmoid_result_death_rate_min: %.4f", root.uSA.demography_lowbest_sigmoid_result.death_rate_min);
+                ImGui::Text("demography_lowbest_sigmoid_result_death_rate_max: %.4f", root.uSA.demography_lowbest_sigmoid_result.death_rate_max);
+                ImGui::Text("demography_lowbest_sigmoid_result_death_rate_norm: %.4f", root.uSA.demography_lowbest_sigmoid_result.death_rate_norm);
+                ImGui::Text("demography_lowbest_sigmoid_result_death_rate_sigmoid: %.4f", root.uSA.demography_lowbest_sigmoid_result.death_rate_sigmoid);
+                ImGui::Text("demography_lowbest_sigmoid_result_median_age: %.4f", root.uSA.demography_lowbest_sigmoid_result.median_age);
+                ImGui::Text("demography_lowbest_sigmoid_result_median_age_min: %.4f", root.uSA.demography_lowbest_sigmoid_result.median_age_min);
+                ImGui::Text("demography_lowbest_sigmoid_result_median_age_max: %.4f", root.uSA.demography_lowbest_sigmoid_result.median_age_max);
+                ImGui::Text("demography_lowbest_sigmoid_result_median_age_norm: %.4f", root.uSA.demography_lowbest_sigmoid_result.median_age_norm);
+                ImGui::Text("demography_lowbest_sigmoid_result_median_age_sigmoid: %.4f", root.uSA.demography_lowbest_sigmoid_result.median_age_sigmoid);
+                ImGui::Text("demography_lowbest_sigmoid_result_infant_mortality: %.4f", root.uSA.demography_lowbest_sigmoid_result.infant_mortality);
+                ImGui::Text("demography_lowbest_sigmoid_result_infant_mortality_min: %.4f", root.uSA.demography_lowbest_sigmoid_result.infant_mortality_min);
+                ImGui::Text("demography_lowbest_sigmoid_result_infant_mortality_max: %.4f", root.uSA.demography_lowbest_sigmoid_result.infant_mortality_max);
+                ImGui::Text("demography_lowbest_sigmoid_result_infant_mortality_norm: %.4f", root.uSA.demography_lowbest_sigmoid_result.infant_mortality_norm);
+                ImGui::Text("demography_lowbest_sigmoid_result_infant_mortality_sigmoid: %.4f", root.uSA.demography_lowbest_sigmoid_result.infant_mortality_sigmoid);
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("economy_highbest_sigmoid_result"))
+            {
+                ImGui::Text("economy_highbest_sigmoid_result_gdp_current: %.4f", root.uSA.economy_highbest_sigmoid_result.gdp_current);
+                ImGui::Text("economy_highbest_sigmoid_result_gdp_current_min: %.4f", root.uSA.economy_highbest_sigmoid_result.gdp_current_min);
+                ImGui::Text("economy_highbest_sigmoid_result_gdp_current_max: %.4f", root.uSA.economy_highbest_sigmoid_result.gdp_current_max);
+                ImGui::Text("economy_highbest_sigmoid_result_gdp_current_norm: %.4f", root.uSA.economy_highbest_sigmoid_result.gdp_current_norm);
+                ImGui::Text("economy_highbest_sigmoid_result_gdp_current_sigmoid: %.4f", root.uSA.economy_highbest_sigmoid_result.gdp_current_sigmoid);
+                ImGui::Text("economy_highbest_sigmoid_result_gdp_real_growth: %.4f", root.uSA.economy_highbest_sigmoid_result.gdp_real_growth);
+                ImGui::Text("economy_highbest_sigmoid_result_gdp_real_growth_min: %.4f", root.uSA.economy_highbest_sigmoid_result.gdp_real_growth_min);
+                ImGui::Text("economy_highbest_sigmoid_result_gdp_real_growth_max: %.4f", root.uSA.economy_highbest_sigmoid_result.gdp_real_growth_max);
+                ImGui::Text("economy_highbest_sigmoid_result_gdp_real_growth_norm: %.4f", root.uSA.economy_highbest_sigmoid_result.gdp_real_growth_norm);
+                ImGui::Text("economy_highbest_sigmoid_result_gdp_real_growth_sigmoid: %.4f", root.uSA.economy_highbest_sigmoid_result.gdp_real_growth_sigmoid);
+                ImGui::Text("economy_highbest_sigmoid_result_gdp_per_capita: %d", root.uSA.economy_highbest_sigmoid_result.gdp_per_capita);
+                ImGui::Text("economy_highbest_sigmoid_result_gdp_per_capita_min: %.4f", root.uSA.economy_highbest_sigmoid_result.gdp_per_capita_min);
+                ImGui::Text("economy_highbest_sigmoid_result_gdp_per_capita_max: %.4f", root.uSA.economy_highbest_sigmoid_result.gdp_per_capita_max);
+                ImGui::Text("economy_highbest_sigmoid_result_gdp_per_capita_norm: %.4f", root.uSA.economy_highbest_sigmoid_result.gdp_per_capita_norm);
+                ImGui::Text("economy_highbest_sigmoid_result_gdp_per_capita_sigmoid: %.4f", root.uSA.economy_highbest_sigmoid_result.gdp_per_capita_sigmoid);
+                ImGui::Text("economy_highbest_sigmoid_result_labor_force: %d", root.uSA.economy_highbest_sigmoid_result.labor_force);
+                ImGui::Text("economy_highbest_sigmoid_result_labor_force_min: %.4f", root.uSA.economy_highbest_sigmoid_result.labor_force_min);
+                ImGui::Text("economy_highbest_sigmoid_result_labor_force_max: %.4f", root.uSA.economy_highbest_sigmoid_result.labor_force_max);
+                ImGui::Text("economy_highbest_sigmoid_result_labor_force_norm: %.4f", root.uSA.economy_highbest_sigmoid_result.labor_force_norm);
+                ImGui::Text("economy_highbest_sigmoid_result_labor_force_sigmoid: %.4f", root.uSA.economy_highbest_sigmoid_result.labor_force_sigmoid);
+                ImGui::Text("economy_highbest_sigmoid_result_labor_force_participation: %.4f", root.uSA.economy_highbest_sigmoid_result.labor_force_participation);
+                ImGui::Text("economy_highbest_sigmoid_result_labor_force_participation_min: %.4f", root.uSA.economy_highbest_sigmoid_result.labor_force_participation_min);
+                ImGui::Text("economy_highbest_sigmoid_result_labor_force_participation_max: %.4f", root.uSA.economy_highbest_sigmoid_result.labor_force_participation_max);
+                ImGui::Text("economy_highbest_sigmoid_result_labor_force_participation_norm: %.4f", root.uSA.economy_highbest_sigmoid_result.labor_force_participation_norm);
+                ImGui::Text("economy_highbest_sigmoid_result_labor_force_participation_sigmoid: %.4f", root.uSA.economy_highbest_sigmoid_result.labor_force_participation_sigmoid);
+                ImGui::Text("economy_highbest_sigmoid_result_employed: %d", root.uSA.economy_highbest_sigmoid_result.employed);
+                ImGui::Text("economy_highbest_sigmoid_result_employed_min: %.4f", root.uSA.economy_highbest_sigmoid_result.employed_min);
+                ImGui::Text("economy_highbest_sigmoid_result_employed_max: %.4f", root.uSA.economy_highbest_sigmoid_result.employed_max);
+                ImGui::Text("economy_highbest_sigmoid_result_employed_norm: %.4f", root.uSA.economy_highbest_sigmoid_result.employed_norm);
+                ImGui::Text("economy_highbest_sigmoid_result_employed_sigmoid: %.4f", root.uSA.economy_highbest_sigmoid_result.employed_sigmoid);
+                ImGui::Text("economy_highbest_sigmoid_result_median_household_income: %d", root.uSA.economy_highbest_sigmoid_result.median_household_income);
+                ImGui::Text("economy_highbest_sigmoid_result_median_household_income_min: %.4f", root.uSA.economy_highbest_sigmoid_result.median_household_income_min);
+                ImGui::Text("economy_highbest_sigmoid_result_median_household_income_max: %.4f", root.uSA.economy_highbest_sigmoid_result.median_household_income_max);
+                ImGui::Text("economy_highbest_sigmoid_result_median_household_income_norm: %.4f", root.uSA.economy_highbest_sigmoid_result.median_household_income_norm);
+                ImGui::Text("economy_highbest_sigmoid_result_median_household_income_sigmoid: %.4f", root.uSA.economy_highbest_sigmoid_result.median_household_income_sigmoid);
+                ImGui::Text("economy_highbest_sigmoid_result_federal_revenue: %.4f", root.uSA.economy_highbest_sigmoid_result.federal_revenue);
+                ImGui::Text("economy_highbest_sigmoid_result_federal_revenue_min: %.4f", root.uSA.economy_highbest_sigmoid_result.federal_revenue_min);
+                ImGui::Text("economy_highbest_sigmoid_result_federal_revenue_max: %.4f", root.uSA.economy_highbest_sigmoid_result.federal_revenue_max);
+                ImGui::Text("economy_highbest_sigmoid_result_federal_revenue_norm: %.4f", root.uSA.economy_highbest_sigmoid_result.federal_revenue_norm);
+                ImGui::Text("economy_highbest_sigmoid_result_federal_revenue_sigmoid: %.4f", root.uSA.economy_highbest_sigmoid_result.federal_revenue_sigmoid);
+                ImGui::Text("economy_highbest_sigmoid_result_foreign_exchange_reserves: %.4f", root.uSA.economy_highbest_sigmoid_result.foreign_exchange_reserves);
+                ImGui::Text("economy_highbest_sigmoid_result_foreign_exchange_reserves_min: %.4f", root.uSA.economy_highbest_sigmoid_result.foreign_exchange_reserves_min);
+                ImGui::Text("economy_highbest_sigmoid_result_foreign_exchange_reserves_max: %.4f", root.uSA.economy_highbest_sigmoid_result.foreign_exchange_reserves_max);
+                ImGui::Text("economy_highbest_sigmoid_result_foreign_exchange_reserves_norm: %.4f", root.uSA.economy_highbest_sigmoid_result.foreign_exchange_reserves_norm);
+                ImGui::Text("economy_highbest_sigmoid_result_foreign_exchange_reserves_sigmoid: %.4f", root.uSA.economy_highbest_sigmoid_result.foreign_exchange_reserves_sigmoid);
+                ImGui::Text("economy_highbest_sigmoid_result_fdi_inflow: %.4f", root.uSA.economy_highbest_sigmoid_result.fdi_inflow);
+                ImGui::Text("economy_highbest_sigmoid_result_fdi_inflow_min: %.4f", root.uSA.economy_highbest_sigmoid_result.fdi_inflow_min);
+                ImGui::Text("economy_highbest_sigmoid_result_fdi_inflow_max: %.4f", root.uSA.economy_highbest_sigmoid_result.fdi_inflow_max);
+                ImGui::Text("economy_highbest_sigmoid_result_fdi_inflow_norm: %.4f", root.uSA.economy_highbest_sigmoid_result.fdi_inflow_norm);
+                ImGui::Text("economy_highbest_sigmoid_result_fdi_inflow_sigmoid: %.4f", root.uSA.economy_highbest_sigmoid_result.fdi_inflow_sigmoid);
+                ImGui::Text("economy_highbest_sigmoid_result_services_share: %.4f", root.uSA.economy_highbest_sigmoid_result.services_share);
+                ImGui::Text("economy_highbest_sigmoid_result_services_share_min: %.4f", root.uSA.economy_highbest_sigmoid_result.services_share_min);
+                ImGui::Text("economy_highbest_sigmoid_result_services_share_max: %.4f", root.uSA.economy_highbest_sigmoid_result.services_share_max);
+                ImGui::Text("economy_highbest_sigmoid_result_services_share_norm: %.4f", root.uSA.economy_highbest_sigmoid_result.services_share_norm);
+                ImGui::Text("economy_highbest_sigmoid_result_services_share_sigmoid: %.4f", root.uSA.economy_highbest_sigmoid_result.services_share_sigmoid);
+                ImGui::Text("economy_highbest_sigmoid_result_industry_share: %.4f", root.uSA.economy_highbest_sigmoid_result.industry_share);
+                ImGui::Text("economy_highbest_sigmoid_result_industry_share_min: %.4f", root.uSA.economy_highbest_sigmoid_result.industry_share_min);
+                ImGui::Text("economy_highbest_sigmoid_result_industry_share_max: %.4f", root.uSA.economy_highbest_sigmoid_result.industry_share_max);
+                ImGui::Text("economy_highbest_sigmoid_result_industry_share_norm: %.4f", root.uSA.economy_highbest_sigmoid_result.industry_share_norm);
+                ImGui::Text("economy_highbest_sigmoid_result_industry_share_sigmoid: %.4f", root.uSA.economy_highbest_sigmoid_result.industry_share_sigmoid);
+                ImGui::Text("economy_highbest_sigmoid_result_agriculture_share: %.4f", root.uSA.economy_highbest_sigmoid_result.agriculture_share);
+                ImGui::Text("economy_highbest_sigmoid_result_agriculture_share_min: %.4f", root.uSA.economy_highbest_sigmoid_result.agriculture_share_min);
+                ImGui::Text("economy_highbest_sigmoid_result_agriculture_share_max: %.4f", root.uSA.economy_highbest_sigmoid_result.agriculture_share_max);
+                ImGui::Text("economy_highbest_sigmoid_result_agriculture_share_norm: %.4f", root.uSA.economy_highbest_sigmoid_result.agriculture_share_norm);
+                ImGui::Text("economy_highbest_sigmoid_result_agriculture_share_sigmoid: %.4f", root.uSA.economy_highbest_sigmoid_result.agriculture_share_sigmoid);
+                ImGui::Text("economy_highbest_sigmoid_result_manufacturing_share: %.4f", root.uSA.economy_highbest_sigmoid_result.manufacturing_share);
+                ImGui::Text("economy_highbest_sigmoid_result_manufacturing_share_min: %.4f", root.uSA.economy_highbest_sigmoid_result.manufacturing_share_min);
+                ImGui::Text("economy_highbest_sigmoid_result_manufacturing_share_max: %.4f", root.uSA.economy_highbest_sigmoid_result.manufacturing_share_max);
+                ImGui::Text("economy_highbest_sigmoid_result_manufacturing_share_norm: %.4f", root.uSA.economy_highbest_sigmoid_result.manufacturing_share_norm);
+                ImGui::Text("economy_highbest_sigmoid_result_manufacturing_share_sigmoid: %.4f", root.uSA.economy_highbest_sigmoid_result.manufacturing_share_sigmoid);
+                ImGui::Text("economy_highbest_sigmoid_result_minimum_wage_federal: %.4f", root.uSA.economy_highbest_sigmoid_result.minimum_wage_federal);
+                ImGui::Text("economy_highbest_sigmoid_result_minimum_wage_federal_min: %.4f", root.uSA.economy_highbest_sigmoid_result.minimum_wage_federal_min);
+                ImGui::Text("economy_highbest_sigmoid_result_minimum_wage_federal_max: %.4f", root.uSA.economy_highbest_sigmoid_result.minimum_wage_federal_max);
+                ImGui::Text("economy_highbest_sigmoid_result_minimum_wage_federal_norm: %.4f", root.uSA.economy_highbest_sigmoid_result.minimum_wage_federal_norm);
+                ImGui::Text("economy_highbest_sigmoid_result_minimum_wage_federal_sigmoid: %.4f", root.uSA.economy_highbest_sigmoid_result.minimum_wage_federal_sigmoid);
+                ImGui::Text("economy_highbest_sigmoid_result_union_membership_rate: %.4f", root.uSA.economy_highbest_sigmoid_result.union_membership_rate);
+                ImGui::Text("economy_highbest_sigmoid_result_union_membership_rate_min: %.4f", root.uSA.economy_highbest_sigmoid_result.union_membership_rate_min);
+                ImGui::Text("economy_highbest_sigmoid_result_union_membership_rate_max: %.4f", root.uSA.economy_highbest_sigmoid_result.union_membership_rate_max);
+                ImGui::Text("economy_highbest_sigmoid_result_union_membership_rate_norm: %.4f", root.uSA.economy_highbest_sigmoid_result.union_membership_rate_norm);
+                ImGui::Text("economy_highbest_sigmoid_result_union_membership_rate_sigmoid: %.4f", root.uSA.economy_highbest_sigmoid_result.union_membership_rate_sigmoid);
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("economy_lowbest_sigmoid_result"))
+            {
+                ImGui::Text("economy_lowbest_sigmoid_result_inflation_rate: %.4f", root.uSA.economy_lowbest_sigmoid_result.inflation_rate);
+                ImGui::Text("economy_lowbest_sigmoid_result_inflation_rate_min: %.4f", root.uSA.economy_lowbest_sigmoid_result.inflation_rate_min);
+                ImGui::Text("economy_lowbest_sigmoid_result_inflation_rate_max: %.4f", root.uSA.economy_lowbest_sigmoid_result.inflation_rate_max);
+                ImGui::Text("economy_lowbest_sigmoid_result_inflation_rate_norm: %.4f", root.uSA.economy_lowbest_sigmoid_result.inflation_rate_norm);
+                ImGui::Text("economy_lowbest_sigmoid_result_inflation_rate_sigmoid: %.4f", root.uSA.economy_lowbest_sigmoid_result.inflation_rate_sigmoid);
+                ImGui::Text("economy_lowbest_sigmoid_result_unemployment_rate: %.4f", root.uSA.economy_lowbest_sigmoid_result.unemployment_rate);
+                ImGui::Text("economy_lowbest_sigmoid_result_unemployment_rate_min: %.4f", root.uSA.economy_lowbest_sigmoid_result.unemployment_rate_min);
+                ImGui::Text("economy_lowbest_sigmoid_result_unemployment_rate_max: %.4f", root.uSA.economy_lowbest_sigmoid_result.unemployment_rate_max);
+                ImGui::Text("economy_lowbest_sigmoid_result_unemployment_rate_norm: %.4f", root.uSA.economy_lowbest_sigmoid_result.unemployment_rate_norm);
+                ImGui::Text("economy_lowbest_sigmoid_result_unemployment_rate_sigmoid: %.4f", root.uSA.economy_lowbest_sigmoid_result.unemployment_rate_sigmoid);
+                ImGui::Text("economy_lowbest_sigmoid_result_unemployed: %d", root.uSA.economy_lowbest_sigmoid_result.unemployed);
+                ImGui::Text("economy_lowbest_sigmoid_result_unemployed_min: %.4f", root.uSA.economy_lowbest_sigmoid_result.unemployed_min);
+                ImGui::Text("economy_lowbest_sigmoid_result_unemployed_max: %.4f", root.uSA.economy_lowbest_sigmoid_result.unemployed_max);
+                ImGui::Text("economy_lowbest_sigmoid_result_unemployed_norm: %.4f", root.uSA.economy_lowbest_sigmoid_result.unemployed_norm);
+                ImGui::Text("economy_lowbest_sigmoid_result_unemployed_sigmoid: %.4f", root.uSA.economy_lowbest_sigmoid_result.unemployed_sigmoid);
+                ImGui::Text("economy_lowbest_sigmoid_result_poverty_rate: %.4f", root.uSA.economy_lowbest_sigmoid_result.poverty_rate);
+                ImGui::Text("economy_lowbest_sigmoid_result_poverty_rate_min: %.4f", root.uSA.economy_lowbest_sigmoid_result.poverty_rate_min);
+                ImGui::Text("economy_lowbest_sigmoid_result_poverty_rate_max: %.4f", root.uSA.economy_lowbest_sigmoid_result.poverty_rate_max);
+                ImGui::Text("economy_lowbest_sigmoid_result_poverty_rate_norm: %.4f", root.uSA.economy_lowbest_sigmoid_result.poverty_rate_norm);
+                ImGui::Text("economy_lowbest_sigmoid_result_poverty_rate_sigmoid: %.4f", root.uSA.economy_lowbest_sigmoid_result.poverty_rate_sigmoid);
+                ImGui::Text("economy_lowbest_sigmoid_result_gini_index: %.4f", root.uSA.economy_lowbest_sigmoid_result.gini_index);
+                ImGui::Text("economy_lowbest_sigmoid_result_gini_index_min: %.4f", root.uSA.economy_lowbest_sigmoid_result.gini_index_min);
+                ImGui::Text("economy_lowbest_sigmoid_result_gini_index_max: %.4f", root.uSA.economy_lowbest_sigmoid_result.gini_index_max);
+                ImGui::Text("economy_lowbest_sigmoid_result_gini_index_norm: %.4f", root.uSA.economy_lowbest_sigmoid_result.gini_index_norm);
+                ImGui::Text("economy_lowbest_sigmoid_result_gini_index_sigmoid: %.4f", root.uSA.economy_lowbest_sigmoid_result.gini_index_sigmoid);
+                ImGui::Text("economy_lowbest_sigmoid_result_federal_spending: %.4f", root.uSA.economy_lowbest_sigmoid_result.federal_spending);
+                ImGui::Text("economy_lowbest_sigmoid_result_federal_spending_min: %.4f", root.uSA.economy_lowbest_sigmoid_result.federal_spending_min);
+                ImGui::Text("economy_lowbest_sigmoid_result_federal_spending_max: %.4f", root.uSA.economy_lowbest_sigmoid_result.federal_spending_max);
+                ImGui::Text("economy_lowbest_sigmoid_result_federal_spending_norm: %.4f", root.uSA.economy_lowbest_sigmoid_result.federal_spending_norm);
+                ImGui::Text("economy_lowbest_sigmoid_result_federal_spending_sigmoid: %.4f", root.uSA.economy_lowbest_sigmoid_result.federal_spending_sigmoid);
+                ImGui::Text("economy_lowbest_sigmoid_result_budget_balance: %.4f", root.uSA.economy_lowbest_sigmoid_result.budget_balance);
+                ImGui::Text("economy_lowbest_sigmoid_result_budget_balance_min: %.4f", root.uSA.economy_lowbest_sigmoid_result.budget_balance_min);
+                ImGui::Text("economy_lowbest_sigmoid_result_budget_balance_max: %.4f", root.uSA.economy_lowbest_sigmoid_result.budget_balance_max);
+                ImGui::Text("economy_lowbest_sigmoid_result_budget_balance_norm: %.4f", root.uSA.economy_lowbest_sigmoid_result.budget_balance_norm);
+                ImGui::Text("economy_lowbest_sigmoid_result_budget_balance_sigmoid: %.4f", root.uSA.economy_lowbest_sigmoid_result.budget_balance_sigmoid);
+                ImGui::Text("economy_lowbest_sigmoid_result_public_debt: %.4f", root.uSA.economy_lowbest_sigmoid_result.public_debt);
+                ImGui::Text("economy_lowbest_sigmoid_result_public_debt_min: %.4f", root.uSA.economy_lowbest_sigmoid_result.public_debt_min);
+                ImGui::Text("economy_lowbest_sigmoid_result_public_debt_max: %.4f", root.uSA.economy_lowbest_sigmoid_result.public_debt_max);
+                ImGui::Text("economy_lowbest_sigmoid_result_public_debt_norm: %.4f", root.uSA.economy_lowbest_sigmoid_result.public_debt_norm);
+                ImGui::Text("economy_lowbest_sigmoid_result_public_debt_sigmoid: %.4f", root.uSA.economy_lowbest_sigmoid_result.public_debt_sigmoid);
+                ImGui::Text("economy_lowbest_sigmoid_result_household_debt: %.4f", root.uSA.economy_lowbest_sigmoid_result.household_debt);
+                ImGui::Text("economy_lowbest_sigmoid_result_household_debt_min: %.4f", root.uSA.economy_lowbest_sigmoid_result.household_debt_min);
+                ImGui::Text("economy_lowbest_sigmoid_result_household_debt_max: %.4f", root.uSA.economy_lowbest_sigmoid_result.household_debt_max);
+                ImGui::Text("economy_lowbest_sigmoid_result_household_debt_norm: %.4f", root.uSA.economy_lowbest_sigmoid_result.household_debt_norm);
+                ImGui::Text("economy_lowbest_sigmoid_result_household_debt_sigmoid: %.4f", root.uSA.economy_lowbest_sigmoid_result.household_debt_sigmoid);
+                ImGui::Text("economy_lowbest_sigmoid_result_exports: %.4f", root.uSA.economy_lowbest_sigmoid_result.exports);
+                ImGui::Text("economy_lowbest_sigmoid_result_exports_min: %.4f", root.uSA.economy_lowbest_sigmoid_result.exports_min);
+                ImGui::Text("economy_lowbest_sigmoid_result_exports_max: %.4f", root.uSA.economy_lowbest_sigmoid_result.exports_max);
+                ImGui::Text("economy_lowbest_sigmoid_result_exports_norm: %.4f", root.uSA.economy_lowbest_sigmoid_result.exports_norm);
+                ImGui::Text("economy_lowbest_sigmoid_result_exports_sigmoid: %.4f", root.uSA.economy_lowbest_sigmoid_result.exports_sigmoid);
+                ImGui::Text("economy_lowbest_sigmoid_result_imports: %.4f", root.uSA.economy_lowbest_sigmoid_result.imports);
+                ImGui::Text("economy_lowbest_sigmoid_result_imports_min: %.4f", root.uSA.economy_lowbest_sigmoid_result.imports_min);
+                ImGui::Text("economy_lowbest_sigmoid_result_imports_max: %.4f", root.uSA.economy_lowbest_sigmoid_result.imports_max);
+                ImGui::Text("economy_lowbest_sigmoid_result_imports_norm: %.4f", root.uSA.economy_lowbest_sigmoid_result.imports_norm);
+                ImGui::Text("economy_lowbest_sigmoid_result_imports_sigmoid: %.4f", root.uSA.economy_lowbest_sigmoid_result.imports_sigmoid);
+                ImGui::Text("economy_lowbest_sigmoid_result_trade_balance: %.4f", root.uSA.economy_lowbest_sigmoid_result.trade_balance);
+                ImGui::Text("economy_lowbest_sigmoid_result_trade_balance_min: %.4f", root.uSA.economy_lowbest_sigmoid_result.trade_balance_min);
+                ImGui::Text("economy_lowbest_sigmoid_result_trade_balance_max: %.4f", root.uSA.economy_lowbest_sigmoid_result.trade_balance_max);
+                ImGui::Text("economy_lowbest_sigmoid_result_trade_balance_norm: %.4f", root.uSA.economy_lowbest_sigmoid_result.trade_balance_norm);
+                ImGui::Text("economy_lowbest_sigmoid_result_trade_balance_sigmoid: %.4f", root.uSA.economy_lowbest_sigmoid_result.trade_balance_sigmoid);
+                ImGui::Text("economy_lowbest_sigmoid_result_corporate_tax_rate: %.4f", root.uSA.economy_lowbest_sigmoid_result.corporate_tax_rate);
+                ImGui::Text("economy_lowbest_sigmoid_result_corporate_tax_rate_min: %.4f", root.uSA.economy_lowbest_sigmoid_result.corporate_tax_rate_min);
+                ImGui::Text("economy_lowbest_sigmoid_result_corporate_tax_rate_max: %.4f", root.uSA.economy_lowbest_sigmoid_result.corporate_tax_rate_max);
+                ImGui::Text("economy_lowbest_sigmoid_result_corporate_tax_rate_norm: %.4f", root.uSA.economy_lowbest_sigmoid_result.corporate_tax_rate_norm);
+                ImGui::Text("economy_lowbest_sigmoid_result_corporate_tax_rate_sigmoid: %.4f", root.uSA.economy_lowbest_sigmoid_result.corporate_tax_rate_sigmoid);
+                ImGui::Text("economy_lowbest_sigmoid_result_personal_tax_top_rate: %.4f", root.uSA.economy_lowbest_sigmoid_result.personal_tax_top_rate);
+                ImGui::Text("economy_lowbest_sigmoid_result_personal_tax_top_rate_min: %.4f", root.uSA.economy_lowbest_sigmoid_result.personal_tax_top_rate_min);
+                ImGui::Text("economy_lowbest_sigmoid_result_personal_tax_top_rate_max: %.4f", root.uSA.economy_lowbest_sigmoid_result.personal_tax_top_rate_max);
+                ImGui::Text("economy_lowbest_sigmoid_result_personal_tax_top_rate_norm: %.4f", root.uSA.economy_lowbest_sigmoid_result.personal_tax_top_rate_norm);
+                ImGui::Text("economy_lowbest_sigmoid_result_personal_tax_top_rate_sigmoid: %.4f", root.uSA.economy_lowbest_sigmoid_result.personal_tax_top_rate_sigmoid);
+                ImGui::Text("economy_lowbest_sigmoid_result_policy_rate: %.4f", root.uSA.economy_lowbest_sigmoid_result.policy_rate);
+                ImGui::Text("economy_lowbest_sigmoid_result_policy_rate_min: %.4f", root.uSA.economy_lowbest_sigmoid_result.policy_rate_min);
+                ImGui::Text("economy_lowbest_sigmoid_result_policy_rate_max: %.4f", root.uSA.economy_lowbest_sigmoid_result.policy_rate_max);
+                ImGui::Text("economy_lowbest_sigmoid_result_policy_rate_norm: %.4f", root.uSA.economy_lowbest_sigmoid_result.policy_rate_norm);
+                ImGui::Text("economy_lowbest_sigmoid_result_policy_rate_sigmoid: %.4f", root.uSA.economy_lowbest_sigmoid_result.policy_rate_sigmoid);
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("government_highbest_sigmoid_result"))
+            {
+                ImGui::Text("government_highbest_sigmoid_result_approval_rating: %.4f", root.uSA.government_highbest_sigmoid_result.approval_rating);
+                ImGui::Text("government_highbest_sigmoid_result_approval_rating_min: %.4f", root.uSA.government_highbest_sigmoid_result.approval_rating_min);
+                ImGui::Text("government_highbest_sigmoid_result_approval_rating_max: %.4f", root.uSA.government_highbest_sigmoid_result.approval_rating_max);
+                ImGui::Text("government_highbest_sigmoid_result_approval_rating_norm: %.4f", root.uSA.government_highbest_sigmoid_result.approval_rating_norm);
+                ImGui::Text("government_highbest_sigmoid_result_approval_rating_sigmoid: %.4f", root.uSA.government_highbest_sigmoid_result.approval_rating_sigmoid);
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("government_lowbest_sigmoid_result"))
+            {
+                ImGui::Text("government_lowbest_sigmoid_result_federal_employees: %d", root.uSA.government_lowbest_sigmoid_result.federal_employees);
+                ImGui::Text("government_lowbest_sigmoid_result_federal_employees_min: %.4f", root.uSA.government_lowbest_sigmoid_result.federal_employees_min);
+                ImGui::Text("government_lowbest_sigmoid_result_federal_employees_max: %.4f", root.uSA.government_lowbest_sigmoid_result.federal_employees_max);
+                ImGui::Text("government_lowbest_sigmoid_result_federal_employees_norm: %.4f", root.uSA.government_lowbest_sigmoid_result.federal_employees_norm);
+                ImGui::Text("government_lowbest_sigmoid_result_federal_employees_sigmoid: %.4f", root.uSA.government_lowbest_sigmoid_result.federal_employees_sigmoid);
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("military_highbest_sigmoid_result"))
+            {
+                ImGui::Text("military_highbest_sigmoid_result_defense_budget: %.4f", root.uSA.military_highbest_sigmoid_result.defense_budget);
+                ImGui::Text("military_highbest_sigmoid_result_defense_budget_min: %.4f", root.uSA.military_highbest_sigmoid_result.defense_budget_min);
+                ImGui::Text("military_highbest_sigmoid_result_defense_budget_max: %.4f", root.uSA.military_highbest_sigmoid_result.defense_budget_max);
+                ImGui::Text("military_highbest_sigmoid_result_defense_budget_norm: %.4f", root.uSA.military_highbest_sigmoid_result.defense_budget_norm);
+                ImGui::Text("military_highbest_sigmoid_result_defense_budget_sigmoid: %.4f", root.uSA.military_highbest_sigmoid_result.defense_budget_sigmoid);
+                ImGui::Text("military_highbest_sigmoid_result_active_personnel: %d", root.uSA.military_highbest_sigmoid_result.active_personnel);
+                ImGui::Text("military_highbest_sigmoid_result_active_personnel_min: %.4f", root.uSA.military_highbest_sigmoid_result.active_personnel_min);
+                ImGui::Text("military_highbest_sigmoid_result_active_personnel_max: %.4f", root.uSA.military_highbest_sigmoid_result.active_personnel_max);
+                ImGui::Text("military_highbest_sigmoid_result_active_personnel_norm: %.4f", root.uSA.military_highbest_sigmoid_result.active_personnel_norm);
+                ImGui::Text("military_highbest_sigmoid_result_active_personnel_sigmoid: %.4f", root.uSA.military_highbest_sigmoid_result.active_personnel_sigmoid);
+                ImGui::Text("military_highbest_sigmoid_result_reserve_personnel: %d", root.uSA.military_highbest_sigmoid_result.reserve_personnel);
+                ImGui::Text("military_highbest_sigmoid_result_reserve_personnel_min: %.4f", root.uSA.military_highbest_sigmoid_result.reserve_personnel_min);
+                ImGui::Text("military_highbest_sigmoid_result_reserve_personnel_max: %.4f", root.uSA.military_highbest_sigmoid_result.reserve_personnel_max);
+                ImGui::Text("military_highbest_sigmoid_result_reserve_personnel_norm: %.4f", root.uSA.military_highbest_sigmoid_result.reserve_personnel_norm);
+                ImGui::Text("military_highbest_sigmoid_result_reserve_personnel_sigmoid: %.4f", root.uSA.military_highbest_sigmoid_result.reserve_personnel_sigmoid);
+                ImGui::Text("military_highbest_sigmoid_result_national_guard_personnel: %d", root.uSA.military_highbest_sigmoid_result.national_guard_personnel);
+                ImGui::Text("military_highbest_sigmoid_result_national_guard_personnel_min: %.4f", root.uSA.military_highbest_sigmoid_result.national_guard_personnel_min);
+                ImGui::Text("military_highbest_sigmoid_result_national_guard_personnel_max: %.4f", root.uSA.military_highbest_sigmoid_result.national_guard_personnel_max);
+                ImGui::Text("military_highbest_sigmoid_result_national_guard_personnel_norm: %.4f", root.uSA.military_highbest_sigmoid_result.national_guard_personnel_norm);
+                ImGui::Text("military_highbest_sigmoid_result_national_guard_personnel_sigmoid: %.4f", root.uSA.military_highbest_sigmoid_result.national_guard_personnel_sigmoid);
+                ImGui::Text("military_highbest_sigmoid_result_army_personnel: %d", root.uSA.military_highbest_sigmoid_result.army_personnel);
+                ImGui::Text("military_highbest_sigmoid_result_army_personnel_min: %.4f", root.uSA.military_highbest_sigmoid_result.army_personnel_min);
+                ImGui::Text("military_highbest_sigmoid_result_army_personnel_max: %.4f", root.uSA.military_highbest_sigmoid_result.army_personnel_max);
+                ImGui::Text("military_highbest_sigmoid_result_army_personnel_norm: %.4f", root.uSA.military_highbest_sigmoid_result.army_personnel_norm);
+                ImGui::Text("military_highbest_sigmoid_result_army_personnel_sigmoid: %.4f", root.uSA.military_highbest_sigmoid_result.army_personnel_sigmoid);
+                ImGui::Text("military_highbest_sigmoid_result_navy_personnel: %d", root.uSA.military_highbest_sigmoid_result.navy_personnel);
+                ImGui::Text("military_highbest_sigmoid_result_navy_personnel_min: %.4f", root.uSA.military_highbest_sigmoid_result.navy_personnel_min);
+                ImGui::Text("military_highbest_sigmoid_result_navy_personnel_max: %.4f", root.uSA.military_highbest_sigmoid_result.navy_personnel_max);
+                ImGui::Text("military_highbest_sigmoid_result_navy_personnel_norm: %.4f", root.uSA.military_highbest_sigmoid_result.navy_personnel_norm);
+                ImGui::Text("military_highbest_sigmoid_result_navy_personnel_sigmoid: %.4f", root.uSA.military_highbest_sigmoid_result.navy_personnel_sigmoid);
+                ImGui::Text("military_highbest_sigmoid_result_air_force_personnel: %d", root.uSA.military_highbest_sigmoid_result.air_force_personnel);
+                ImGui::Text("military_highbest_sigmoid_result_air_force_personnel_min: %.4f", root.uSA.military_highbest_sigmoid_result.air_force_personnel_min);
+                ImGui::Text("military_highbest_sigmoid_result_air_force_personnel_max: %.4f", root.uSA.military_highbest_sigmoid_result.air_force_personnel_max);
+                ImGui::Text("military_highbest_sigmoid_result_air_force_personnel_norm: %.4f", root.uSA.military_highbest_sigmoid_result.air_force_personnel_norm);
+                ImGui::Text("military_highbest_sigmoid_result_air_force_personnel_sigmoid: %.4f", root.uSA.military_highbest_sigmoid_result.air_force_personnel_sigmoid);
+                ImGui::Text("military_highbest_sigmoid_result_marine_personnel: %d", root.uSA.military_highbest_sigmoid_result.marine_personnel);
+                ImGui::Text("military_highbest_sigmoid_result_marine_personnel_min: %.4f", root.uSA.military_highbest_sigmoid_result.marine_personnel_min);
+                ImGui::Text("military_highbest_sigmoid_result_marine_personnel_max: %.4f", root.uSA.military_highbest_sigmoid_result.marine_personnel_max);
+                ImGui::Text("military_highbest_sigmoid_result_marine_personnel_norm: %.4f", root.uSA.military_highbest_sigmoid_result.marine_personnel_norm);
+                ImGui::Text("military_highbest_sigmoid_result_marine_personnel_sigmoid: %.4f", root.uSA.military_highbest_sigmoid_result.marine_personnel_sigmoid);
+                ImGui::Text("military_highbest_sigmoid_result_space_force_personnel: %d", root.uSA.military_highbest_sigmoid_result.space_force_personnel);
+                ImGui::Text("military_highbest_sigmoid_result_space_force_personnel_min: %.4f", root.uSA.military_highbest_sigmoid_result.space_force_personnel_min);
+                ImGui::Text("military_highbest_sigmoid_result_space_force_personnel_max: %.4f", root.uSA.military_highbest_sigmoid_result.space_force_personnel_max);
+                ImGui::Text("military_highbest_sigmoid_result_space_force_personnel_norm: %.4f", root.uSA.military_highbest_sigmoid_result.space_force_personnel_norm);
+                ImGui::Text("military_highbest_sigmoid_result_space_force_personnel_sigmoid: %.4f", root.uSA.military_highbest_sigmoid_result.space_force_personnel_sigmoid);
+                ImGui::Text("military_highbest_sigmoid_result_nuclear_warheads: %d", root.uSA.military_highbest_sigmoid_result.nuclear_warheads);
+                ImGui::Text("military_highbest_sigmoid_result_nuclear_warheads_min: %.4f", root.uSA.military_highbest_sigmoid_result.nuclear_warheads_min);
+                ImGui::Text("military_highbest_sigmoid_result_nuclear_warheads_max: %.4f", root.uSA.military_highbest_sigmoid_result.nuclear_warheads_max);
+                ImGui::Text("military_highbest_sigmoid_result_nuclear_warheads_norm: %.4f", root.uSA.military_highbest_sigmoid_result.nuclear_warheads_norm);
+                ImGui::Text("military_highbest_sigmoid_result_nuclear_warheads_sigmoid: %.4f", root.uSA.military_highbest_sigmoid_result.nuclear_warheads_sigmoid);
+                ImGui::Text("military_highbest_sigmoid_result_carriers: %d", root.uSA.military_highbest_sigmoid_result.carriers);
+                ImGui::Text("military_highbest_sigmoid_result_carriers_min: %.4f", root.uSA.military_highbest_sigmoid_result.carriers_min);
+                ImGui::Text("military_highbest_sigmoid_result_carriers_max: %.4f", root.uSA.military_highbest_sigmoid_result.carriers_max);
+                ImGui::Text("military_highbest_sigmoid_result_carriers_norm: %.4f", root.uSA.military_highbest_sigmoid_result.carriers_norm);
+                ImGui::Text("military_highbest_sigmoid_result_carriers_sigmoid: %.4f", root.uSA.military_highbest_sigmoid_result.carriers_sigmoid);
+                ImGui::Text("military_highbest_sigmoid_result_destroyers: %d", root.uSA.military_highbest_sigmoid_result.destroyers);
+                ImGui::Text("military_highbest_sigmoid_result_destroyers_min: %.4f", root.uSA.military_highbest_sigmoid_result.destroyers_min);
+                ImGui::Text("military_highbest_sigmoid_result_destroyers_max: %.4f", root.uSA.military_highbest_sigmoid_result.destroyers_max);
+                ImGui::Text("military_highbest_sigmoid_result_destroyers_norm: %.4f", root.uSA.military_highbest_sigmoid_result.destroyers_norm);
+                ImGui::Text("military_highbest_sigmoid_result_destroyers_sigmoid: %.4f", root.uSA.military_highbest_sigmoid_result.destroyers_sigmoid);
+                ImGui::Text("military_highbest_sigmoid_result_submarines: %d", root.uSA.military_highbest_sigmoid_result.submarines);
+                ImGui::Text("military_highbest_sigmoid_result_submarines_min: %.4f", root.uSA.military_highbest_sigmoid_result.submarines_min);
+                ImGui::Text("military_highbest_sigmoid_result_submarines_max: %.4f", root.uSA.military_highbest_sigmoid_result.submarines_max);
+                ImGui::Text("military_highbest_sigmoid_result_submarines_norm: %.4f", root.uSA.military_highbest_sigmoid_result.submarines_norm);
+                ImGui::Text("military_highbest_sigmoid_result_submarines_sigmoid: %.4f", root.uSA.military_highbest_sigmoid_result.submarines_sigmoid);
+                ImGui::Text("military_highbest_sigmoid_result_tanks: %d", root.uSA.military_highbest_sigmoid_result.tanks);
+                ImGui::Text("military_highbest_sigmoid_result_tanks_min: %.4f", root.uSA.military_highbest_sigmoid_result.tanks_min);
+                ImGui::Text("military_highbest_sigmoid_result_tanks_max: %.4f", root.uSA.military_highbest_sigmoid_result.tanks_max);
+                ImGui::Text("military_highbest_sigmoid_result_tanks_norm: %.4f", root.uSA.military_highbest_sigmoid_result.tanks_norm);
+                ImGui::Text("military_highbest_sigmoid_result_tanks_sigmoid: %.4f", root.uSA.military_highbest_sigmoid_result.tanks_sigmoid);
+                ImGui::Text("military_highbest_sigmoid_result_armored_vehicles: %d", root.uSA.military_highbest_sigmoid_result.armored_vehicles);
+                ImGui::Text("military_highbest_sigmoid_result_armored_vehicles_min: %.4f", root.uSA.military_highbest_sigmoid_result.armored_vehicles_min);
+                ImGui::Text("military_highbest_sigmoid_result_armored_vehicles_max: %.4f", root.uSA.military_highbest_sigmoid_result.armored_vehicles_max);
+                ImGui::Text("military_highbest_sigmoid_result_armored_vehicles_norm: %.4f", root.uSA.military_highbest_sigmoid_result.armored_vehicles_norm);
+                ImGui::Text("military_highbest_sigmoid_result_armored_vehicles_sigmoid: %.4f", root.uSA.military_highbest_sigmoid_result.armored_vehicles_sigmoid);
+                ImGui::Text("military_highbest_sigmoid_result_fighter_aircraft: %d", root.uSA.military_highbest_sigmoid_result.fighter_aircraft);
+                ImGui::Text("military_highbest_sigmoid_result_fighter_aircraft_min: %.4f", root.uSA.military_highbest_sigmoid_result.fighter_aircraft_min);
+                ImGui::Text("military_highbest_sigmoid_result_fighter_aircraft_max: %.4f", root.uSA.military_highbest_sigmoid_result.fighter_aircraft_max);
+                ImGui::Text("military_highbest_sigmoid_result_fighter_aircraft_norm: %.4f", root.uSA.military_highbest_sigmoid_result.fighter_aircraft_norm);
+                ImGui::Text("military_highbest_sigmoid_result_fighter_aircraft_sigmoid: %.4f", root.uSA.military_highbest_sigmoid_result.fighter_aircraft_sigmoid);
+                ImGui::Text("military_highbest_sigmoid_result_bombers: %d", root.uSA.military_highbest_sigmoid_result.bombers);
+                ImGui::Text("military_highbest_sigmoid_result_bombers_min: %.4f", root.uSA.military_highbest_sigmoid_result.bombers_min);
+                ImGui::Text("military_highbest_sigmoid_result_bombers_max: %.4f", root.uSA.military_highbest_sigmoid_result.bombers_max);
+                ImGui::Text("military_highbest_sigmoid_result_bombers_norm: %.4f", root.uSA.military_highbest_sigmoid_result.bombers_norm);
+                ImGui::Text("military_highbest_sigmoid_result_bombers_sigmoid: %.4f", root.uSA.military_highbest_sigmoid_result.bombers_sigmoid);
+                ImGui::Text("military_highbest_sigmoid_result_attack_helicopters: %d", root.uSA.military_highbest_sigmoid_result.attack_helicopters);
+                ImGui::Text("military_highbest_sigmoid_result_attack_helicopters_min: %.4f", root.uSA.military_highbest_sigmoid_result.attack_helicopters_min);
+                ImGui::Text("military_highbest_sigmoid_result_attack_helicopters_max: %.4f", root.uSA.military_highbest_sigmoid_result.attack_helicopters_max);
+                ImGui::Text("military_highbest_sigmoid_result_attack_helicopters_norm: %.4f", root.uSA.military_highbest_sigmoid_result.attack_helicopters_norm);
+                ImGui::Text("military_highbest_sigmoid_result_attack_helicopters_sigmoid: %.4f", root.uSA.military_highbest_sigmoid_result.attack_helicopters_sigmoid);
+                ImGui::Text("military_highbest_sigmoid_result_transport_aircraft: %d", root.uSA.military_highbest_sigmoid_result.transport_aircraft);
+                ImGui::Text("military_highbest_sigmoid_result_transport_aircraft_min: %.4f", root.uSA.military_highbest_sigmoid_result.transport_aircraft_min);
+                ImGui::Text("military_highbest_sigmoid_result_transport_aircraft_max: %.4f", root.uSA.military_highbest_sigmoid_result.transport_aircraft_max);
+                ImGui::Text("military_highbest_sigmoid_result_transport_aircraft_norm: %.4f", root.uSA.military_highbest_sigmoid_result.transport_aircraft_norm);
+                ImGui::Text("military_highbest_sigmoid_result_transport_aircraft_sigmoid: %.4f", root.uSA.military_highbest_sigmoid_result.transport_aircraft_sigmoid);
+                ImGui::Text("military_highbest_sigmoid_result_military_bases_overseas: %d", root.uSA.military_highbest_sigmoid_result.military_bases_overseas);
+                ImGui::Text("military_highbest_sigmoid_result_military_bases_overseas_min: %.4f", root.uSA.military_highbest_sigmoid_result.military_bases_overseas_min);
+                ImGui::Text("military_highbest_sigmoid_result_military_bases_overseas_max: %.4f", root.uSA.military_highbest_sigmoid_result.military_bases_overseas_max);
+                ImGui::Text("military_highbest_sigmoid_result_military_bases_overseas_norm: %.4f", root.uSA.military_highbest_sigmoid_result.military_bases_overseas_norm);
+                ImGui::Text("military_highbest_sigmoid_result_military_bases_overseas_sigmoid: %.4f", root.uSA.military_highbest_sigmoid_result.military_bases_overseas_sigmoid);
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("resources_highbest_sigmoid_result"))
+            {
+                ImGui::Text("resources_highbest_sigmoid_result_oil_reserves_billion_barrels: %.4f", root.uSA.resources_highbest_sigmoid_result.oil_reserves_billion_barrels);
+                ImGui::Text("resources_highbest_sigmoid_result_oil_reserves_billion_barrels_min: %.4f", root.uSA.resources_highbest_sigmoid_result.oil_reserves_billion_barrels_min);
+                ImGui::Text("resources_highbest_sigmoid_result_oil_reserves_billion_barrels_max: %.4f", root.uSA.resources_highbest_sigmoid_result.oil_reserves_billion_barrels_max);
+                ImGui::Text("resources_highbest_sigmoid_result_oil_reserves_billion_barrels_norm: %.4f", root.uSA.resources_highbest_sigmoid_result.oil_reserves_billion_barrels_norm);
+                ImGui::Text("resources_highbest_sigmoid_result_oil_reserves_billion_barrels_sigmoid: %.4f", root.uSA.resources_highbest_sigmoid_result.oil_reserves_billion_barrels_sigmoid);
+                ImGui::Text("resources_highbest_sigmoid_result_gas_reserves_tcf: %.4f", root.uSA.resources_highbest_sigmoid_result.gas_reserves_tcf);
+                ImGui::Text("resources_highbest_sigmoid_result_gas_reserves_tcf_min: %.4f", root.uSA.resources_highbest_sigmoid_result.gas_reserves_tcf_min);
+                ImGui::Text("resources_highbest_sigmoid_result_gas_reserves_tcf_max: %.4f", root.uSA.resources_highbest_sigmoid_result.gas_reserves_tcf_max);
+                ImGui::Text("resources_highbest_sigmoid_result_gas_reserves_tcf_norm: %.4f", root.uSA.resources_highbest_sigmoid_result.gas_reserves_tcf_norm);
+                ImGui::Text("resources_highbest_sigmoid_result_gas_reserves_tcf_sigmoid: %.4f", root.uSA.resources_highbest_sigmoid_result.gas_reserves_tcf_sigmoid);
+                ImGui::Text("resources_highbest_sigmoid_result_coal_reserves_billion_short_tons: %.4f", root.uSA.resources_highbest_sigmoid_result.coal_reserves_billion_short_tons);
+                ImGui::Text("resources_highbest_sigmoid_result_coal_reserves_billion_short_tons_min: %.4f", root.uSA.resources_highbest_sigmoid_result.coal_reserves_billion_short_tons_min);
+                ImGui::Text("resources_highbest_sigmoid_result_coal_reserves_billion_short_tons_max: %.4f", root.uSA.resources_highbest_sigmoid_result.coal_reserves_billion_short_tons_max);
+                ImGui::Text("resources_highbest_sigmoid_result_coal_reserves_billion_short_tons_norm: %.4f", root.uSA.resources_highbest_sigmoid_result.coal_reserves_billion_short_tons_norm);
+                ImGui::Text("resources_highbest_sigmoid_result_coal_reserves_billion_short_tons_sigmoid: %.4f", root.uSA.resources_highbest_sigmoid_result.coal_reserves_billion_short_tons_sigmoid);
+                ImGui::Text("resources_highbest_sigmoid_result_oil_production_bpd: %d", root.uSA.resources_highbest_sigmoid_result.oil_production_bpd);
+                ImGui::Text("resources_highbest_sigmoid_result_oil_production_bpd_min: %.4f", root.uSA.resources_highbest_sigmoid_result.oil_production_bpd_min);
+                ImGui::Text("resources_highbest_sigmoid_result_oil_production_bpd_max: %.4f", root.uSA.resources_highbest_sigmoid_result.oil_production_bpd_max);
+                ImGui::Text("resources_highbest_sigmoid_result_oil_production_bpd_norm: %.4f", root.uSA.resources_highbest_sigmoid_result.oil_production_bpd_norm);
+                ImGui::Text("resources_highbest_sigmoid_result_oil_production_bpd_sigmoid: %.4f", root.uSA.resources_highbest_sigmoid_result.oil_production_bpd_sigmoid);
+                ImGui::Text("resources_highbest_sigmoid_result_natural_gas_production_bcf_day: %.4f", root.uSA.resources_highbest_sigmoid_result.natural_gas_production_bcf_day);
+                ImGui::Text("resources_highbest_sigmoid_result_natural_gas_production_bcf_day_min: %.4f", root.uSA.resources_highbest_sigmoid_result.natural_gas_production_bcf_day_min);
+                ImGui::Text("resources_highbest_sigmoid_result_natural_gas_production_bcf_day_max: %.4f", root.uSA.resources_highbest_sigmoid_result.natural_gas_production_bcf_day_max);
+                ImGui::Text("resources_highbest_sigmoid_result_natural_gas_production_bcf_day_norm: %.4f", root.uSA.resources_highbest_sigmoid_result.natural_gas_production_bcf_day_norm);
+                ImGui::Text("resources_highbest_sigmoid_result_natural_gas_production_bcf_day_sigmoid: %.4f", root.uSA.resources_highbest_sigmoid_result.natural_gas_production_bcf_day_sigmoid);
+                ImGui::Text("resources_highbest_sigmoid_result_coal_production_million_short_tons: %.4f", root.uSA.resources_highbest_sigmoid_result.coal_production_million_short_tons);
+                ImGui::Text("resources_highbest_sigmoid_result_coal_production_million_short_tons_min: %.4f", root.uSA.resources_highbest_sigmoid_result.coal_production_million_short_tons_min);
+                ImGui::Text("resources_highbest_sigmoid_result_coal_production_million_short_tons_max: %.4f", root.uSA.resources_highbest_sigmoid_result.coal_production_million_short_tons_max);
+                ImGui::Text("resources_highbest_sigmoid_result_coal_production_million_short_tons_norm: %.4f", root.uSA.resources_highbest_sigmoid_result.coal_production_million_short_tons_norm);
+                ImGui::Text("resources_highbest_sigmoid_result_coal_production_million_short_tons_sigmoid: %.4f", root.uSA.resources_highbest_sigmoid_result.coal_production_million_short_tons_sigmoid);
+                ImGui::Text("resources_highbest_sigmoid_result_electricity_generation_twh: %.4f", root.uSA.resources_highbest_sigmoid_result.electricity_generation_twh);
+                ImGui::Text("resources_highbest_sigmoid_result_electricity_generation_twh_min: %.4f", root.uSA.resources_highbest_sigmoid_result.electricity_generation_twh_min);
+                ImGui::Text("resources_highbest_sigmoid_result_electricity_generation_twh_max: %.4f", root.uSA.resources_highbest_sigmoid_result.electricity_generation_twh_max);
+                ImGui::Text("resources_highbest_sigmoid_result_electricity_generation_twh_norm: %.4f", root.uSA.resources_highbest_sigmoid_result.electricity_generation_twh_norm);
+                ImGui::Text("resources_highbest_sigmoid_result_electricity_generation_twh_sigmoid: %.4f", root.uSA.resources_highbest_sigmoid_result.electricity_generation_twh_sigmoid);
+                ImGui::Text("resources_highbest_sigmoid_result_renewable_share: %.4f", root.uSA.resources_highbest_sigmoid_result.renewable_share);
+                ImGui::Text("resources_highbest_sigmoid_result_renewable_share_min: %.4f", root.uSA.resources_highbest_sigmoid_result.renewable_share_min);
+                ImGui::Text("resources_highbest_sigmoid_result_renewable_share_max: %.4f", root.uSA.resources_highbest_sigmoid_result.renewable_share_max);
+                ImGui::Text("resources_highbest_sigmoid_result_renewable_share_norm: %.4f", root.uSA.resources_highbest_sigmoid_result.renewable_share_norm);
+                ImGui::Text("resources_highbest_sigmoid_result_renewable_share_sigmoid: %.4f", root.uSA.resources_highbest_sigmoid_result.renewable_share_sigmoid);
+                ImGui::Text("resources_highbest_sigmoid_result_nuclear_share: %.4f", root.uSA.resources_highbest_sigmoid_result.nuclear_share);
+                ImGui::Text("resources_highbest_sigmoid_result_nuclear_share_min: %.4f", root.uSA.resources_highbest_sigmoid_result.nuclear_share_min);
+                ImGui::Text("resources_highbest_sigmoid_result_nuclear_share_max: %.4f", root.uSA.resources_highbest_sigmoid_result.nuclear_share_max);
+                ImGui::Text("resources_highbest_sigmoid_result_nuclear_share_norm: %.4f", root.uSA.resources_highbest_sigmoid_result.nuclear_share_norm);
+                ImGui::Text("resources_highbest_sigmoid_result_nuclear_share_sigmoid: %.4f", root.uSA.resources_highbest_sigmoid_result.nuclear_share_sigmoid);
+                ImGui::Text("resources_highbest_sigmoid_result_forest_area_km2: %d", root.uSA.resources_highbest_sigmoid_result.forest_area_km2);
+                ImGui::Text("resources_highbest_sigmoid_result_forest_area_km2_min: %.4f", root.uSA.resources_highbest_sigmoid_result.forest_area_km2_min);
+                ImGui::Text("resources_highbest_sigmoid_result_forest_area_km2_max: %.4f", root.uSA.resources_highbest_sigmoid_result.forest_area_km2_max);
+                ImGui::Text("resources_highbest_sigmoid_result_forest_area_km2_norm: %.4f", root.uSA.resources_highbest_sigmoid_result.forest_area_km2_norm);
+                ImGui::Text("resources_highbest_sigmoid_result_forest_area_km2_sigmoid: %.4f", root.uSA.resources_highbest_sigmoid_result.forest_area_km2_sigmoid);
+                ImGui::Text("resources_highbest_sigmoid_result_farmland_million_acres: %.4f", root.uSA.resources_highbest_sigmoid_result.farmland_million_acres);
+                ImGui::Text("resources_highbest_sigmoid_result_farmland_million_acres_min: %.4f", root.uSA.resources_highbest_sigmoid_result.farmland_million_acres_min);
+                ImGui::Text("resources_highbest_sigmoid_result_farmland_million_acres_max: %.4f", root.uSA.resources_highbest_sigmoid_result.farmland_million_acres_max);
+                ImGui::Text("resources_highbest_sigmoid_result_farmland_million_acres_norm: %.4f", root.uSA.resources_highbest_sigmoid_result.farmland_million_acres_norm);
+                ImGui::Text("resources_highbest_sigmoid_result_farmland_million_acres_sigmoid: %.4f", root.uSA.resources_highbest_sigmoid_result.farmland_million_acres_sigmoid);
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("resources_lowbest_sigmoid_result"))
+            {
+                ImGui::Text("resources_lowbest_sigmoid_result_freshwater_withdrawal_bcm: %.4f", root.uSA.resources_lowbest_sigmoid_result.freshwater_withdrawal_bcm);
+                ImGui::Text("resources_lowbest_sigmoid_result_freshwater_withdrawal_bcm_min: %.4f", root.uSA.resources_lowbest_sigmoid_result.freshwater_withdrawal_bcm_min);
+                ImGui::Text("resources_lowbest_sigmoid_result_freshwater_withdrawal_bcm_max: %.4f", root.uSA.resources_lowbest_sigmoid_result.freshwater_withdrawal_bcm_max);
+                ImGui::Text("resources_lowbest_sigmoid_result_freshwater_withdrawal_bcm_norm: %.4f", root.uSA.resources_lowbest_sigmoid_result.freshwater_withdrawal_bcm_norm);
+                ImGui::Text("resources_lowbest_sigmoid_result_freshwater_withdrawal_bcm_sigmoid: %.4f", root.uSA.resources_lowbest_sigmoid_result.freshwater_withdrawal_bcm_sigmoid);
+                ImGui::Text("resources_lowbest_sigmoid_result_co2_emissions_mt: %.4f", root.uSA.resources_lowbest_sigmoid_result.co2_emissions_mt);
+                ImGui::Text("resources_lowbest_sigmoid_result_co2_emissions_mt_min: %.4f", root.uSA.resources_lowbest_sigmoid_result.co2_emissions_mt_min);
+                ImGui::Text("resources_lowbest_sigmoid_result_co2_emissions_mt_max: %.4f", root.uSA.resources_lowbest_sigmoid_result.co2_emissions_mt_max);
+                ImGui::Text("resources_lowbest_sigmoid_result_co2_emissions_mt_norm: %.4f", root.uSA.resources_lowbest_sigmoid_result.co2_emissions_mt_norm);
+                ImGui::Text("resources_lowbest_sigmoid_result_co2_emissions_mt_sigmoid: %.4f", root.uSA.resources_lowbest_sigmoid_result.co2_emissions_mt_sigmoid);
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("infrastructure_highbest_sigmoid_result"))
+            {
+                ImGui::Text("infrastructure_highbest_sigmoid_result_land_area_km2: %d", root.uSA.infrastructure_highbest_sigmoid_result.land_area_km2);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_land_area_km2_min: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.land_area_km2_min);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_land_area_km2_max: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.land_area_km2_max);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_land_area_km2_norm: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.land_area_km2_norm);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_land_area_km2_sigmoid: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.land_area_km2_sigmoid);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_total_area_km2: %d", root.uSA.infrastructure_highbest_sigmoid_result.total_area_km2);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_total_area_km2_min: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.total_area_km2_min);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_total_area_km2_max: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.total_area_km2_max);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_total_area_km2_norm: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.total_area_km2_norm);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_total_area_km2_sigmoid: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.total_area_km2_sigmoid);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_coastline_km: %d", root.uSA.infrastructure_highbest_sigmoid_result.coastline_km);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_coastline_km_min: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.coastline_km_min);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_coastline_km_max: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.coastline_km_max);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_coastline_km_norm: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.coastline_km_norm);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_coastline_km_sigmoid: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.coastline_km_sigmoid);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_road_km: %d", root.uSA.infrastructure_highbest_sigmoid_result.road_km);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_road_km_min: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.road_km_min);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_road_km_max: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.road_km_max);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_road_km_norm: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.road_km_norm);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_road_km_sigmoid: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.road_km_sigmoid);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_rail_km: %d", root.uSA.infrastructure_highbest_sigmoid_result.rail_km);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_rail_km_min: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.rail_km_min);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_rail_km_max: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.rail_km_max);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_rail_km_norm: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.rail_km_norm);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_rail_km_sigmoid: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.rail_km_sigmoid);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_airports: %d", root.uSA.infrastructure_highbest_sigmoid_result.airports);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_airports_min: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.airports_min);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_airports_max: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.airports_max);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_airports_norm: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.airports_norm);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_airports_sigmoid: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.airports_sigmoid);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_major_ports: %d", root.uSA.infrastructure_highbest_sigmoid_result.major_ports);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_major_ports_min: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.major_ports_min);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_major_ports_max: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.major_ports_max);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_major_ports_norm: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.major_ports_norm);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_major_ports_sigmoid: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.major_ports_sigmoid);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_electricity_access_pct: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.electricity_access_pct);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_electricity_access_pct_min: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.electricity_access_pct_min);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_electricity_access_pct_max: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.electricity_access_pct_max);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_electricity_access_pct_norm: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.electricity_access_pct_norm);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_electricity_access_pct_sigmoid: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.electricity_access_pct_sigmoid);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_safe_water_access_pct: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.safe_water_access_pct);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_safe_water_access_pct_min: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.safe_water_access_pct_min);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_safe_water_access_pct_max: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.safe_water_access_pct_max);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_safe_water_access_pct_norm: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.safe_water_access_pct_norm);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_safe_water_access_pct_sigmoid: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.safe_water_access_pct_sigmoid);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_fixed_broadband_subscriptions: %d", root.uSA.infrastructure_highbest_sigmoid_result.fixed_broadband_subscriptions);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_fixed_broadband_subscriptions_min: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.fixed_broadband_subscriptions_min);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_fixed_broadband_subscriptions_max: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.fixed_broadband_subscriptions_max);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_fixed_broadband_subscriptions_norm: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.fixed_broadband_subscriptions_norm);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_fixed_broadband_subscriptions_sigmoid: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.fixed_broadband_subscriptions_sigmoid);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_mobile_subscriptions: %d", root.uSA.infrastructure_highbest_sigmoid_result.mobile_subscriptions);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_mobile_subscriptions_min: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.mobile_subscriptions_min);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_mobile_subscriptions_max: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.mobile_subscriptions_max);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_mobile_subscriptions_norm: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.mobile_subscriptions_norm);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_mobile_subscriptions_sigmoid: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.mobile_subscriptions_sigmoid);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_housing_units: %d", root.uSA.infrastructure_highbest_sigmoid_result.housing_units);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_housing_units_min: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.housing_units_min);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_housing_units_max: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.housing_units_max);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_housing_units_norm: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.housing_units_norm);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_housing_units_sigmoid: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.housing_units_sigmoid);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_data_centers: %d", root.uSA.infrastructure_highbest_sigmoid_result.data_centers);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_data_centers_min: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.data_centers_min);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_data_centers_max: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.data_centers_max);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_data_centers_norm: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.data_centers_norm);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_data_centers_sigmoid: %.4f", root.uSA.infrastructure_highbest_sigmoid_result.data_centers_sigmoid);
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("education_highbest_sigmoid_result"))
+            {
+                ImGui::Text("education_highbest_sigmoid_result_literacy_rate: %.4f", root.uSA.education_highbest_sigmoid_result.literacy_rate);
+                ImGui::Text("education_highbest_sigmoid_result_literacy_rate_min: %.4f", root.uSA.education_highbest_sigmoid_result.literacy_rate_min);
+                ImGui::Text("education_highbest_sigmoid_result_literacy_rate_max: %.4f", root.uSA.education_highbest_sigmoid_result.literacy_rate_max);
+                ImGui::Text("education_highbest_sigmoid_result_literacy_rate_norm: %.4f", root.uSA.education_highbest_sigmoid_result.literacy_rate_norm);
+                ImGui::Text("education_highbest_sigmoid_result_literacy_rate_sigmoid: %.4f", root.uSA.education_highbest_sigmoid_result.literacy_rate_sigmoid);
+                ImGui::Text("education_highbest_sigmoid_result_education_spending_pct_gdp: %.4f", root.uSA.education_highbest_sigmoid_result.education_spending_pct_gdp);
+                ImGui::Text("education_highbest_sigmoid_result_education_spending_pct_gdp_min: %.4f", root.uSA.education_highbest_sigmoid_result.education_spending_pct_gdp_min);
+                ImGui::Text("education_highbest_sigmoid_result_education_spending_pct_gdp_max: %.4f", root.uSA.education_highbest_sigmoid_result.education_spending_pct_gdp_max);
+                ImGui::Text("education_highbest_sigmoid_result_education_spending_pct_gdp_norm: %.4f", root.uSA.education_highbest_sigmoid_result.education_spending_pct_gdp_norm);
+                ImGui::Text("education_highbest_sigmoid_result_education_spending_pct_gdp_sigmoid: %.4f", root.uSA.education_highbest_sigmoid_result.education_spending_pct_gdp_sigmoid);
+                ImGui::Text("education_highbest_sigmoid_result_school_life_expectancy: %.4f", root.uSA.education_highbest_sigmoid_result.school_life_expectancy);
+                ImGui::Text("education_highbest_sigmoid_result_school_life_expectancy_min: %.4f", root.uSA.education_highbest_sigmoid_result.school_life_expectancy_min);
+                ImGui::Text("education_highbest_sigmoid_result_school_life_expectancy_max: %.4f", root.uSA.education_highbest_sigmoid_result.school_life_expectancy_max);
+                ImGui::Text("education_highbest_sigmoid_result_school_life_expectancy_norm: %.4f", root.uSA.education_highbest_sigmoid_result.school_life_expectancy_norm);
+                ImGui::Text("education_highbest_sigmoid_result_school_life_expectancy_sigmoid: %.4f", root.uSA.education_highbest_sigmoid_result.school_life_expectancy_sigmoid);
+                ImGui::Text("education_highbest_sigmoid_result_high_school_graduation_rate: %.4f", root.uSA.education_highbest_sigmoid_result.high_school_graduation_rate);
+                ImGui::Text("education_highbest_sigmoid_result_high_school_graduation_rate_min: %.4f", root.uSA.education_highbest_sigmoid_result.high_school_graduation_rate_min);
+                ImGui::Text("education_highbest_sigmoid_result_high_school_graduation_rate_max: %.4f", root.uSA.education_highbest_sigmoid_result.high_school_graduation_rate_max);
+                ImGui::Text("education_highbest_sigmoid_result_high_school_graduation_rate_norm: %.4f", root.uSA.education_highbest_sigmoid_result.high_school_graduation_rate_norm);
+                ImGui::Text("education_highbest_sigmoid_result_high_school_graduation_rate_sigmoid: %.4f", root.uSA.education_highbest_sigmoid_result.high_school_graduation_rate_sigmoid);
+                ImGui::Text("education_highbest_sigmoid_result_tertiary_attainment_pct: %.4f", root.uSA.education_highbest_sigmoid_result.tertiary_attainment_pct);
+                ImGui::Text("education_highbest_sigmoid_result_tertiary_attainment_pct_min: %.4f", root.uSA.education_highbest_sigmoid_result.tertiary_attainment_pct_min);
+                ImGui::Text("education_highbest_sigmoid_result_tertiary_attainment_pct_max: %.4f", root.uSA.education_highbest_sigmoid_result.tertiary_attainment_pct_max);
+                ImGui::Text("education_highbest_sigmoid_result_tertiary_attainment_pct_norm: %.4f", root.uSA.education_highbest_sigmoid_result.tertiary_attainment_pct_norm);
+                ImGui::Text("education_highbest_sigmoid_result_tertiary_attainment_pct_sigmoid: %.4f", root.uSA.education_highbest_sigmoid_result.tertiary_attainment_pct_sigmoid);
+                ImGui::Text("education_highbest_sigmoid_result_public_school_students: %d", root.uSA.education_highbest_sigmoid_result.public_school_students);
+                ImGui::Text("education_highbest_sigmoid_result_public_school_students_min: %.4f", root.uSA.education_highbest_sigmoid_result.public_school_students_min);
+                ImGui::Text("education_highbest_sigmoid_result_public_school_students_max: %.4f", root.uSA.education_highbest_sigmoid_result.public_school_students_max);
+                ImGui::Text("education_highbest_sigmoid_result_public_school_students_norm: %.4f", root.uSA.education_highbest_sigmoid_result.public_school_students_norm);
+                ImGui::Text("education_highbest_sigmoid_result_public_school_students_sigmoid: %.4f", root.uSA.education_highbest_sigmoid_result.public_school_students_sigmoid);
+                ImGui::Text("education_highbest_sigmoid_result_college_students: %d", root.uSA.education_highbest_sigmoid_result.college_students);
+                ImGui::Text("education_highbest_sigmoid_result_college_students_min: %.4f", root.uSA.education_highbest_sigmoid_result.college_students_min);
+                ImGui::Text("education_highbest_sigmoid_result_college_students_max: %.4f", root.uSA.education_highbest_sigmoid_result.college_students_max);
+                ImGui::Text("education_highbest_sigmoid_result_college_students_norm: %.4f", root.uSA.education_highbest_sigmoid_result.college_students_norm);
+                ImGui::Text("education_highbest_sigmoid_result_college_students_sigmoid: %.4f", root.uSA.education_highbest_sigmoid_result.college_students_sigmoid);
+                ImGui::Text("education_highbest_sigmoid_result_stem_graduates_yearly: %d", root.uSA.education_highbest_sigmoid_result.stem_graduates_yearly);
+                ImGui::Text("education_highbest_sigmoid_result_stem_graduates_yearly_min: %.4f", root.uSA.education_highbest_sigmoid_result.stem_graduates_yearly_min);
+                ImGui::Text("education_highbest_sigmoid_result_stem_graduates_yearly_max: %.4f", root.uSA.education_highbest_sigmoid_result.stem_graduates_yearly_max);
+                ImGui::Text("education_highbest_sigmoid_result_stem_graduates_yearly_norm: %.4f", root.uSA.education_highbest_sigmoid_result.stem_graduates_yearly_norm);
+                ImGui::Text("education_highbest_sigmoid_result_stem_graduates_yearly_sigmoid: %.4f", root.uSA.education_highbest_sigmoid_result.stem_graduates_yearly_sigmoid);
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("health_highbest_sigmoid_result"))
+            {
+                ImGui::Text("health_highbest_sigmoid_result_health_spending_pct_gdp: %.4f", root.uSA.health_highbest_sigmoid_result.health_spending_pct_gdp);
+                ImGui::Text("health_highbest_sigmoid_result_health_spending_pct_gdp_min: %.4f", root.uSA.health_highbest_sigmoid_result.health_spending_pct_gdp_min);
+                ImGui::Text("health_highbest_sigmoid_result_health_spending_pct_gdp_max: %.4f", root.uSA.health_highbest_sigmoid_result.health_spending_pct_gdp_max);
+                ImGui::Text("health_highbest_sigmoid_result_health_spending_pct_gdp_norm: %.4f", root.uSA.health_highbest_sigmoid_result.health_spending_pct_gdp_norm);
+                ImGui::Text("health_highbest_sigmoid_result_health_spending_pct_gdp_sigmoid: %.4f", root.uSA.health_highbest_sigmoid_result.health_spending_pct_gdp_sigmoid);
+                ImGui::Text("health_highbest_sigmoid_result_insured_rate: %.4f", root.uSA.health_highbest_sigmoid_result.insured_rate);
+                ImGui::Text("health_highbest_sigmoid_result_insured_rate_min: %.4f", root.uSA.health_highbest_sigmoid_result.insured_rate_min);
+                ImGui::Text("health_highbest_sigmoid_result_insured_rate_max: %.4f", root.uSA.health_highbest_sigmoid_result.insured_rate_max);
+                ImGui::Text("health_highbest_sigmoid_result_insured_rate_norm: %.4f", root.uSA.health_highbest_sigmoid_result.insured_rate_norm);
+                ImGui::Text("health_highbest_sigmoid_result_insured_rate_sigmoid: %.4f", root.uSA.health_highbest_sigmoid_result.insured_rate_sigmoid);
+                ImGui::Text("health_highbest_sigmoid_result_physicians_per_1000: %.4f", root.uSA.health_highbest_sigmoid_result.physicians_per_1000);
+                ImGui::Text("health_highbest_sigmoid_result_physicians_per_1000_min: %.4f", root.uSA.health_highbest_sigmoid_result.physicians_per_1000_min);
+                ImGui::Text("health_highbest_sigmoid_result_physicians_per_1000_max: %.4f", root.uSA.health_highbest_sigmoid_result.physicians_per_1000_max);
+                ImGui::Text("health_highbest_sigmoid_result_physicians_per_1000_norm: %.4f", root.uSA.health_highbest_sigmoid_result.physicians_per_1000_norm);
+                ImGui::Text("health_highbest_sigmoid_result_physicians_per_1000_sigmoid: %.4f", root.uSA.health_highbest_sigmoid_result.physicians_per_1000_sigmoid);
+                ImGui::Text("health_highbest_sigmoid_result_hospital_beds_per_1000: %.4f", root.uSA.health_highbest_sigmoid_result.hospital_beds_per_1000);
+                ImGui::Text("health_highbest_sigmoid_result_hospital_beds_per_1000_min: %.4f", root.uSA.health_highbest_sigmoid_result.hospital_beds_per_1000_min);
+                ImGui::Text("health_highbest_sigmoid_result_hospital_beds_per_1000_max: %.4f", root.uSA.health_highbest_sigmoid_result.hospital_beds_per_1000_max);
+                ImGui::Text("health_highbest_sigmoid_result_hospital_beds_per_1000_norm: %.4f", root.uSA.health_highbest_sigmoid_result.hospital_beds_per_1000_norm);
+                ImGui::Text("health_highbest_sigmoid_result_hospital_beds_per_1000_sigmoid: %.4f", root.uSA.health_highbest_sigmoid_result.hospital_beds_per_1000_sigmoid);
+                ImGui::Text("health_highbest_sigmoid_result_nurses: %d", root.uSA.health_highbest_sigmoid_result.nurses);
+                ImGui::Text("health_highbest_sigmoid_result_nurses_min: %.4f", root.uSA.health_highbest_sigmoid_result.nurses_min);
+                ImGui::Text("health_highbest_sigmoid_result_nurses_max: %.4f", root.uSA.health_highbest_sigmoid_result.nurses_max);
+                ImGui::Text("health_highbest_sigmoid_result_nurses_norm: %.4f", root.uSA.health_highbest_sigmoid_result.nurses_norm);
+                ImGui::Text("health_highbest_sigmoid_result_nurses_sigmoid: %.4f", root.uSA.health_highbest_sigmoid_result.nurses_sigmoid);
+                ImGui::Text("health_highbest_sigmoid_result_hospital_count: %d", root.uSA.health_highbest_sigmoid_result.hospital_count);
+                ImGui::Text("health_highbest_sigmoid_result_hospital_count_min: %.4f", root.uSA.health_highbest_sigmoid_result.hospital_count_min);
+                ImGui::Text("health_highbest_sigmoid_result_hospital_count_max: %.4f", root.uSA.health_highbest_sigmoid_result.hospital_count_max);
+                ImGui::Text("health_highbest_sigmoid_result_hospital_count_norm: %.4f", root.uSA.health_highbest_sigmoid_result.hospital_count_norm);
+                ImGui::Text("health_highbest_sigmoid_result_hospital_count_sigmoid: %.4f", root.uSA.health_highbest_sigmoid_result.hospital_count_sigmoid);
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("health_lowbest_sigmoid_result"))
+            {
+                ImGui::Text("health_lowbest_sigmoid_result_obesity_rate: %.4f", root.uSA.health_lowbest_sigmoid_result.obesity_rate);
+                ImGui::Text("health_lowbest_sigmoid_result_obesity_rate_min: %.4f", root.uSA.health_lowbest_sigmoid_result.obesity_rate_min);
+                ImGui::Text("health_lowbest_sigmoid_result_obesity_rate_max: %.4f", root.uSA.health_lowbest_sigmoid_result.obesity_rate_max);
+                ImGui::Text("health_lowbest_sigmoid_result_obesity_rate_norm: %.4f", root.uSA.health_lowbest_sigmoid_result.obesity_rate_norm);
+                ImGui::Text("health_lowbest_sigmoid_result_obesity_rate_sigmoid: %.4f", root.uSA.health_lowbest_sigmoid_result.obesity_rate_sigmoid);
+                ImGui::Text("health_lowbest_sigmoid_result_maternal_mortality: %.4f", root.uSA.health_lowbest_sigmoid_result.maternal_mortality);
+                ImGui::Text("health_lowbest_sigmoid_result_maternal_mortality_min: %.4f", root.uSA.health_lowbest_sigmoid_result.maternal_mortality_min);
+                ImGui::Text("health_lowbest_sigmoid_result_maternal_mortality_max: %.4f", root.uSA.health_lowbest_sigmoid_result.maternal_mortality_max);
+                ImGui::Text("health_lowbest_sigmoid_result_maternal_mortality_norm: %.4f", root.uSA.health_lowbest_sigmoid_result.maternal_mortality_norm);
+                ImGui::Text("health_lowbest_sigmoid_result_maternal_mortality_sigmoid: %.4f", root.uSA.health_lowbest_sigmoid_result.maternal_mortality_sigmoid);
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("technology_highbest_sigmoid_result"))
+            {
+                ImGui::Text("technology_highbest_sigmoid_result_rnd_spending: %.4f", root.uSA.technology_highbest_sigmoid_result.rnd_spending);
+                ImGui::Text("technology_highbest_sigmoid_result_rnd_spending_min: %.4f", root.uSA.technology_highbest_sigmoid_result.rnd_spending_min);
+                ImGui::Text("technology_highbest_sigmoid_result_rnd_spending_max: %.4f", root.uSA.technology_highbest_sigmoid_result.rnd_spending_max);
+                ImGui::Text("technology_highbest_sigmoid_result_rnd_spending_norm: %.4f", root.uSA.technology_highbest_sigmoid_result.rnd_spending_norm);
+                ImGui::Text("technology_highbest_sigmoid_result_rnd_spending_sigmoid: %.4f", root.uSA.technology_highbest_sigmoid_result.rnd_spending_sigmoid);
+                ImGui::Text("technology_highbest_sigmoid_result_rnd_share_gdp: %.4f", root.uSA.technology_highbest_sigmoid_result.rnd_share_gdp);
+                ImGui::Text("technology_highbest_sigmoid_result_rnd_share_gdp_min: %.4f", root.uSA.technology_highbest_sigmoid_result.rnd_share_gdp_min);
+                ImGui::Text("technology_highbest_sigmoid_result_rnd_share_gdp_max: %.4f", root.uSA.technology_highbest_sigmoid_result.rnd_share_gdp_max);
+                ImGui::Text("technology_highbest_sigmoid_result_rnd_share_gdp_norm: %.4f", root.uSA.technology_highbest_sigmoid_result.rnd_share_gdp_norm);
+                ImGui::Text("technology_highbest_sigmoid_result_rnd_share_gdp_sigmoid: %.4f", root.uSA.technology_highbest_sigmoid_result.rnd_share_gdp_sigmoid);
+                ImGui::Text("technology_highbest_sigmoid_result_internet_users_pct: %.4f", root.uSA.technology_highbest_sigmoid_result.internet_users_pct);
+                ImGui::Text("technology_highbest_sigmoid_result_internet_users_pct_min: %.4f", root.uSA.technology_highbest_sigmoid_result.internet_users_pct_min);
+                ImGui::Text("technology_highbest_sigmoid_result_internet_users_pct_max: %.4f", root.uSA.technology_highbest_sigmoid_result.internet_users_pct_max);
+                ImGui::Text("technology_highbest_sigmoid_result_internet_users_pct_norm: %.4f", root.uSA.technology_highbest_sigmoid_result.internet_users_pct_norm);
+                ImGui::Text("technology_highbest_sigmoid_result_internet_users_pct_sigmoid: %.4f", root.uSA.technology_highbest_sigmoid_result.internet_users_pct_sigmoid);
+                ImGui::Text("technology_highbest_sigmoid_result_smartphone_users_pct: %.4f", root.uSA.technology_highbest_sigmoid_result.smartphone_users_pct);
+                ImGui::Text("technology_highbest_sigmoid_result_smartphone_users_pct_min: %.4f", root.uSA.technology_highbest_sigmoid_result.smartphone_users_pct_min);
+                ImGui::Text("technology_highbest_sigmoid_result_smartphone_users_pct_max: %.4f", root.uSA.technology_highbest_sigmoid_result.smartphone_users_pct_max);
+                ImGui::Text("technology_highbest_sigmoid_result_smartphone_users_pct_norm: %.4f", root.uSA.technology_highbest_sigmoid_result.smartphone_users_pct_norm);
+                ImGui::Text("technology_highbest_sigmoid_result_smartphone_users_pct_sigmoid: %.4f", root.uSA.technology_highbest_sigmoid_result.smartphone_users_pct_sigmoid);
+                ImGui::Text("technology_highbest_sigmoid_result_cloud_market_size: %.4f", root.uSA.technology_highbest_sigmoid_result.cloud_market_size);
+                ImGui::Text("technology_highbest_sigmoid_result_cloud_market_size_min: %.4f", root.uSA.technology_highbest_sigmoid_result.cloud_market_size_min);
+                ImGui::Text("technology_highbest_sigmoid_result_cloud_market_size_max: %.4f", root.uSA.technology_highbest_sigmoid_result.cloud_market_size_max);
+                ImGui::Text("technology_highbest_sigmoid_result_cloud_market_size_norm: %.4f", root.uSA.technology_highbest_sigmoid_result.cloud_market_size_norm);
+                ImGui::Text("technology_highbest_sigmoid_result_cloud_market_size_sigmoid: %.4f", root.uSA.technology_highbest_sigmoid_result.cloud_market_size_sigmoid);
+                ImGui::Text("technology_highbest_sigmoid_result_ai_private_investment: %.4f", root.uSA.technology_highbest_sigmoid_result.ai_private_investment);
+                ImGui::Text("technology_highbest_sigmoid_result_ai_private_investment_min: %.4f", root.uSA.technology_highbest_sigmoid_result.ai_private_investment_min);
+                ImGui::Text("technology_highbest_sigmoid_result_ai_private_investment_max: %.4f", root.uSA.technology_highbest_sigmoid_result.ai_private_investment_max);
+                ImGui::Text("technology_highbest_sigmoid_result_ai_private_investment_norm: %.4f", root.uSA.technology_highbest_sigmoid_result.ai_private_investment_norm);
+                ImGui::Text("technology_highbest_sigmoid_result_ai_private_investment_sigmoid: %.4f", root.uSA.technology_highbest_sigmoid_result.ai_private_investment_sigmoid);
+                ImGui::Text("technology_highbest_sigmoid_result_space_launches_yearly: %d", root.uSA.technology_highbest_sigmoid_result.space_launches_yearly);
+                ImGui::Text("technology_highbest_sigmoid_result_space_launches_yearly_min: %.4f", root.uSA.technology_highbest_sigmoid_result.space_launches_yearly_min);
+                ImGui::Text("technology_highbest_sigmoid_result_space_launches_yearly_max: %.4f", root.uSA.technology_highbest_sigmoid_result.space_launches_yearly_max);
+                ImGui::Text("technology_highbest_sigmoid_result_space_launches_yearly_norm: %.4f", root.uSA.technology_highbest_sigmoid_result.space_launches_yearly_norm);
+                ImGui::Text("technology_highbest_sigmoid_result_space_launches_yearly_sigmoid: %.4f", root.uSA.technology_highbest_sigmoid_result.space_launches_yearly_sigmoid);
+                ImGui::Text("technology_highbest_sigmoid_result_patents_granted_yearly: %d", root.uSA.technology_highbest_sigmoid_result.patents_granted_yearly);
+                ImGui::Text("technology_highbest_sigmoid_result_patents_granted_yearly_min: %.4f", root.uSA.technology_highbest_sigmoid_result.patents_granted_yearly_min);
+                ImGui::Text("technology_highbest_sigmoid_result_patents_granted_yearly_max: %.4f", root.uSA.technology_highbest_sigmoid_result.patents_granted_yearly_max);
+                ImGui::Text("technology_highbest_sigmoid_result_patents_granted_yearly_norm: %.4f", root.uSA.technology_highbest_sigmoid_result.patents_granted_yearly_norm);
+                ImGui::Text("technology_highbest_sigmoid_result_patents_granted_yearly_sigmoid: %.4f", root.uSA.technology_highbest_sigmoid_result.patents_granted_yearly_sigmoid);
+                ImGui::TreePop();
+            }
+            ImGui::TreePop();
+        }
+
+        if (ImGui::TreeNode("Magic"))
+        {
+            if (ImGui::TreeNode("kingdom_info"))
+            {
+                ImGui::Text("kingdom_info_name: %s", root.magic.kingdom_info.name.c_str());
+                ImGui::Text("kingdom_info_founded_year: %d", root.magic.kingdom_info.founded_year);
+                ImGui::Text("kingdom_info_capital: %s", root.magic.kingdom_info.capital.c_str());
+                ImGui::Text("kingdom_info_ruling_house: %s", root.magic.kingdom_info.ruling_house.c_str());
+                ImGui::Text("kingdom_info_current_monarch: %s", root.magic.kingdom_info.current_monarch.c_str());
+                ImGui::Text("kingdom_info_government_type: %s", root.magic.kingdom_info.government_type.c_str());
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("government_highbest_sigmoid_result"))
+            {
+                ImGui::Text("government_highbest_sigmoid_result_approval_rating: %.4f", root.magic.government_highbest_sigmoid_result.approval_rating);
+                ImGui::Text("government_highbest_sigmoid_result_approval_rating_min: %.4f", root.magic.government_highbest_sigmoid_result.approval_rating_min);
+                ImGui::Text("government_highbest_sigmoid_result_approval_rating_max: %.4f", root.magic.government_highbest_sigmoid_result.approval_rating_max);
+                ImGui::Text("government_highbest_sigmoid_result_approval_rating_norm: %.4f", root.magic.government_highbest_sigmoid_result.approval_rating_norm);
+                ImGui::Text("government_highbest_sigmoid_result_approval_rating_sigmoid: %.4f", root.magic.government_highbest_sigmoid_result.approval_rating_sigmoid);
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("government_lowbest_sigmoid_result"))
+            {
+                ImGui::Text("government_lowbest_sigmoid_result_tax_burden_index: %.4f", root.magic.government_lowbest_sigmoid_result.tax_burden_index);
+                ImGui::Text("government_lowbest_sigmoid_result_tax_burden_index_min: %.4f", root.magic.government_lowbest_sigmoid_result.tax_burden_index_min);
+                ImGui::Text("government_lowbest_sigmoid_result_tax_burden_index_max: %.4f", root.magic.government_lowbest_sigmoid_result.tax_burden_index_max);
+                ImGui::Text("government_lowbest_sigmoid_result_tax_burden_index_norm: %.4f", root.magic.government_lowbest_sigmoid_result.tax_burden_index_norm);
+                ImGui::Text("government_lowbest_sigmoid_result_tax_burden_index_sigmoid: %.4f", root.magic.government_lowbest_sigmoid_result.tax_burden_index_sigmoid);
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("magic_highbest_sigmoid_result"))
+            {
+                ImGui::Text("magic_highbest_sigmoid_result_mana_saturation: %.4f", root.magic.magic_highbest_sigmoid_result.mana_saturation);
+                ImGui::Text("magic_highbest_sigmoid_result_mana_saturation_min: %.4f", root.magic.magic_highbest_sigmoid_result.mana_saturation_min);
+                ImGui::Text("magic_highbest_sigmoid_result_mana_saturation_max: %.4f", root.magic.magic_highbest_sigmoid_result.mana_saturation_max);
+                ImGui::Text("magic_highbest_sigmoid_result_mana_saturation_norm: %.4f", root.magic.magic_highbest_sigmoid_result.mana_saturation_norm);
+                ImGui::Text("magic_highbest_sigmoid_result_mana_saturation_sigmoid: %.4f", root.magic.magic_highbest_sigmoid_result.mana_saturation_sigmoid);
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("magic_lowbest_sigmoid_result"))
+            {
+                ImGui::Text("magic_lowbest_sigmoid_result_forbidden_magic_incidents: %d", root.magic.magic_lowbest_sigmoid_result.forbidden_magic_incidents);
+                ImGui::Text("magic_lowbest_sigmoid_result_forbidden_magic_incidents_min: %.4f", root.magic.magic_lowbest_sigmoid_result.forbidden_magic_incidents_min);
+                ImGui::Text("magic_lowbest_sigmoid_result_forbidden_magic_incidents_max: %.4f", root.magic.magic_lowbest_sigmoid_result.forbidden_magic_incidents_max);
+                ImGui::Text("magic_lowbest_sigmoid_result_forbidden_magic_incidents_norm: %.4f", root.magic.magic_lowbest_sigmoid_result.forbidden_magic_incidents_norm);
+                ImGui::Text("magic_lowbest_sigmoid_result_forbidden_magic_incidents_sigmoid: %.4f", root.magic.magic_lowbest_sigmoid_result.forbidden_magic_incidents_sigmoid);
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("population_lowbest_sigmoid_result"))
+            {
+                ImGui::Text("population_lowbest_sigmoid_result_total_population: %d", root.magic.population_lowbest_sigmoid_result.total_population);
+                ImGui::Text("population_lowbest_sigmoid_result_total_population_min: %.4f", root.magic.population_lowbest_sigmoid_result.total_population_min);
+                ImGui::Text("population_lowbest_sigmoid_result_total_population_max: %.4f", root.magic.population_lowbest_sigmoid_result.total_population_max);
+                ImGui::Text("population_lowbest_sigmoid_result_total_population_norm: %.4f", root.magic.population_lowbest_sigmoid_result.total_population_norm);
+                ImGui::Text("population_lowbest_sigmoid_result_total_population_sigmoid: %.4f", root.magic.population_lowbest_sigmoid_result.total_population_sigmoid);
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("population_highbest_sigmoid_result"))
+            {
+                ImGui::Text("population_highbest_sigmoid_result_mage_population_ratio: %.4f", root.magic.population_highbest_sigmoid_result.mage_population_ratio);
+                ImGui::Text("population_highbest_sigmoid_result_mage_population_ratio_min: %.4f", root.magic.population_highbest_sigmoid_result.mage_population_ratio_min);
+                ImGui::Text("population_highbest_sigmoid_result_mage_population_ratio_max: %.4f", root.magic.population_highbest_sigmoid_result.mage_population_ratio_max);
+                ImGui::Text("population_highbest_sigmoid_result_mage_population_ratio_norm: %.4f", root.magic.population_highbest_sigmoid_result.mage_population_ratio_norm);
+                ImGui::Text("population_highbest_sigmoid_result_mage_population_ratio_sigmoid: %.4f", root.magic.population_highbest_sigmoid_result.mage_population_ratio_sigmoid);
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("economy_highbest_sigmoid_result"))
+            {
+                ImGui::Text("economy_highbest_sigmoid_result_gdp_gold_standard: %.4f", root.magic.economy_highbest_sigmoid_result.gdp_gold_standard);
+                ImGui::Text("economy_highbest_sigmoid_result_gdp_gold_standard_min: %.4f", root.magic.economy_highbest_sigmoid_result.gdp_gold_standard_min);
+                ImGui::Text("economy_highbest_sigmoid_result_gdp_gold_standard_max: %.4f", root.magic.economy_highbest_sigmoid_result.gdp_gold_standard_max);
+                ImGui::Text("economy_highbest_sigmoid_result_gdp_gold_standard_norm: %.4f", root.magic.economy_highbest_sigmoid_result.gdp_gold_standard_norm);
+                ImGui::Text("economy_highbest_sigmoid_result_gdp_gold_standard_sigmoid: %.4f", root.magic.economy_highbest_sigmoid_result.gdp_gold_standard_sigmoid);
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("economy_lowbest_sigmoid_result"))
+            {
+                ImGui::Text("economy_lowbest_sigmoid_result_inflation_rate: %.4f", root.magic.economy_lowbest_sigmoid_result.inflation_rate);
+                ImGui::Text("economy_lowbest_sigmoid_result_inflation_rate_min: %.4f", root.magic.economy_lowbest_sigmoid_result.inflation_rate_min);
+                ImGui::Text("economy_lowbest_sigmoid_result_inflation_rate_max: %.4f", root.magic.economy_lowbest_sigmoid_result.inflation_rate_max);
+                ImGui::Text("economy_lowbest_sigmoid_result_inflation_rate_norm: %.4f", root.magic.economy_lowbest_sigmoid_result.inflation_rate_norm);
+                ImGui::Text("economy_lowbest_sigmoid_result_inflation_rate_sigmoid: %.4f", root.magic.economy_lowbest_sigmoid_result.inflation_rate_sigmoid);
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("military_highbest_sigmoid_result"))
+            {
+                ImGui::Text("military_highbest_sigmoid_result_royal_battlemage_corps_strength: %.4f", root.magic.military_highbest_sigmoid_result.royal_battlemage_corps_strength);
+                ImGui::Text("military_highbest_sigmoid_result_royal_battlemage_corps_strength_min: %.4f", root.magic.military_highbest_sigmoid_result.royal_battlemage_corps_strength_min);
+                ImGui::Text("military_highbest_sigmoid_result_royal_battlemage_corps_strength_max: %.4f", root.magic.military_highbest_sigmoid_result.royal_battlemage_corps_strength_max);
+                ImGui::Text("military_highbest_sigmoid_result_royal_battlemage_corps_strength_norm: %.4f", root.magic.military_highbest_sigmoid_result.royal_battlemage_corps_strength_norm);
+                ImGui::Text("military_highbest_sigmoid_result_royal_battlemage_corps_strength_sigmoid: %.4f", root.magic.military_highbest_sigmoid_result.royal_battlemage_corps_strength_sigmoid);
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("military_lowbest_sigmoid_result"))
+            {
+                ImGui::Text("military_lowbest_sigmoid_result_border_conflict_frequency: %d", root.magic.military_lowbest_sigmoid_result.border_conflict_frequency);
+                ImGui::Text("military_lowbest_sigmoid_result_border_conflict_frequency_min: %.4f", root.magic.military_lowbest_sigmoid_result.border_conflict_frequency_min);
+                ImGui::Text("military_lowbest_sigmoid_result_border_conflict_frequency_max: %.4f", root.magic.military_lowbest_sigmoid_result.border_conflict_frequency_max);
+                ImGui::Text("military_lowbest_sigmoid_result_border_conflict_frequency_norm: %.4f", root.magic.military_lowbest_sigmoid_result.border_conflict_frequency_norm);
+                ImGui::Text("military_lowbest_sigmoid_result_border_conflict_frequency_sigmoid: %.4f", root.magic.military_lowbest_sigmoid_result.border_conflict_frequency_sigmoid);
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("environment_highbest_sigmoid_result"))
+            {
+                ImGui::Text("environment_highbest_sigmoid_result_starwood_forest_health: %.4f", root.magic.environment_highbest_sigmoid_result.starwood_forest_health);
+                ImGui::Text("environment_highbest_sigmoid_result_starwood_forest_health_min: %.4f", root.magic.environment_highbest_sigmoid_result.starwood_forest_health_min);
+                ImGui::Text("environment_highbest_sigmoid_result_starwood_forest_health_max: %.4f", root.magic.environment_highbest_sigmoid_result.starwood_forest_health_max);
+                ImGui::Text("environment_highbest_sigmoid_result_starwood_forest_health_norm: %.4f", root.magic.environment_highbest_sigmoid_result.starwood_forest_health_norm);
+                ImGui::Text("environment_highbest_sigmoid_result_starwood_forest_health_sigmoid: %.4f", root.magic.environment_highbest_sigmoid_result.starwood_forest_health_sigmoid);
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("environment_lowbest_sigmoid_result"))
+            {
+                ImGui::Text("environment_lowbest_sigmoid_result_leyline_instability: %.4f", root.magic.environment_lowbest_sigmoid_result.leyline_instability);
+                ImGui::Text("environment_lowbest_sigmoid_result_leyline_instability_min: %.4f", root.magic.environment_lowbest_sigmoid_result.leyline_instability_min);
+                ImGui::Text("environment_lowbest_sigmoid_result_leyline_instability_max: %.4f", root.magic.environment_lowbest_sigmoid_result.leyline_instability_max);
+                ImGui::Text("environment_lowbest_sigmoid_result_leyline_instability_norm: %.4f", root.magic.environment_lowbest_sigmoid_result.leyline_instability_norm);
+                ImGui::Text("environment_lowbest_sigmoid_result_leyline_instability_sigmoid: %.4f", root.magic.environment_lowbest_sigmoid_result.leyline_instability_sigmoid);
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("diplomacy_highbest_sigmoid_result"))
+            {
+                ImGui::Text("diplomacy_highbest_sigmoid_result_neighboring_realms_relations: %.4f", root.magic.diplomacy_highbest_sigmoid_result.neighboring_realms_relations);
+                ImGui::Text("diplomacy_highbest_sigmoid_result_neighboring_realms_relations_min: %.4f", root.magic.diplomacy_highbest_sigmoid_result.neighboring_realms_relations_min);
+                ImGui::Text("diplomacy_highbest_sigmoid_result_neighboring_realms_relations_max: %.4f", root.magic.diplomacy_highbest_sigmoid_result.neighboring_realms_relations_max);
+                ImGui::Text("diplomacy_highbest_sigmoid_result_neighboring_realms_relations_norm: %.4f", root.magic.diplomacy_highbest_sigmoid_result.neighboring_realms_relations_norm);
+                ImGui::Text("diplomacy_highbest_sigmoid_result_neighboring_realms_relations_sigmoid: %.4f", root.magic.diplomacy_highbest_sigmoid_result.neighboring_realms_relations_sigmoid);
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("diplomacy_lowbest_sigmoid_result"))
+            {
+                ImGui::Text("diplomacy_lowbest_sigmoid_result_active_trade_disputes: %d", root.magic.diplomacy_lowbest_sigmoid_result.active_trade_disputes);
+                ImGui::Text("diplomacy_lowbest_sigmoid_result_active_trade_disputes_min: %.4f", root.magic.diplomacy_lowbest_sigmoid_result.active_trade_disputes_min);
+                ImGui::Text("diplomacy_lowbest_sigmoid_result_active_trade_disputes_max: %.4f", root.magic.diplomacy_lowbest_sigmoid_result.active_trade_disputes_max);
+                ImGui::Text("diplomacy_lowbest_sigmoid_result_active_trade_disputes_norm: %.4f", root.magic.diplomacy_lowbest_sigmoid_result.active_trade_disputes_norm);
+                ImGui::Text("diplomacy_lowbest_sigmoid_result_active_trade_disputes_sigmoid: %.4f", root.magic.diplomacy_lowbest_sigmoid_result.active_trade_disputes_sigmoid);
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("culture_highbest_sigmoid_result"))
+            {
+                ImGui::Text("culture_highbest_sigmoid_result_festival_of_stars_attendance: %.4f", root.magic.culture_highbest_sigmoid_result.festival_of_stars_attendance);
+                ImGui::Text("culture_highbest_sigmoid_result_festival_of_stars_attendance_min: %.4f", root.magic.culture_highbest_sigmoid_result.festival_of_stars_attendance_min);
+                ImGui::Text("culture_highbest_sigmoid_result_festival_of_stars_attendance_max: %.4f", root.magic.culture_highbest_sigmoid_result.festival_of_stars_attendance_max);
+                ImGui::Text("culture_highbest_sigmoid_result_festival_of_stars_attendance_norm: %.4f", root.magic.culture_highbest_sigmoid_result.festival_of_stars_attendance_norm);
+                ImGui::Text("culture_highbest_sigmoid_result_festival_of_stars_attendance_sigmoid: %.4f", root.magic.culture_highbest_sigmoid_result.festival_of_stars_attendance_sigmoid);
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("infrastructure_highbest_sigmoid_result"))
+            {
+                ImGui::Text("infrastructure_highbest_sigmoid_result_teleportation_network_coverage: %.4f", root.magic.infrastructure_highbest_sigmoid_result.teleportation_network_coverage);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_teleportation_network_coverage_min: %.4f", root.magic.infrastructure_highbest_sigmoid_result.teleportation_network_coverage_min);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_teleportation_network_coverage_max: %.4f", root.magic.infrastructure_highbest_sigmoid_result.teleportation_network_coverage_max);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_teleportation_network_coverage_norm: %.4f", root.magic.infrastructure_highbest_sigmoid_result.teleportation_network_coverage_norm);
+                ImGui::Text("infrastructure_highbest_sigmoid_result_teleportation_network_coverage_sigmoid: %.4f", root.magic.infrastructure_highbest_sigmoid_result.teleportation_network_coverage_sigmoid);
+                ImGui::TreePop();
+            }
+            if (ImGui::TreeNode("infrastructure_lowbest_sigmoid_result"))
+            {
+                ImGui::Text("infrastructure_lowbest_sigmoid_result_crumbling_ward_sites: %d", root.magic.infrastructure_lowbest_sigmoid_result.crumbling_ward_sites);
+                ImGui::Text("infrastructure_lowbest_sigmoid_result_crumbling_ward_sites_min: %.4f", root.magic.infrastructure_lowbest_sigmoid_result.crumbling_ward_sites_min);
+                ImGui::Text("infrastructure_lowbest_sigmoid_result_crumbling_ward_sites_max: %.4f", root.magic.infrastructure_lowbest_sigmoid_result.crumbling_ward_sites_max);
+                ImGui::Text("infrastructure_lowbest_sigmoid_result_crumbling_ward_sites_norm: %.4f", root.magic.infrastructure_lowbest_sigmoid_result.crumbling_ward_sites_norm);
+                ImGui::Text("infrastructure_lowbest_sigmoid_result_crumbling_ward_sites_sigmoid: %.4f", root.magic.infrastructure_lowbest_sigmoid_result.crumbling_ward_sites_sigmoid);
+                ImGui::TreePop();
+            }
+            ImGui::TreePop();
+        }
+
+    }
+};

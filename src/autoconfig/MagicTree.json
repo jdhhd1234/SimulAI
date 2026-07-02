@@ -1,0 +1,720 @@
+{
+    "name": "MainConfig",
+    "type": "root",
+    "children": [
+        {
+            "name": "kingdom_info",
+            "type": "struct",
+            "children": [
+                {
+                    "key": "name",
+                    "value": "Kingdom of Arcanelle",
+                    "cpp_type": "std::string",
+                    "syntax": "Unknown",
+                    "normal_type": "variable",
+                    "value_child": []
+                },
+                {
+                    "key": "founded_year",
+                    "value": "742",
+                    "cpp_type": "int",
+                    "syntax": "Unknown",
+                    "normal_type": "variable",
+                    "value_child": []
+                },
+                {
+                    "key": "capital",
+                    "value": "Lumenthal",
+                    "cpp_type": "std::string",
+                    "syntax": "Unknown",
+                    "normal_type": "variable",
+                    "value_child": []
+                },
+                {
+                    "key": "ruling_house",
+                    "value": "HouseVeyrathorn",
+                    "cpp_type": "std::string",
+                    "syntax": "Unknown",
+                    "normal_type": "variable",
+                    "value_child": []
+                },
+                {
+                    "key": "current_monarch",
+                    "value": "QueesoldeVeyrathorn III",
+                    "cpp_type": "std::string",
+                    "syntax": "Unknown",
+                    "normal_type": "variable",
+                    "value_child": []
+                },
+                {
+                    "key": "government_type",
+                    "value": "Magocracy",
+                    "cpp_type": "std::string",
+                    "syntax": "Unknown",
+                    "normal_type": "variable",
+                    "value_child": []
+                }
+            ],
+            "integrated_score": {
+                "HighBest": {
+                    "count": 0,
+                    "avg_norm": 0.0,
+                    "avg_sigmoid": 0.0
+                },
+                "LowBest": {
+                    "count": 0,
+                    "avg_norm": 0.0,
+                    "inverted_avg_norm": 0.0,
+                    "avg_sigmoid": 0.0
+                },
+                "total_score": 0.0
+            }
+        },
+        {
+            "name": "government_HighBest_sigmoid_result",
+            "type": "struct",
+            "children": [
+                {
+                    "key": "approval_rating",
+                    "value": "63.50",
+                    "cpp_type": "float",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 63.5,
+                                "min": 0.0,
+                                "max": 100.0,
+                                "norm": 0.635,
+                                "sigmoid": 0.6536
+                            }
+                        }
+                    ]
+                }
+            ],
+            "integrated_score": {
+                "HighBest": {
+                    "count": 1,
+                    "avg_norm": 0.635,
+                    "avg_sigmoid": 0.6536
+                },
+                "LowBest": {
+                    "count": 0,
+                    "avg_norm": 0.0,
+                    "inverted_avg_norm": 0.0,
+                    "avg_sigmoid": 0.0
+                },
+                "total_score": 0.635
+            }
+        },
+        {
+            "name": "government_LowBest_sigmoid_result",
+            "type": "struct",
+            "children": [
+                {
+                    "key": "tax_burden_index",
+                    "value": "41.20",
+                    "cpp_type": "float",
+                    "syntax": "LowBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 41.2,
+                                "min": 0.0,
+                                "max": 100.0,
+                                "norm": 0.412,
+                                "sigmoid": 0.6016
+                            }
+                        }
+                    ]
+                }
+            ],
+            "integrated_score": {
+                "HighBest": {
+                    "count": 0,
+                    "avg_norm": 0.0,
+                    "avg_sigmoid": 0.0
+                },
+                "LowBest": {
+                    "count": 1,
+                    "avg_norm": 0.412,
+                    "inverted_avg_norm": 0.588,
+                    "avg_sigmoid": 0.6016
+                },
+                "total_score": 0.588
+            }
+        },
+        {
+            "name": "magic_HighBest_sigmoid_result",
+            "type": "struct",
+            "children": [
+                {
+                    "key": "mana_saturation",
+                    "value": "78.30",
+                    "cpp_type": "float",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 78.3,
+                                "min": 0.0,
+                                "max": 100.0,
+                                "norm": 0.783,
+                                "sigmoid": 0.6863
+                            }
+                        }
+                    ]
+                }
+            ],
+            "integrated_score": {
+                "HighBest": {
+                    "count": 1,
+                    "avg_norm": 0.783,
+                    "avg_sigmoid": 0.6863
+                },
+                "LowBest": {
+                    "count": 0,
+                    "avg_norm": 0.0,
+                    "inverted_avg_norm": 0.0,
+                    "avg_sigmoid": 0.0
+                },
+                "total_score": 0.783
+            }
+        },
+        {
+            "name": "magic_LowBest_sigmoid_result",
+            "type": "struct",
+            "children": [
+                {
+                    "key": "forbidden_magic_incidents",
+                    "value": "12",
+                    "cpp_type": "int",
+                    "syntax": "LowBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 12.0,
+                                "min": 0.0,
+                                "max": 500.0,
+                                "norm": 0.024,
+                                "sigmoid": 0.506
+                            }
+                        }
+                    ]
+                }
+            ],
+            "integrated_score": {
+                "HighBest": {
+                    "count": 0,
+                    "avg_norm": 0.0,
+                    "avg_sigmoid": 0.0
+                },
+                "LowBest": {
+                    "count": 1,
+                    "avg_norm": 0.024,
+                    "inverted_avg_norm": 0.976,
+                    "avg_sigmoid": 0.506
+                },
+                "total_score": 0.976
+            }
+        },
+        {
+            "name": "population_LowBest_sigmoid_result",
+            "type": "struct",
+            "children": [
+                {
+                    "key": "total_population",
+                    "value": "1850000",
+                    "cpp_type": "int",
+                    "syntax": "LowBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 1850000.0,
+                                "min": 0.0,
+                                "max": 5000000.0,
+                                "norm": 0.37,
+                                "sigmoid": 0.5915
+                            }
+                        }
+                    ]
+                }
+            ],
+            "integrated_score": {
+                "HighBest": {
+                    "count": 0,
+                    "avg_norm": 0.0,
+                    "avg_sigmoid": 0.0
+                },
+                "LowBest": {
+                    "count": 1,
+                    "avg_norm": 0.37,
+                    "inverted_avg_norm": 0.63,
+                    "avg_sigmoid": 0.5915
+                },
+                "total_score": 0.63
+            }
+        },
+        {
+            "name": "population_HighBest_sigmoid_result",
+            "type": "struct",
+            "children": [
+                {
+                    "key": "mage_population_ratio",
+                    "value": "14.70",
+                    "cpp_type": "float",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 14.7,
+                                "min": 0.0,
+                                "max": 100.0,
+                                "norm": 0.147,
+                                "sigmoid": 0.5367
+                            }
+                        }
+                    ]
+                }
+            ],
+            "integrated_score": {
+                "HighBest": {
+                    "count": 1,
+                    "avg_norm": 0.147,
+                    "avg_sigmoid": 0.5367
+                },
+                "LowBest": {
+                    "count": 0,
+                    "avg_norm": 0.0,
+                    "inverted_avg_norm": 0.0,
+                    "avg_sigmoid": 0.0
+                },
+                "total_score": 0.147
+            }
+        },
+        {
+            "name": "economy_HighBest_sigmoid_result",
+            "type": "struct",
+            "children": [
+                {
+                    "key": "gdp_gold_standard",
+                    "value": "2340000000",
+                    "cpp_type": "double",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 2340000000.0,
+                                "min": 0.0,
+                                "max": 10000000000.0,
+                                "norm": 0.234,
+                                "sigmoid": 0.5582
+                            }
+                        }
+                    ]
+                }
+            ],
+            "integrated_score": {
+                "HighBest": {
+                    "count": 1,
+                    "avg_norm": 0.234,
+                    "avg_sigmoid": 0.5582
+                },
+                "LowBest": {
+                    "count": 0,
+                    "avg_norm": 0.0,
+                    "inverted_avg_norm": 0.0,
+                    "avg_sigmoid": 0.0
+                },
+                "total_score": 0.234
+            }
+        },
+        {
+            "name": "economy_LowBest_sigmoid_result",
+            "type": "struct",
+            "children": [
+                {
+                    "key": "inflation_rate",
+                    "value": "3.40",
+                    "cpp_type": "float",
+                    "syntax": "LowBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 3.4,
+                                "min": -10.0,
+                                "max": 50.0,
+                                "norm": 0.2233,
+                                "sigmoid": 0.5556
+                            }
+                        }
+                    ]
+                }
+            ],
+            "integrated_score": {
+                "HighBest": {
+                    "count": 0,
+                    "avg_norm": 0.0,
+                    "avg_sigmoid": 0.0
+                },
+                "LowBest": {
+                    "count": 1,
+                    "avg_norm": 0.2233,
+                    "inverted_avg_norm": 0.7767,
+                    "avg_sigmoid": 0.5556
+                },
+                "total_score": 0.7767
+            }
+        },
+        {
+            "name": "military_HighBest_sigmoid_result",
+            "type": "struct",
+            "children": [
+                {
+                    "key": "royal_battlemage_corps_strength",
+                    "value": "71.00",
+                    "cpp_type": "float",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 71.0,
+                                "min": 0.0,
+                                "max": 100.0,
+                                "norm": 0.71,
+                                "sigmoid": 0.6704
+                            }
+                        }
+                    ]
+                }
+            ],
+            "integrated_score": {
+                "HighBest": {
+                    "count": 1,
+                    "avg_norm": 0.71,
+                    "avg_sigmoid": 0.6704
+                },
+                "LowBest": {
+                    "count": 0,
+                    "avg_norm": 0.0,
+                    "inverted_avg_norm": 0.0,
+                    "avg_sigmoid": 0.0
+                },
+                "total_score": 0.71
+            }
+        },
+        {
+            "name": "military_LowBest_sigmoid_result",
+            "type": "struct",
+            "children": [
+                {
+                    "key": "border_conflict_frequency",
+                    "value": "8",
+                    "cpp_type": "int",
+                    "syntax": "LowBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 8.0,
+                                "min": 0.0,
+                                "max": 100.0,
+                                "norm": 0.08,
+                                "sigmoid": 0.52
+                            }
+                        }
+                    ]
+                }
+            ],
+            "integrated_score": {
+                "HighBest": {
+                    "count": 0,
+                    "avg_norm": 0.0,
+                    "avg_sigmoid": 0.0
+                },
+                "LowBest": {
+                    "count": 1,
+                    "avg_norm": 0.08,
+                    "inverted_avg_norm": 0.92,
+                    "avg_sigmoid": 0.52
+                },
+                "total_score": 0.92
+            }
+        },
+        {
+            "name": "environment_HighBest_sigmoid_result",
+            "type": "struct",
+            "children": [
+                {
+                    "key": "starwood_forest_health",
+                    "value": "69.50",
+                    "cpp_type": "float",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 69.5,
+                                "min": 0.0,
+                                "max": 100.0,
+                                "norm": 0.695,
+                                "sigmoid": 0.6671
+                            }
+                        }
+                    ]
+                }
+            ],
+            "integrated_score": {
+                "HighBest": {
+                    "count": 1,
+                    "avg_norm": 0.695,
+                    "avg_sigmoid": 0.6671
+                },
+                "LowBest": {
+                    "count": 0,
+                    "avg_norm": 0.0,
+                    "inverted_avg_norm": 0.0,
+                    "avg_sigmoid": 0.0
+                },
+                "total_score": 0.695
+            }
+        },
+        {
+            "name": "environment_LowBest_sigmoid_result",
+            "type": "struct",
+            "children": [
+                {
+                    "key": "leyline_instability",
+                    "value": "22.00",
+                    "cpp_type": "float",
+                    "syntax": "LowBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 22.0,
+                                "min": 0.0,
+                                "max": 100.0,
+                                "norm": 0.22,
+                                "sigmoid": 0.5548
+                            }
+                        }
+                    ]
+                }
+            ],
+            "integrated_score": {
+                "HighBest": {
+                    "count": 0,
+                    "avg_norm": 0.0,
+                    "avg_sigmoid": 0.0
+                },
+                "LowBest": {
+                    "count": 1,
+                    "avg_norm": 0.22,
+                    "inverted_avg_norm": 0.78,
+                    "avg_sigmoid": 0.5548
+                },
+                "total_score": 0.78
+            }
+        },
+        {
+            "name": "diplomacy_HighBest_sigmoid_result",
+            "type": "struct",
+            "children": [
+                {
+                    "key": "neighboring_realms_relations",
+                    "value": "58.90",
+                    "cpp_type": "float",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 58.9,
+                                "min": 0.0,
+                                "max": 100.0,
+                                "norm": 0.589,
+                                "sigmoid": 0.6431
+                            }
+                        }
+                    ]
+                }
+            ],
+            "integrated_score": {
+                "HighBest": {
+                    "count": 1,
+                    "avg_norm": 0.589,
+                    "avg_sigmoid": 0.6431
+                },
+                "LowBest": {
+                    "count": 0,
+                    "avg_norm": 0.0,
+                    "inverted_avg_norm": 0.0,
+                    "avg_sigmoid": 0.0
+                },
+                "total_score": 0.589
+            }
+        },
+        {
+            "name": "diplomacy_LowBest_sigmoid_result",
+            "type": "struct",
+            "children": [
+                {
+                    "key": "active_trade_disputes",
+                    "value": "3",
+                    "cpp_type": "int",
+                    "syntax": "LowBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 3.0,
+                                "min": 0.0,
+                                "max": 50.0,
+                                "norm": 0.06,
+                                "sigmoid": 0.515
+                            }
+                        }
+                    ]
+                }
+            ],
+            "integrated_score": {
+                "HighBest": {
+                    "count": 0,
+                    "avg_norm": 0.0,
+                    "avg_sigmoid": 0.0
+                },
+                "LowBest": {
+                    "count": 1,
+                    "avg_norm": 0.06,
+                    "inverted_avg_norm": 0.94,
+                    "avg_sigmoid": 0.515
+                },
+                "total_score": 0.94
+            }
+        },
+        {
+            "name": "culture_HighBest_sigmoid_result",
+            "type": "struct",
+            "children": [
+                {
+                    "key": "festival_of_stars_attendance",
+                    "value": "88.00",
+                    "cpp_type": "float",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 88.0,
+                                "min": 0.0,
+                                "max": 100.0,
+                                "norm": 0.88,
+                                "sigmoid": 0.7068
+                            }
+                        }
+                    ]
+                }
+            ],
+            "integrated_score": {
+                "HighBest": {
+                    "count": 1,
+                    "avg_norm": 0.88,
+                    "avg_sigmoid": 0.7068
+                },
+                "LowBest": {
+                    "count": 0,
+                    "avg_norm": 0.0,
+                    "inverted_avg_norm": 0.0,
+                    "avg_sigmoid": 0.0
+                },
+                "total_score": 0.88
+            }
+        },
+        {
+            "name": "infrastructure_HighBest_sigmoid_result",
+            "type": "struct",
+            "children": [
+                {
+                    "key": "teleportation_network_coverage",
+                    "value": "44.60",
+                    "cpp_type": "float",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 44.6,
+                                "min": 0.0,
+                                "max": 100.0,
+                                "norm": 0.446,
+                                "sigmoid": 0.6097
+                            }
+                        }
+                    ]
+                }
+            ],
+            "integrated_score": {
+                "HighBest": {
+                    "count": 1,
+                    "avg_norm": 0.446,
+                    "avg_sigmoid": 0.6097
+                },
+                "LowBest": {
+                    "count": 0,
+                    "avg_norm": 0.0,
+                    "inverted_avg_norm": 0.0,
+                    "avg_sigmoid": 0.0
+                },
+                "total_score": 0.446
+            }
+        },
+        {
+            "name": "infrastructure_LowBest_sigmoid_result",
+            "type": "struct",
+            "children": [
+                {
+                    "key": "crumbling_ward_sites",
+                    "value": "17",
+                    "cpp_type": "int",
+                    "syntax": "LowBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 17.0,
+                                "min": 0.0,
+                                "max": 200.0,
+                                "norm": 0.085,
+                                "sigmoid": 0.5212
+                            }
+                        }
+                    ]
+                }
+            ],
+            "integrated_score": {
+                "HighBest": {
+                    "count": 0,
+                    "avg_norm": 0.0,
+                    "avg_sigmoid": 0.0
+                },
+                "LowBest": {
+                    "count": 1,
+                    "avg_norm": 0.085,
+                    "inverted_avg_norm": 0.915,
+                    "avg_sigmoid": 0.5212
+                },
+                "total_score": 0.915
+            }
+        }
+    ]
+}
