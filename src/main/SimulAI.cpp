@@ -1,4 +1,7 @@
-#include <Windows.h>
+#ifdef _WIN32
+#include <windows.h>
+#endif
+
 #include <vector>
 #include <string>
 
@@ -10,10 +13,17 @@
 #include "src/main/vector/vector_init.hpp"
 #include "src/main/LuaBind/LuaBind.hpp"
 
-int main()
+void InitConsole()
 {
+#ifdef _WIN32
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
+#endif
+}
+
+int main()
+{
+    InitConsole();
 
     std::cout << "hello World!" << std::endl;
 

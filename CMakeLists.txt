@@ -15,13 +15,15 @@ list(REMOVE_ITEM LUA_SRC
     ${CMAKE_CURRENT_SOURCE_DIR}/src/external/lua/lua.c
     ${CMAKE_CURRENT_SOURCE_DIR}/src/external/lua/luac.c
 )
-add_library(lua_lib STATIC ${LUA_SRC}
-  src/main/State/state.hpp)
-target_include_directories(lua_lib PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src/external/lua")
+add_library(lua_lib STATIC ${LUA_SRC})
 
-add_executable(${PROJECT_NAME} "src/main/SimulAI.cpp" 
+target_include_directories(lua_lib PUBLIC 
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/external/lua"
+)
+
+add_executable(${PROJECT_NAME}
+    "src/main/SimulAI.cpp"
     "src/main/SimulAI.hpp"
-    ${LUA_SRC}
     "src/main/cppGUI/gui_main.cpp"
     "src/main/cppGUI/gui_main.hpp"
     "src/opengl_setting/glad/src/glad.c"
@@ -30,6 +32,7 @@ add_executable(${PROJECT_NAME} "src/main/SimulAI.cpp"
     "src/main/LuaBind/LuaBind.hpp"
     "src/main/LuaBind/LuaBind.cpp"
     "src/main/State/state.hpp"
+    "src/main/State/state.cpp"
     src/main/vector/vector_init.hpp
 )
 
@@ -42,15 +45,17 @@ target_sources(${PROJECT_NAME} PRIVATE
 )
 
 if (MSVC)
-    add_compile_options(/utf-8)
+    target_compile_options(${PROJECT_NAME} PRIVATE
+        /utf-8
+        /bigobj
+        /Zc:char8_t-
+    )
 endif()
-
-target_compile_options(SimulAI PRIVATE /bigobj)
-target_compile_options(${PROJECT_NAME} PRIVATE /Zc:char8_t-)
 
 target_include_directories(${PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}/src/external
+    ${CMAKE_SOURCE_DIR}/src/external/lua
 )
 
 include(FetchContent)
