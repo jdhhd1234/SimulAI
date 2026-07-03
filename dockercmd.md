@@ -7,4 +7,4 @@
 
 
 # docker build -t simulai . (in project root)
-## docker run --rm simulai (run)
+## docker run --rm simulai:latest  (run)
