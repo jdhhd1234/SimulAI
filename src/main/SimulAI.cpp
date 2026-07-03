@@ -41,7 +41,7 @@ int main()
     //MIG.GUIMain(WS);
     //std::cout << "[DEBUG] GUI Main Success!" << std::endl;
 
-    LB.BindindToLua("C:/Users/kym10/Documents/VSCodeProj/SimulAI/src/ini_fld/DebugTestINI/Lua/main.lua", WS, lua);
+    LB.BindindToLua("src/ini_fld/DebugTestINI/Lua/main.lua", WS, lua);
     std::cout << "[Log] BindindToLua Success!" << std::endl;
 
     return 0;

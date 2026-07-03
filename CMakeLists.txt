@@ -8,17 +8,18 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 find_package(Python COMPONENTS Interpreter Development REQUIRED)
 
 file(GLOB LUA_SRC
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/external/lua/*.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/external/Lua/*.c
 )
 
 list(REMOVE_ITEM LUA_SRC
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/external/lua/lua.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/external/lua/luac.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/external/Lua/lua.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/external/Lua/luac.c
 )
+
 add_library(lua_lib STATIC ${LUA_SRC})
 
 target_include_directories(lua_lib PUBLIC 
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/external/lua"
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/external/Lua"
 )
 
 add_executable(${PROJECT_NAME}
@@ -142,6 +143,7 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/src"
     RUNTIME_OUTPUT_DIRECTORY_DEBUG "${CMAKE_CURRENT_SOURCE_DIR}/src"
     RUNTIME_OUTPUT_DIRECTORY_RELEASE "${CMAKE_CURRENT_SOURCE_DIR}/src"
+    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}"
 )
 
 if (TARGET nlohmann_json)
