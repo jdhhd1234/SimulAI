@@ -33,6 +33,14 @@ add_executable(${PROJECT_NAME} "src/main/SimulAI.cpp"
     src/main/vector/vector_init.hpp
 )
 
+file(GLOB ROOT_LUA_SOURCES
+    "${CMAKE_SOURCE_DIR}/src/autoconfig/RootLua*.cpp"
+)
+
+target_sources(${PROJECT_NAME} PRIVATE
+    ${ROOT_LUA_SOURCES}
+)
+
 if (MSVC)
     add_compile_options(/utf-8)
 endif()

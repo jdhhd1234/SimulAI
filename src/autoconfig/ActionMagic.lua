@@ -1,4 +1,4 @@
--- Auto Generated Action Lua
+﻿-- Auto Generated Action Lua
 -- Do Not Edit Manually
 
 local Actions = {}

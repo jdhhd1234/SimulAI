@@ -42,12 +42,18 @@ def MakeJsonToHpp(path: Path, output: Path, name: datacls.UtilityGenSpec):
     cpp_code.append("};\n\n")
                 
     
-    with output.open("w", encoding="utf-8") as f:
+    with output.open("w", encoding="utf-8-sig") as f:
         f.writelines(cpp_code)
-    
+
+def read_clean_hpp_text(hpp_path: Path) -> str:
+    text = hpp_path.read_text(encoding="utf-8-sig", errors="replace")
+    text = text.replace("\ufeff", "")
+    text = text.replace("\x00", "")
+    return text
     
 def FindRootStructName(hpp_path: Path) -> str:
-    hpp = CppHeaderParser.CppHeader(str(hpp_path))
+    hpp_text = read_clean_hpp_text(hpp_path)
+    hpp = CppHeaderParser.CppHeader(hpp_text, argType="string")
 
     candidates = [
         name for name in hpp.classes.keys()
@@ -68,7 +74,7 @@ def ToMemberName(struct_name: str) -> str:
     return name[:1].lower() + name[1:]
     
 def ExtractAllStructMembers(hpp_path: Path) -> dict[str, list[tuple[str, str]]]:
-    text = hpp_path.read_text(encoding="utf-8")
+    text = hpp_path.read_text(encoding="utf-8-sig")
 
     struct_members = {}
 
@@ -135,7 +141,10 @@ def MakeInteIncludeAuto(
     cpp_code.append("")
     cpp_code.append(f"static constexpr size_t member_count = {len(root_members)};")
 
-    root_output.write_text("\n".join(cpp_code), encoding="utf-8")
+    root_output.write_text("\n".join(cpp_code), encoding="utf-8-sig")
+    
+    #Lua
+    group_size = 10  # 파일 하나당 new_usertype 개수
 
     bind_hpp_code = [
         "#pragma once",
@@ -144,52 +153,86 @@ def MakeInteIncludeAuto(
         "class LuaAuto {",
         "public:",
         "    void BindRootConfig(sol::state& lua);",
+    ]
+
+    # struct 목록 만들기
+    bind_targets = []
+
+    for struct_name, members in struct_members.items():
+        if struct_name == root_struct_name:
+            continue
+        if not members:
+            continue
+
+        bind_targets.append((struct_name, members))
+
+    bind_targets.append((root_struct_name, root_members))
+
+    # 그룹 나누기
+    groups = [
+        bind_targets[i:i + group_size]
+        for i in range(0, len(bind_targets), group_size)
+    ]
+
+    for idx in range(len(groups)):
+        bind_hpp_code.append(f"    void BindRootConfig_{idx}(sol::state& lua);")
+
+    bind_hpp_code += [
         "};",
     ]
-    
-    bind_cpp_code = [
-        '#include "RootLua.hpp"',  # 실제 hpp 이름에 맞게 수정
+    bind_output.write_text("\n".join(bind_hpp_code), encoding="utf-8-sig")
+
+    root_cpp_code = [
+        '#include "RootLua.hpp"',
         '#include <sol/sol.hpp>',
-        f'#include "{root_output.as_posix()}"',
         "",
         "void LuaAuto::BindRootConfig(sol::state& lua)",
         "{",
     ]
 
-    # 하위 struct 전부 바인딩
-    for struct_name, members in struct_members.items():
-        if struct_name == root_struct_name:
-            continue
+    for idx in range(len(groups)):
+        root_cpp_code.append(f"    BindRootConfig_{idx}(lua);")
 
-        if not members:
-            continue
-
-        bind_cpp_code.append(f'    lua.new_usertype<{struct_name}>("{struct_name}",')
-
-        for i, (member_type, member_name) in enumerate(members):
-            comma = "," if i < len(members) - 1 else ""
-            bind_cpp_code.append(
-                f'        "{member_name}", &{struct_name}::{member_name}{comma}'
-            )
-
-        bind_cpp_code.append("    );")
-        bind_cpp_code.append("")
-
-    bind_cpp_code.append(f'    lua.new_usertype<{root_struct_name}>("{root_struct_name}",')
-
-    for i, (_, member_name) in enumerate(root_members):
-        comma = "," if i < len(root_members) - 1 else ""
-        bind_cpp_code.append(
-            f'        "{member_name}", &{root_struct_name}::{member_name}{comma}'
-        )
-        
-    bind_cpp_code.append("    );")
-    bind_cpp_code.append("}")
-
-    bind_output.write_text("\n".join(bind_hpp_code), encoding="utf-8")
+    root_cpp_code.append("}")
 
     bind_cpp_output = bind_output.with_suffix(".cpp")
-    bind_cpp_output.write_text("\n".join(bind_cpp_code), encoding="utf-8")
+    bind_cpp_output.write_text("\n".join(root_cpp_code), encoding="utf-8-sig")
+    
+    for idx, group in enumerate(groups):
+        part_cpp_code = [
+            '#include "RootLua.hpp"',
+            '#include <sol/sol.hpp>',
+            f'#include "{root_output.as_posix()}"',
+            "",
+            f"void LuaAuto::BindRootConfig_{idx}(sol::state& lua)",
+            "{",
+        ]
+
+        for struct_name, members in group:
+            if not members:
+                continue
+
+            part_cpp_code.append(f'    lua.new_usertype<{struct_name}>("{struct_name}",')
+
+            for i, (member_type, member_name) in enumerate(members):
+                comma = "," if i < len(members) - 1 else ""
+                part_cpp_code.append(
+                    f'        "{member_name}", &{struct_name}::{member_name}{comma}'
+                )
+
+            part_cpp_code.append("    );")
+            part_cpp_code.append("")
+
+        part_cpp_code.append("}")
+
+        part_output = bind_output.with_name(
+            f"{bind_output.stem}_{idx}.cpp"
+        )
+
+        part_output.write_text(
+            "\n".join(part_cpp_code),
+            encoding="utf-8-sig"
+        )
     
     
     
@@ -223,7 +266,10 @@ def MakeRootImGuiAuto(
     cpp_code.append("    {\n")
 
     for src in sources:
-        hpp = CppHeaderParser.CppHeader(str(src.include_path))
+        hpp = CppHeaderParser.CppHeader(
+            read_clean_hpp_text(src.include_path),
+            argType="string"
+        )
 
         struct_name = FindRootStructName(src.include_path)
         member_name = ToMemberName(struct_name)
@@ -279,27 +325,4 @@ def MakeRootImGuiAuto(
 
 
     output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text("".join(cpp_code), encoding="utf-8")
-    
-    
-def AutoSetterClass(path: Path, output: Path, name: datacls.UtilityGenSpec):
-    
-    data = mdata.LoadTreeJson(path)
-    
-    cpp_code = []
-    cpp_code.append("#pragma once\n")
-    cpp_code.append("#include <string>\n")
-    cpp_code.append("#include <iostream>\n")
-        
-    cpp_code.append(f"class {name.struct_name}Cls {{\n")
-    cpp_code.append('public:\n')
-    for struct in data.children:
-        
-        for field in struct.children:
-            cpp_code.append(f'    void {field.key.title()}();\n')
-        #cpp_code.append(f"    void {struct.name}{name.prefix}(); \n")
-    cpp_code.append("};\n\n")
-                
-    
-    with output.open("w", encoding="utf-8") as f:
-        f.writelines(cpp_code)
+    output.write_text("".join(cpp_code), encoding="utf-8-sig")

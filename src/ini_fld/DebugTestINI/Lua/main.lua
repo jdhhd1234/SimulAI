@@ -1,12 +1,6 @@
-
+local norm_event = require("normal_event")
 
 function MainRunningEvent(world)
     local usaRoot = GetRoot(world, 0)
-    local param = UtilityParam.new()
-
-    SetUtilityParam(
-        param,
-        0,
-        100,
-        0.5)
+    --print(usaRoot.uSA.country.country_name)
 end

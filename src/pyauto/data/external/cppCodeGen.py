@@ -170,7 +170,7 @@ def ToLuaName(name: str) -> str:
 
 def ActionAutoLua(action_ini: Path, output: Path):
     config = configparser.ConfigParser()
-    config.read(action_ini, encoding="utf-8")
+    config.read(action_ini, encoding="utf-8-sig")
 
     lua_code = []
 
@@ -214,7 +214,7 @@ def ActionAutoLua(action_ini: Path, output: Path):
 
     output.parent.mkdir(parents=True, exist_ok=True)
 
-    with output.open("w", encoding="utf-8") as f:
+    with output.open("w", encoding="utf-8-sig") as f:
         f.writelines(lua_code)
         
 
@@ -347,5 +347,5 @@ def TreeJson(parsed: datacls.ParserINIResult, output: Path):
         
     tree_data = add_integrated_score_to_tree(tree_data)
         
-    with output.open("w", encoding="utf-8") as f:
+    with output.open("w", encoding="utf-8-sig") as f:
         json.dump(tree_data, f, indent=4)

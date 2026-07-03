@@ -26,12 +26,13 @@ int main()
     VectorCls VC;
 
     VC.VectorInit(WS); //Vector Init Function
+    std::cout << "[Log] Vector Init Success!" << std::endl;
     //std::cout << "[Start] Hello Engine!" << std::endl;
     //MIG.GUIMain(WS);
     //std::cout << "[DEBUG] GUI Main Success!" << std::endl;
 
     LB.BindindToLua("C:/Users/kym10/Documents/VSCodeProj/SimulAI/src/ini_fld/DebugTestINI/Lua/main.lua", WS, lua);
-    std::cout << "[DEBUG] BindindToLua Success!" << std::endl;
+    std::cout << "[Log] BindindToLua Success!" << std::endl;
 
     return 0;
 }

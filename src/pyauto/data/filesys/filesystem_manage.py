@@ -10,7 +10,7 @@ import data.external.dataclass_only as datacls
 
 def load_ini(path: Path | PathLike) -> configparser.ConfigParser:
     cfg = configparser.ConfigParser()
-    cfg.read(path, encoding="utf-8")
+    cfg.read(path, encoding="utf-8-sig")
     return cfg
 
 def load_hpp(path: Path | PathLike) -> CppHeaderParser.CppHeader:
@@ -18,11 +18,11 @@ def load_hpp(path: Path | PathLike) -> CppHeaderParser.CppHeader:
     return header
 
 def load_json(path: Path | PathLike) -> Union[dict, list]:
-    with open(path, "r", encoding='utf-8') as f:
+    with open(path, "r", encoding='utf-8-sig') as f:
         return json.load(f)
 
 def write_ini(path: Path, code: str) -> None:
-    path.write_text(code, encoding='utf-8')
+    path.write_text(code, encoding='utf-8-sig')
     
 
 def ReadFileINI(fileList: datacls.ReadFileList) -> datacls.ReadConfig:

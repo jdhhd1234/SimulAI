@@ -119,7 +119,7 @@ def ParseDataINI(paths: datacls.ReadFileList, onoff: bool = False):
     
     
 def LoadTreeJson(path: Path) -> datacls.JsonTree:
-    with open(path, "r", encoding="utf-8") as f:
+    with open(path, "r", encoding="utf-8-sig") as f:
         tree_data = json.load(f)
         
     structs = []
