@@ -21,10 +21,10 @@ def MakeJsonToHpp(path: Path, output: Path, name: datacls.UtilityGenSpec):
         
         for field in struct.children:
             if field.cpp_type == "std::string":
-                cpp_code.append(f'    std::string {field.key} = "";\n')
+                cpp_code.append(f'    std::string {field.key} = "{field.value}";\n')
                 continue
 
-            cpp_code.append(f'    {field.cpp_type} {field.key} = 0;\n')
+            cpp_code.append(f'    {field.cpp_type} {field.key} = {field.value};\n')
 
             if field.value_child:
                 norm = field.value_child[0]["norm_result"]
@@ -280,3 +280,26 @@ def MakeRootImGuiAuto(
 
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text("".join(cpp_code), encoding="utf-8")
+    
+    
+def AutoSetterClass(path: Path, output: Path, name: datacls.UtilityGenSpec):
+    
+    data = mdata.LoadTreeJson(path)
+    
+    cpp_code = []
+    cpp_code.append("#pragma once\n")
+    cpp_code.append("#include <string>\n")
+    cpp_code.append("#include <iostream>\n")
+        
+    cpp_code.append(f"class {name.struct_name}Cls {{\n")
+    cpp_code.append('public:\n')
+    for struct in data.children:
+        
+        for field in struct.children:
+            cpp_code.append(f'    void {field.key.title()}();\n')
+        #cpp_code.append(f"    void {struct.name}{name.prefix}(); \n")
+    cpp_code.append("};\n\n")
+                
+    
+    with output.open("w", encoding="utf-8") as f:
+        f.writelines(cpp_code)

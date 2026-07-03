@@ -31,7 +31,6 @@ add_executable(${PROJECT_NAME} "src/main/SimulAI.cpp"
     "src/main/LuaBind/LuaBind.cpp"
     "src/main/State/state.hpp"
     src/main/vector/vector_init.hpp
-    src/autoconfig/RootLua.cpp
 )
 
 if (MSVC)

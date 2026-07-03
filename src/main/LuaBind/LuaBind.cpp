@@ -4,6 +4,14 @@
 #include "src/main/State/state.hpp"
 #include <random>
 
+//=====================
+//Utility AI API Area
+//=====================
+
+
+//=====================
+//Normal API Area
+//=====================
 bool LuaBinding::BernouliLua(double percentage)
 {
     static std::random_device rd;
@@ -52,9 +60,21 @@ void LuaBinding::BindindToLua(std::string filepath, WorldState &worldstate, sol:
 
     lua_auto.BindRootConfig(lua);
 
+    //=====================
+    //Normal API
+    //=====================
     lua.set_function("BernouliLua", &LuaBinding::BernouliLua, this);
     lua.set_function("BernouliLuaRange", &LuaBinding::BernouliLuaRange, this);
     lua.set_function("GetRoot", &LuaBinding::GetRoot, this);
+    //lua.set_function("SetUtilityParam", &AIAPI::SetUtilityParam, this);
+
+    //=====================
+    //Utility AI API
+    //=====================
+    /*lua.set_function("Normalize", &AIAPI::Normalize, this);
+    lua.set_function("ApplyCurve", &AIAPI::ApplyCurve, this);
+    lua.set_function("ApplyWeight", &AIAPI::ApplyWeight, this);
+    lua.set_function("Evaluate", &AIAPI::Evaluate, this);*/
 
     try
     {

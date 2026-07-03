@@ -83,6 +83,10 @@ def RunParserJob(job: datacls.ParserJob):
     print(f"[{job.name}] Tree Json Generate!")
 
     cppGenUtily.MakeJsonToHpp(job.tree_json, job.utility_out, job.utility_spec)
+    
+    setter_out = Path("src/autoconfig/SetterClass.hpp")
+    cppGenUtily.AutoSetterClass(job.tree_json, setter_out, job.utility_spec)
+    
     print(f"[{job.name}] Json To Hpp Generate!")
     print(f"[{job.name}] Done")
 
