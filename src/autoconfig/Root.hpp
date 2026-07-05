@@ -1,7 +1,7 @@
 ﻿#pragma once
 
-#include "UtilitySystem.hpp"
-#include "UtilitySystemMagic.hpp"
+#include "src/autoconfig/UtilitySystem.hpp"
+#include "src/autoconfig/UtilitySystemMagic.hpp"
 #include <vector>
 #include <cstddef>
 

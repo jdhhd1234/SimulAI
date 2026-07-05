@@ -11,7 +11,7 @@ jobs = [
     datacls.ParserJob(
         name="USA",
         read_ini=datacls.ReadFileList(
-            index_ini=Path("src/ini_fld/DebugTestINI/index30.ini"),
+            index_ini=Path("src/ini_fld/DebugTestINI/index.ini"),
             action_ini=Path("src/ini_fld/DebugTestINI/action.ini"),
         ),
         write_files=datacls.WriteFileList(

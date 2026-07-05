@@ -39,7 +39,7 @@ bool LuaBinding::BernouliLuaRange(double first, double end)
 RootConfig& LuaBinding::GetRoot(WorldState& WS, size_t index)
 {
     return WS.Countries[1].Root.at(index);
-    WS.Countries[1].Root[0].uSA;
+    //DEBUG WS.Countries[1].Root[0].uSA;
 }
 
 void LuaBinding::BindindToLua(std::string filepath, WorldState &worldstate, sol::state& lua)
@@ -49,6 +49,7 @@ void LuaBinding::BindindToLua(std::string filepath, WorldState &worldstate, sol:
     lua.open_libraries(
         sol::lib::base,
         sol::lib::package,
+        sol::lib::debug,
         sol::lib::string,
         sol::lib::table,
         sol::lib::math,
@@ -82,7 +83,7 @@ void LuaBinding::BindindToLua(std::string filepath, WorldState &worldstate, sol:
     }
     catch (const sol::error &e)
     {
-        std::cout << "Lua Error: " << e.what() << std::endl;
+        std::cout << "[Sol Lua Error]: " << e.what() << std::endl;
     }
 
     sol::protected_function add_main_func = lua["MainRunningEvent"];
@@ -91,7 +92,7 @@ void LuaBinding::BindindToLua(std::string filepath, WorldState &worldstate, sol:
     if (!main_result.valid())
     {
         sol::error err = main_result;
-        std::cout << "[Sol2 Error]: " << err.what() << std::endl;
+        std::cout << "[Lua Error]: " << err.what() << std::endl;
     }
     else
     {

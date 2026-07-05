@@ -109,9 +109,1381 @@
             }
         },
         {
-            "name": "resources_HighBest_sigmoid_result_Part02",
+            "name": "government_sigmoid_result",
             "type": "struct",
             "children": [
+                {
+                    "key": "president",
+                    "value": "DonaldTrump",
+                    "cpp_type": "std::string",
+                    "syntax": "Unknown",
+                    "normal_type": "variable",
+                    "value_child": []
+                },
+                {
+                    "key": "vice_president",
+                    "value": "JDVance",
+                    "cpp_type": "std::string",
+                    "syntax": "Unknown",
+                    "normal_type": "variable",
+                    "value_child": []
+                },
+                {
+                    "key": "ruling_party",
+                    "value": "Republican",
+                    "cpp_type": "std::string",
+                    "syntax": "Unknown",
+                    "normal_type": "variable",
+                    "value_child": []
+                },
+                {
+                    "key": "executive_departments",
+                    "value": "15",
+                    "cpp_type": "int",
+                    "syntax": "Unknown",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 15.0,
+                                "min": 1.0,
+                                "max": 50.0,
+                                "norm": 0.2857,
+                                "sigmoid": 0.5709
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "house_seats",
+                    "value": "435",
+                    "cpp_type": "int",
+                    "syntax": "Unknown",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 435.0,
+                                "min": 0.0,
+                                "max": 1000.0,
+                                "norm": 0.435,
+                                "sigmoid": 0.6071
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "senate_seats",
+                    "value": "100",
+                    "cpp_type": "int",
+                    "syntax": "Unknown",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 100.0,
+                                "min": 0.0,
+                                "max": 200.0,
+                                "norm": 0.5,
+                                "sigmoid": 0.6225
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "supreme_court_justices",
+                    "value": "9",
+                    "cpp_type": "int",
+                    "syntax": "Unknown",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 9.0,
+                                "min": 1.0,
+                                "max": 25.0,
+                                "norm": 0.3333,
+                                "sigmoid": 0.5826
+                            }
+                        }
+                    ]
+                }
+            ],
+            "integrated_score": {
+                "HighBest": {
+                    "count": 0,
+                    "avg_norm": 0.0,
+                    "avg_sigmoid": 0.0
+                },
+                "LowBest": {
+                    "count": 0,
+                    "avg_norm": 0.0,
+                    "inverted_avg_norm": 0.0,
+                    "avg_sigmoid": 0.0
+                },
+                "total_score": 0.0
+            }
+        },
+        {
+            "name": "demography_HighBest_sigmoid_result",
+            "type": "struct",
+            "children": [
+                {
+                    "key": "population",
+                    "value": "341784857",
+                    "cpp_type": "int",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 341784857.0,
+                                "min": 0.0,
+                                "max": 1000000000.0,
+                                "norm": 0.3418,
+                                "sigmoid": 0.5846
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "population_growth_rate",
+                    "value": "0.58",
+                    "cpp_type": "float",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 0.58,
+                                "min": -5.0,
+                                "max": 10.0,
+                                "norm": 0.372,
+                                "sigmoid": 0.5919
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "population_density",
+                    "value": "37.37",
+                    "cpp_type": "float",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 37.37,
+                                "min": 0.0,
+                                "max": 500.0,
+                                "norm": 0.0747,
+                                "sigmoid": 0.5187
+                            }
+                        }
+                    ]
+                }
+            ],
+            "integrated_score": {
+                "HighBest": {
+                    "count": 3,
+                    "avg_norm": 0.2628,
+                    "avg_sigmoid": 0.5651
+                },
+                "LowBest": {
+                    "count": 0,
+                    "avg_norm": 0.0,
+                    "inverted_avg_norm": 0.0,
+                    "avg_sigmoid": 0.0
+                },
+                "total_score": 0.2628
+            }
+        },
+        {
+            "name": "demography_LowBest_sigmoid_result",
+            "type": "struct",
+            "children": [
+                {
+                    "key": "deaths",
+                    "value": "3090000",
+                    "cpp_type": "int",
+                    "syntax": "LowBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 3090000.0,
+                                "min": 1000000.0,
+                                "max": 5000000.0,
+                                "norm": 0.5225,
+                                "sigmoid": 0.6277
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "death_rate",
+                    "value": "9.10",
+                    "cpp_type": "float",
+                    "syntax": "LowBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 9.1,
+                                "min": 0.0,
+                                "max": 20.0,
+                                "norm": 0.455,
+                                "sigmoid": 0.6118
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "median_age",
+                    "value": "39.10",
+                    "cpp_type": "float",
+                    "syntax": "LowBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 39.1,
+                                "min": 10.0,
+                                "max": 80.0,
+                                "norm": 0.4157,
+                                "sigmoid": 0.6025
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "infant_mortality",
+                    "value": "5.50",
+                    "cpp_type": "float",
+                    "syntax": "LowBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 5.5,
+                                "min": 0.0,
+                                "max": 15.0,
+                                "norm": 0.3667,
+                                "sigmoid": 0.5907
+                            }
+                        }
+                    ]
+                }
+            ],
+            "integrated_score": {
+                "HighBest": {
+                    "count": 0,
+                    "avg_norm": 0.0,
+                    "avg_sigmoid": 0.0
+                },
+                "LowBest": {
+                    "count": 4,
+                    "avg_norm": 0.44,
+                    "inverted_avg_norm": 0.56,
+                    "avg_sigmoid": 0.6082
+                },
+                "total_score": 0.56
+            }
+        },
+        {
+            "name": "economy_HighBest_sigmoid_result",
+            "type": "struct",
+            "children": [
+                {
+                    "key": "gdp_current",
+                    "value": "29184000000000",
+                    "cpp_type": "double",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 29184000000000.0,
+                                "min": 0.0,
+                                "max": 100000000000000.0,
+                                "norm": 0.2918,
+                                "sigmoid": 0.5724
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "gdp_real_growth",
+                    "value": "2.80",
+                    "cpp_type": "float",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 2.8,
+                                "min": -20.0,
+                                "max": 20.0,
+                                "norm": 0.57,
+                                "sigmoid": 0.6388
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "gdp_per_capita",
+                    "value": "85380",
+                    "cpp_type": "int",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 85380.0,
+                                "min": 0.0,
+                                "max": 200000.0,
+                                "norm": 0.4269,
+                                "sigmoid": 0.6051
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "labor_force",
+                    "value": "170742000",
+                    "cpp_type": "int",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 170742000.0,
+                                "min": 0.0,
+                                "max": 500000000.0,
+                                "norm": 0.3415,
+                                "sigmoid": 0.5846
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "labor_force_participation",
+                    "value": "62.60",
+                    "cpp_type": "float",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 62.6,
+                                "min": 0.0,
+                                "max": 100.0,
+                                "norm": 0.626,
+                                "sigmoid": 0.6516
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "employed",
+                    "value": "163912000",
+                    "cpp_type": "int",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 163912000.0,
+                                "min": 0.0,
+                                "max": 500000000.0,
+                                "norm": 0.3278,
+                                "sigmoid": 0.5812
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "median_household_income",
+                    "value": "80610",
+                    "cpp_type": "int",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 80610.0,
+                                "min": 0.0,
+                                "max": 250000.0,
+                                "norm": 0.3224,
+                                "sigmoid": 0.5799
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "federal_revenue",
+                    "value": "4920000000000",
+                    "cpp_type": "double",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 4920000000000.0,
+                                "min": 0.0,
+                                "max": 20000000000000.0,
+                                "norm": 0.246,
+                                "sigmoid": 0.5612
+                            }
+                        }
+                    ]
+                }
+            ],
+            "integrated_score": {
+                "HighBest": {
+                    "count": 8,
+                    "avg_norm": 0.394,
+                    "avg_sigmoid": 0.5969
+                },
+                "LowBest": {
+                    "count": 0,
+                    "avg_norm": 0.0,
+                    "inverted_avg_norm": 0.0,
+                    "avg_sigmoid": 0.0
+                },
+                "total_score": 0.394
+            }
+        },
+        {
+            "name": "economy_LowBest_sigmoid_result",
+            "type": "struct",
+            "children": [
+                {
+                    "key": "inflation_rate",
+                    "value": "2.90",
+                    "cpp_type": "float",
+                    "syntax": "LowBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 2.9,
+                                "min": -10.0,
+                                "max": 100.0,
+                                "norm": 0.1173,
+                                "sigmoid": 0.5293
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "unemployment_rate",
+                    "value": "4.00",
+                    "cpp_type": "float",
+                    "syntax": "LowBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 4.0,
+                                "min": 0.0,
+                                "max": 100.0,
+                                "norm": 0.04,
+                                "sigmoid": 0.51
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "unemployed",
+                    "value": "6830000",
+                    "cpp_type": "int",
+                    "syntax": "LowBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 6830000.0,
+                                "min": 0.0,
+                                "max": 50000000.0,
+                                "norm": 0.1366,
+                                "sigmoid": 0.5341
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "poverty_rate",
+                    "value": "11.10",
+                    "cpp_type": "float",
+                    "syntax": "LowBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 11.1,
+                                "min": 0.0,
+                                "max": 100.0,
+                                "norm": 0.111,
+                                "sigmoid": 0.5277
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "gini_index",
+                    "value": "41.80",
+                    "cpp_type": "float",
+                    "syntax": "LowBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 41.8,
+                                "min": 0.0,
+                                "max": 100.0,
+                                "norm": 0.418,
+                                "sigmoid": 0.603
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "federal_spending",
+                    "value": "6750000000000",
+                    "cpp_type": "double",
+                    "syntax": "LowBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 6750000000000.0,
+                                "min": 0.0,
+                                "max": 20000000000000.0,
+                                "norm": 0.3375,
+                                "sigmoid": 0.5836
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "budget_balance",
+                    "value": "-1830000000000",
+                    "cpp_type": "double",
+                    "syntax": "LowBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": -1830000000000.0,
+                                "min": -10000000000000.0,
+                                "max": 5000000000000.0,
+                                "norm": 0.5447,
+                                "sigmoid": 0.6329
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "public_debt",
+                    "value": "35800000000000",
+                    "cpp_type": "double",
+                    "syntax": "LowBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 35800000000000.0,
+                                "min": 0.0,
+                                "max": 100000000000000.0,
+                                "norm": 0.358,
+                                "sigmoid": 0.5886
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "household_debt",
+                    "value": "18000000000000",
+                    "cpp_type": "double",
+                    "syntax": "LowBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 18000000000000.0,
+                                "min": 0.0,
+                                "max": 50000000000000.0,
+                                "norm": 0.36,
+                                "sigmoid": 0.589
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "exports",
+                    "value": "3191000000000",
+                    "cpp_type": "double",
+                    "syntax": "LowBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 3191000000000.0,
+                                "min": 0.0,
+                                "max": 10000000000000.0,
+                                "norm": 0.3191,
+                                "sigmoid": 0.5791
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "imports",
+                    "value": "4110000000000",
+                    "cpp_type": "double",
+                    "syntax": "LowBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 4110000000000.0,
+                                "min": 0.0,
+                                "max": 10000000000000.0,
+                                "norm": 0.411,
+                                "sigmoid": 0.6013
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "trade_balance",
+                    "value": "-919000000000",
+                    "cpp_type": "double",
+                    "syntax": "LowBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": -919000000000.0,
+                                "min": -5000000000000.0,
+                                "max": 5000000000000.0,
+                                "norm": 0.4081,
+                                "sigmoid": 0.6006
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "corporate_tax_rate",
+                    "value": "21.00",
+                    "cpp_type": "float",
+                    "syntax": "LowBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 21.0,
+                                "min": 0.0,
+                                "max": 100.0,
+                                "norm": 0.21,
+                                "sigmoid": 0.5523
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "personal_tax_top_rate",
+                    "value": "37.00",
+                    "cpp_type": "float",
+                    "syntax": "LowBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 37.0,
+                                "min": 0.0,
+                                "max": 100.0,
+                                "norm": 0.37,
+                                "sigmoid": 0.5915
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "policy_rate",
+                    "value": "4.50",
+                    "cpp_type": "float",
+                    "syntax": "LowBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 4.5,
+                                "min": -5.0,
+                                "max": 30.0,
+                                "norm": 0.2714,
+                                "sigmoid": 0.5674
+                            }
+                        }
+                    ]
+                }
+            ],
+            "integrated_score": {
+                "HighBest": {
+                    "count": 0,
+                    "avg_norm": 0.0,
+                    "avg_sigmoid": 0.0
+                },
+                "LowBest": {
+                    "count": 15,
+                    "avg_norm": 0.2942,
+                    "inverted_avg_norm": 0.7058,
+                    "avg_sigmoid": 0.5727
+                },
+                "total_score": 0.7058
+            }
+        },
+        {
+            "name": "government_HighBest_sigmoid_result",
+            "type": "struct",
+            "children": [
+                {
+                    "key": "approval_rating",
+                    "value": "47.00",
+                    "cpp_type": "float",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 47.0,
+                                "min": 0.0,
+                                "max": 100.0,
+                                "norm": 0.47,
+                                "sigmoid": 0.6154
+                            }
+                        }
+                    ]
+                }
+            ],
+            "integrated_score": {
+                "HighBest": {
+                    "count": 1,
+                    "avg_norm": 0.47,
+                    "avg_sigmoid": 0.6154
+                },
+                "LowBest": {
+                    "count": 0,
+                    "avg_norm": 0.0,
+                    "inverted_avg_norm": 0.0,
+                    "avg_sigmoid": 0.0
+                },
+                "total_score": 0.47
+            }
+        },
+        {
+            "name": "government_LowBest_sigmoid_result",
+            "type": "struct",
+            "children": [
+                {
+                    "key": "federal_employees",
+                    "value": "2300000",
+                    "cpp_type": "int",
+                    "syntax": "LowBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 2300000.0,
+                                "min": 0.0,
+                                "max": 10000000.0,
+                                "norm": 0.23,
+                                "sigmoid": 0.5572
+                            }
+                        }
+                    ]
+                }
+            ],
+            "integrated_score": {
+                "HighBest": {
+                    "count": 0,
+                    "avg_norm": 0.0,
+                    "avg_sigmoid": 0.0
+                },
+                "LowBest": {
+                    "count": 1,
+                    "avg_norm": 0.23,
+                    "inverted_avg_norm": 0.77,
+                    "avg_sigmoid": 0.5572
+                },
+                "total_score": 0.77
+            }
+        },
+        {
+            "name": "military_HighBest_sigmoid_result",
+            "type": "struct",
+            "children": [
+                {
+                    "key": "defense_budget",
+                    "value": "877000000000",
+                    "cpp_type": "double",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 877000000000.0,
+                                "min": 0.0,
+                                "max": 3000000000000.0,
+                                "norm": 0.2923,
+                                "sigmoid": 0.5726
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "active_personnel",
+                    "value": "1328000",
+                    "cpp_type": "int",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 1328000.0,
+                                "min": 0.0,
+                                "max": 5000000.0,
+                                "norm": 0.2656,
+                                "sigmoid": 0.566
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "reserve_personnel",
+                    "value": "799500",
+                    "cpp_type": "int",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 799500.0,
+                                "min": 0.0,
+                                "max": 5000000.0,
+                                "norm": 0.1599,
+                                "sigmoid": 0.5399
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "national_guard_personnel",
+                    "value": "431000",
+                    "cpp_type": "int",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 431000.0,
+                                "min": 0.0,
+                                "max": 2000000.0,
+                                "norm": 0.2155,
+                                "sigmoid": 0.5537
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "army_personnel",
+                    "value": "452000",
+                    "cpp_type": "int",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 452000.0,
+                                "min": 0.0,
+                                "max": 2000000.0,
+                                "norm": 0.226,
+                                "sigmoid": 0.5563
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "navy_personnel",
+                    "value": "333000",
+                    "cpp_type": "int",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 333000.0,
+                                "min": 0.0,
+                                "max": 2000000.0,
+                                "norm": 0.1665,
+                                "sigmoid": 0.5415
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "air_force_personnel",
+                    "value": "320000",
+                    "cpp_type": "int",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 320000.0,
+                                "min": 0.0,
+                                "max": 2000000.0,
+                                "norm": 0.16,
+                                "sigmoid": 0.5399
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "marine_personnel",
+                    "value": "172000",
+                    "cpp_type": "int",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 172000.0,
+                                "min": 0.0,
+                                "max": 1000000.0,
+                                "norm": 0.172,
+                                "sigmoid": 0.5429
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "space_force_personnel",
+                    "value": "14000",
+                    "cpp_type": "int",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 14000.0,
+                                "min": 0.0,
+                                "max": 1000000.0,
+                                "norm": 0.014,
+                                "sigmoid": 0.5035
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "nuclear_warheads",
+                    "value": "3708",
+                    "cpp_type": "int",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 3708.0,
+                                "min": 0.0,
+                                "max": 20000.0,
+                                "norm": 0.1854,
+                                "sigmoid": 0.5462
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "carriers",
+                    "value": "11",
+                    "cpp_type": "int",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 11.0,
+                                "min": 0.0,
+                                "max": 50.0,
+                                "norm": 0.22,
+                                "sigmoid": 0.5548
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "destroyers",
+                    "value": "75",
+                    "cpp_type": "int",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 75.0,
+                                "min": 0.0,
+                                "max": 300.0,
+                                "norm": 0.25,
+                                "sigmoid": 0.5622
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "submarines",
+                    "value": "68",
+                    "cpp_type": "int",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 68.0,
+                                "min": 0.0,
+                                "max": 200.0,
+                                "norm": 0.34,
+                                "sigmoid": 0.5842
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "tanks",
+                    "value": "2640",
+                    "cpp_type": "int",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 2640.0,
+                                "min": 0.0,
+                                "max": 20000.0,
+                                "norm": 0.132,
+                                "sigmoid": 0.533
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "armored_vehicles",
+                    "value": "12000",
+                    "cpp_type": "int",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 12000.0,
+                                "min": 0.0,
+                                "max": 100000.0,
+                                "norm": 0.12,
+                                "sigmoid": 0.53
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "fighter_aircraft",
+                    "value": "1854",
+                    "cpp_type": "int",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 1854.0,
+                                "min": 0.0,
+                                "max": 10000.0,
+                                "norm": 0.1854,
+                                "sigmoid": 0.5462
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "bombers",
+                    "value": "140",
+                    "cpp_type": "int",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 140.0,
+                                "min": 0.0,
+                                "max": 1000.0,
+                                "norm": 0.14,
+                                "sigmoid": 0.5349
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "attack_helicopters",
+                    "value": "976",
+                    "cpp_type": "int",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 976.0,
+                                "min": 0.0,
+                                "max": 5000.0,
+                                "norm": 0.1952,
+                                "sigmoid": 0.5486
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "transport_aircraft",
+                    "value": "957",
+                    "cpp_type": "int",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 957.0,
+                                "min": 0.0,
+                                "max": 5000.0,
+                                "norm": 0.1914,
+                                "sigmoid": 0.5477
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "military_bases_overseas",
+                    "value": "128",
+                    "cpp_type": "int",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 128.0,
+                                "min": 0.0,
+                                "max": 1000.0,
+                                "norm": 0.128,
+                                "sigmoid": 0.532
+                            }
+                        }
+                    ]
+                }
+            ],
+            "integrated_score": {
+                "HighBest": {
+                    "count": 20,
+                    "avg_norm": 0.188,
+                    "avg_sigmoid": 0.5468
+                },
+                "LowBest": {
+                    "count": 0,
+                    "avg_norm": 0.0,
+                    "inverted_avg_norm": 0.0,
+                    "avg_sigmoid": 0.0
+                },
+                "total_score": 0.188
+            }
+        },
+        {
+            "name": "resources_HighBest_sigmoid_result",
+            "type": "struct",
+            "children": [
+                {
+                    "key": "oil_reserves_billion_barrels",
+                    "value": "46.00",
+                    "cpp_type": "float",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 46.0,
+                                "min": 0.0,
+                                "max": 500.0,
+                                "norm": 0.092,
+                                "sigmoid": 0.523
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "gas_reserves_tcf",
+                    "value": "583.90",
+                    "cpp_type": "float",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 583.9,
+                                "min": 0.0,
+                                "max": 500.0,
+                                "norm": 1.1678,
+                                "sigmoid": 0.7627
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "coal_reserves_billion_short_tons",
+                    "value": "252.00",
+                    "cpp_type": "float",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 252.0,
+                                "min": 0.0,
+                                "max": 1000.0,
+                                "norm": 0.252,
+                                "sigmoid": 0.5627
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "oil_production_bpd",
+                    "value": "13200000",
+                    "cpp_type": "int",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 13200000.0,
+                                "min": 0.0,
+                                "max": 30000000.0,
+                                "norm": 0.44,
+                                "sigmoid": 0.6083
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "natural_gas_production_bcf_day",
+                    "value": "113.00",
+                    "cpp_type": "float",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 113.0,
+                                "min": 0.0,
+                                "max": 500.0,
+                                "norm": 0.226,
+                                "sigmoid": 0.5563
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "coal_production_million_short_tons",
+                    "value": "512.00",
+                    "cpp_type": "float",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 512.0,
+                                "min": 0.0,
+                                "max": 2000.0,
+                                "norm": 0.256,
+                                "sigmoid": 0.5637
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "electricity_generation_twh",
+                    "value": "4478.00",
+                    "cpp_type": "float",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 4478.0,
+                                "min": 0.0,
+                                "max": 15000.0,
+                                "norm": 0.2985,
+                                "sigmoid": 0.5741
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "renewable_share",
+                    "value": "24.00",
+                    "cpp_type": "float",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 24.0,
+                                "min": 0.0,
+                                "max": 100.0,
+                                "norm": 0.24,
+                                "sigmoid": 0.5597
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "nuclear_share",
+                    "value": "18.60",
+                    "cpp_type": "float",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 18.6,
+                                "min": 0.0,
+                                "max": 100.0,
+                                "norm": 0.186,
+                                "sigmoid": 0.5464
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "forest_area_km2",
+                    "value": "3095000",
+                    "cpp_type": "int",
+                    "syntax": "HighBest",
+                    "normal_type": "variable",
+                    "value_child": [
+                        {
+                            "norm_result": {
+                                "value": 3095000.0,
+                                "min": 0.0,
+                                "max": 10000000.0,
+                                "norm": 0.3095,
+                                "sigmoid": 0.5768
+                            }
+                        }
+                    ]
+                },
                 {
                     "key": "farmland_million_acres",
                     "value": "876.00",
@@ -133,9 +1505,9 @@
             ],
             "integrated_score": {
                 "HighBest": {
-                    "count": 1,
-                    "avg_norm": 0.438,
-                    "avg_sigmoid": 0.6078
+                    "count": 11,
+                    "avg_norm": 0.3551,
+                    "avg_sigmoid": 0.5856
                 },
                 "LowBest": {
                     "count": 0,
@@ -143,7 +1515,7 @@
                     "inverted_avg_norm": 0.0,
                     "avg_sigmoid": 0.0
                 },
-                "total_score": 0.438
+                "total_score": 0.3551
             }
         },
         {
@@ -203,7 +1575,7 @@
             }
         },
         {
-            "name": "infrastructure_HighBest_sigmoid_result_Part01",
+            "name": "infrastructure_HighBest_sigmoid_result",
             "type": "struct",
             "children": [
                 {
@@ -385,27 +1757,7 @@
                             }
                         }
                     ]
-                }
-            ],
-            "integrated_score": {
-                "HighBest": {
-                    "count": 10,
-                    "avg_norm": 0.4593,
-                    "avg_sigmoid": 0.6103
                 },
-                "LowBest": {
-                    "count": 0,
-                    "avg_norm": 0.0,
-                    "inverted_avg_norm": 0.0,
-                    "avg_sigmoid": 0.0
-                },
-                "total_score": 0.4593
-            }
-        },
-        {
-            "name": "infrastructure_HighBest_sigmoid_result_Part02",
-            "type": "struct",
-            "children": [
                 {
                     "key": "mobile_subscriptions",
                     "value": "386000000",
@@ -463,9 +1815,9 @@
             ],
             "integrated_score": {
                 "HighBest": {
-                    "count": 3,
-                    "avg_norm": 0.316,
-                    "avg_sigmoid": 0.5783
+                    "count": 13,
+                    "avg_norm": 0.4262,
+                    "avg_sigmoid": 0.6029
                 },
                 "LowBest": {
                     "count": 0,
@@ -473,7 +1825,7 @@
                     "inverted_avg_norm": 0.0,
                     "avg_sigmoid": 0.0
                 },
-                "total_score": 0.316
+                "total_score": 0.4262
             }
         },
         {
@@ -638,354 +1990,6 @@
                     "avg_sigmoid": 0.0
                 },
                 "total_score": 0.5205
-            }
-        },
-        {
-            "name": "health_HighBest_sigmoid_result",
-            "type": "struct",
-            "children": [
-                {
-                    "key": "health_spending_pct_gdp",
-                    "value": "17.30",
-                    "cpp_type": "float",
-                    "syntax": "HighBest",
-                    "normal_type": "variable",
-                    "value_child": [
-                        {
-                            "norm_result": {
-                                "value": 17.3,
-                                "min": 0.0,
-                                "max": 40.0,
-                                "norm": 0.4325,
-                                "sigmoid": 0.6065
-                            }
-                        }
-                    ]
-                },
-                {
-                    "key": "insured_rate",
-                    "value": "92.00",
-                    "cpp_type": "float",
-                    "syntax": "HighBest",
-                    "normal_type": "variable",
-                    "value_child": [
-                        {
-                            "norm_result": {
-                                "value": 92.0,
-                                "min": 0.0,
-                                "max": 100.0,
-                                "norm": 0.92,
-                                "sigmoid": 0.715
-                            }
-                        }
-                    ]
-                },
-                {
-                    "key": "physicians_per_1000",
-                    "value": "2.70",
-                    "cpp_type": "float",
-                    "syntax": "HighBest",
-                    "normal_type": "variable",
-                    "value_child": [
-                        {
-                            "norm_result": {
-                                "value": 2.7,
-                                "min": 0.0,
-                                "max": 15.0,
-                                "norm": 0.18,
-                                "sigmoid": 0.5449
-                            }
-                        }
-                    ]
-                },
-                {
-                    "key": "hospital_beds_per_1000",
-                    "value": "2.80",
-                    "cpp_type": "float",
-                    "syntax": "HighBest",
-                    "normal_type": "variable",
-                    "value_child": [
-                        {
-                            "norm_result": {
-                                "value": 2.8,
-                                "min": 0.0,
-                                "max": 20.0,
-                                "norm": 0.14,
-                                "sigmoid": 0.5349
-                            }
-                        }
-                    ]
-                },
-                {
-                    "key": "nurses",
-                    "value": "5200000",
-                    "cpp_type": "int",
-                    "syntax": "HighBest",
-                    "normal_type": "variable",
-                    "value_child": [
-                        {
-                            "norm_result": {
-                                "value": 5200000.0,
-                                "min": 0.0,
-                                "max": 15000000.0,
-                                "norm": 0.3467,
-                                "sigmoid": 0.5858
-                            }
-                        }
-                    ]
-                },
-                {
-                    "key": "hospital_count",
-                    "value": "6093",
-                    "cpp_type": "int",
-                    "syntax": "HighBest",
-                    "normal_type": "variable",
-                    "value_child": [
-                        {
-                            "norm_result": {
-                                "value": 6093.0,
-                                "min": 0.0,
-                                "max": 20000.0,
-                                "norm": 0.3046,
-                                "sigmoid": 0.5756
-                            }
-                        }
-                    ]
-                }
-            ],
-            "integrated_score": {
-                "HighBest": {
-                    "count": 6,
-                    "avg_norm": 0.3873,
-                    "avg_sigmoid": 0.5938
-                },
-                "LowBest": {
-                    "count": 0,
-                    "avg_norm": 0.0,
-                    "inverted_avg_norm": 0.0,
-                    "avg_sigmoid": 0.0
-                },
-                "total_score": 0.3873
-            }
-        },
-        {
-            "name": "health_LowBest_sigmoid_result",
-            "type": "struct",
-            "children": [
-                {
-                    "key": "obesity_rate",
-                    "value": "40.30",
-                    "cpp_type": "float",
-                    "syntax": "LowBest",
-                    "normal_type": "variable",
-                    "value_child": [
-                        {
-                            "norm_result": {
-                                "value": 40.3,
-                                "min": 0.0,
-                                "max": 100.0,
-                                "norm": 0.403,
-                                "sigmoid": 0.5994
-                            }
-                        }
-                    ]
-                },
-                {
-                    "key": "maternal_mortality",
-                    "value": "22.30",
-                    "cpp_type": "float",
-                    "syntax": "LowBest",
-                    "normal_type": "variable",
-                    "value_child": [
-                        {
-                            "norm_result": {
-                                "value": 22.3,
-                                "min": 0.0,
-                                "max": 200.0,
-                                "norm": 0.1115,
-                                "sigmoid": 0.5278
-                            }
-                        }
-                    ]
-                }
-            ],
-            "integrated_score": {
-                "HighBest": {
-                    "count": 0,
-                    "avg_norm": 0.0,
-                    "avg_sigmoid": 0.0
-                },
-                "LowBest": {
-                    "count": 2,
-                    "avg_norm": 0.2573,
-                    "inverted_avg_norm": 0.7428,
-                    "avg_sigmoid": 0.5636
-                },
-                "total_score": 0.7428
-            }
-        },
-        {
-            "name": "technology_HighBest_sigmoid_result",
-            "type": "struct",
-            "children": [
-                {
-                    "key": "rnd_spending",
-                    "value": "940000000000",
-                    "cpp_type": "double",
-                    "syntax": "HighBest",
-                    "normal_type": "variable",
-                    "value_child": [
-                        {
-                            "norm_result": {
-                                "value": 940000000000.0,
-                                "min": 0.0,
-                                "max": 3000000000000.0,
-                                "norm": 0.3133,
-                                "sigmoid": 0.5777
-                            }
-                        }
-                    ]
-                },
-                {
-                    "key": "rnd_share_gdp",
-                    "value": "3.40",
-                    "cpp_type": "float",
-                    "syntax": "HighBest",
-                    "normal_type": "variable",
-                    "value_child": [
-                        {
-                            "norm_result": {
-                                "value": 3.4,
-                                "min": 0.0,
-                                "max": 15.0,
-                                "norm": 0.2267,
-                                "sigmoid": 0.5564
-                            }
-                        }
-                    ]
-                },
-                {
-                    "key": "internet_users_pct",
-                    "value": "97.10",
-                    "cpp_type": "float",
-                    "syntax": "HighBest",
-                    "normal_type": "variable",
-                    "value_child": [
-                        {
-                            "norm_result": {
-                                "value": 97.1,
-                                "min": 0.0,
-                                "max": 100.0,
-                                "norm": 0.971,
-                                "sigmoid": 0.7253
-                            }
-                        }
-                    ]
-                },
-                {
-                    "key": "smartphone_users_pct",
-                    "value": "90.00",
-                    "cpp_type": "float",
-                    "syntax": "HighBest",
-                    "normal_type": "variable",
-                    "value_child": [
-                        {
-                            "norm_result": {
-                                "value": 90.0,
-                                "min": 0.0,
-                                "max": 100.0,
-                                "norm": 0.9,
-                                "sigmoid": 0.7109
-                            }
-                        }
-                    ]
-                },
-                {
-                    "key": "cloud_market_size",
-                    "value": "400000000000",
-                    "cpp_type": "double",
-                    "syntax": "HighBest",
-                    "normal_type": "variable",
-                    "value_child": [
-                        {
-                            "norm_result": {
-                                "value": 400000000000.0,
-                                "min": 0.0,
-                                "max": 2000000000000.0,
-                                "norm": 0.2,
-                                "sigmoid": 0.5498
-                            }
-                        }
-                    ]
-                },
-                {
-                    "key": "ai_private_investment",
-                    "value": "67000000000",
-                    "cpp_type": "double",
-                    "syntax": "HighBest",
-                    "normal_type": "variable",
-                    "value_child": [
-                        {
-                            "norm_result": {
-                                "value": 67000000000.0,
-                                "min": 0.0,
-                                "max": 500000000000.0,
-                                "norm": 0.134,
-                                "sigmoid": 0.5334
-                            }
-                        }
-                    ]
-                },
-                {
-                    "key": "space_launches_yearly",
-                    "value": "154",
-                    "cpp_type": "int",
-                    "syntax": "HighBest",
-                    "normal_type": "variable",
-                    "value_child": [
-                        {
-                            "norm_result": {
-                                "value": 154.0,
-                                "min": 0.0,
-                                "max": 1000.0,
-                                "norm": 0.154,
-                                "sigmoid": 0.5384
-                            }
-                        }
-                    ]
-                },
-                {
-                    "key": "patents_granted_yearly",
-                    "value": "323410",
-                    "cpp_type": "int",
-                    "syntax": "HighBest",
-                    "normal_type": "variable",
-                    "value_child": [
-                        {
-                            "norm_result": {
-                                "value": 323410.0,
-                                "min": 0.0,
-                                "max": 1000000.0,
-                                "norm": 0.3234,
-                                "sigmoid": 0.5802
-                            }
-                        }
-                    ]
-                }
-            ],
-            "integrated_score": {
-                "HighBest": {
-                    "count": 8,
-                    "avg_norm": 0.4028,
-                    "avg_sigmoid": 0.5965
-                },
-                "LowBest": {
-                    "count": 0,
-                    "avg_norm": 0.0,
-                    "inverted_avg_norm": 0.0,
-                    "avg_sigmoid": 0.0
-                },
-                "total_score": 0.4028
             }
         }
     ]

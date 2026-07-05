@@ -4,6 +4,38 @@
 
 void LuaAuto::BindRootConfig_2(sol::state& lua)
 {
+    lua.new_usertype<population_HighBest_sigmoid_resultMagic>("population_HighBest_sigmoid_resultMagic",
+        "mage_population_ratio", &population_HighBest_sigmoid_resultMagic::mage_population_ratio,
+        "mage_population_ratio_min", &population_HighBest_sigmoid_resultMagic::mage_population_ratio_min,
+        "mage_population_ratio_max", &population_HighBest_sigmoid_resultMagic::mage_population_ratio_max,
+        "mage_population_ratio_norm", &population_HighBest_sigmoid_resultMagic::mage_population_ratio_norm,
+        "mage_population_ratio_sigmoid", &population_HighBest_sigmoid_resultMagic::mage_population_ratio_sigmoid
+    );
+
+    lua.new_usertype<economy_HighBest_sigmoid_resultMagic>("economy_HighBest_sigmoid_resultMagic",
+        "gdp_gold_standard", &economy_HighBest_sigmoid_resultMagic::gdp_gold_standard,
+        "gdp_gold_standard_min", &economy_HighBest_sigmoid_resultMagic::gdp_gold_standard_min,
+        "gdp_gold_standard_max", &economy_HighBest_sigmoid_resultMagic::gdp_gold_standard_max,
+        "gdp_gold_standard_norm", &economy_HighBest_sigmoid_resultMagic::gdp_gold_standard_norm,
+        "gdp_gold_standard_sigmoid", &economy_HighBest_sigmoid_resultMagic::gdp_gold_standard_sigmoid
+    );
+
+    lua.new_usertype<economy_LowBest_sigmoid_resultMagic>("economy_LowBest_sigmoid_resultMagic",
+        "inflation_rate", &economy_LowBest_sigmoid_resultMagic::inflation_rate,
+        "inflation_rate_min", &economy_LowBest_sigmoid_resultMagic::inflation_rate_min,
+        "inflation_rate_max", &economy_LowBest_sigmoid_resultMagic::inflation_rate_max,
+        "inflation_rate_norm", &economy_LowBest_sigmoid_resultMagic::inflation_rate_norm,
+        "inflation_rate_sigmoid", &economy_LowBest_sigmoid_resultMagic::inflation_rate_sigmoid
+    );
+
+    lua.new_usertype<military_HighBest_sigmoid_resultMagic>("military_HighBest_sigmoid_resultMagic",
+        "royal_battlemage_corps_strength", &military_HighBest_sigmoid_resultMagic::royal_battlemage_corps_strength,
+        "royal_battlemage_corps_strength_min", &military_HighBest_sigmoid_resultMagic::royal_battlemage_corps_strength_min,
+        "royal_battlemage_corps_strength_max", &military_HighBest_sigmoid_resultMagic::royal_battlemage_corps_strength_max,
+        "royal_battlemage_corps_strength_norm", &military_HighBest_sigmoid_resultMagic::royal_battlemage_corps_strength_norm,
+        "royal_battlemage_corps_strength_sigmoid", &military_HighBest_sigmoid_resultMagic::royal_battlemage_corps_strength_sigmoid
+    );
+
     lua.new_usertype<military_LowBest_sigmoid_resultMagic>("military_LowBest_sigmoid_resultMagic",
         "border_conflict_frequency", &military_LowBest_sigmoid_resultMagic::border_conflict_frequency,
         "border_conflict_frequency_min", &military_LowBest_sigmoid_resultMagic::border_conflict_frequency_min,
@@ -50,48 +82,6 @@ void LuaAuto::BindRootConfig_2(sol::state& lua)
         "festival_of_stars_attendance_max", &culture_HighBest_sigmoid_resultMagic::festival_of_stars_attendance_max,
         "festival_of_stars_attendance_norm", &culture_HighBest_sigmoid_resultMagic::festival_of_stars_attendance_norm,
         "festival_of_stars_attendance_sigmoid", &culture_HighBest_sigmoid_resultMagic::festival_of_stars_attendance_sigmoid
-    );
-
-    lua.new_usertype<infrastructure_HighBest_sigmoid_resultMagic>("infrastructure_HighBest_sigmoid_resultMagic",
-        "teleportation_network_coverage", &infrastructure_HighBest_sigmoid_resultMagic::teleportation_network_coverage,
-        "teleportation_network_coverage_min", &infrastructure_HighBest_sigmoid_resultMagic::teleportation_network_coverage_min,
-        "teleportation_network_coverage_max", &infrastructure_HighBest_sigmoid_resultMagic::teleportation_network_coverage_max,
-        "teleportation_network_coverage_norm", &infrastructure_HighBest_sigmoid_resultMagic::teleportation_network_coverage_norm,
-        "teleportation_network_coverage_sigmoid", &infrastructure_HighBest_sigmoid_resultMagic::teleportation_network_coverage_sigmoid
-    );
-
-    lua.new_usertype<infrastructure_LowBest_sigmoid_resultMagic>("infrastructure_LowBest_sigmoid_resultMagic",
-        "crumbling_ward_sites", &infrastructure_LowBest_sigmoid_resultMagic::crumbling_ward_sites,
-        "crumbling_ward_sites_min", &infrastructure_LowBest_sigmoid_resultMagic::crumbling_ward_sites_min,
-        "crumbling_ward_sites_max", &infrastructure_LowBest_sigmoid_resultMagic::crumbling_ward_sites_max,
-        "crumbling_ward_sites_norm", &infrastructure_LowBest_sigmoid_resultMagic::crumbling_ward_sites_norm,
-        "crumbling_ward_sites_sigmoid", &infrastructure_LowBest_sigmoid_resultMagic::crumbling_ward_sites_sigmoid
-    );
-
-    lua.new_usertype<UtilityMagicConfig>("UtilityMagicConfig",
-        "kingdom_info", &UtilityMagicConfig::kingdom_info,
-        "government_highbest_sigmoid_result", &UtilityMagicConfig::government_highbest_sigmoid_result,
-        "government_lowbest_sigmoid_result", &UtilityMagicConfig::government_lowbest_sigmoid_result,
-        "magic_highbest_sigmoid_result", &UtilityMagicConfig::magic_highbest_sigmoid_result,
-        "magic_lowbest_sigmoid_result", &UtilityMagicConfig::magic_lowbest_sigmoid_result,
-        "population_lowbest_sigmoid_result", &UtilityMagicConfig::population_lowbest_sigmoid_result,
-        "population_highbest_sigmoid_result", &UtilityMagicConfig::population_highbest_sigmoid_result,
-        "economy_highbest_sigmoid_result", &UtilityMagicConfig::economy_highbest_sigmoid_result,
-        "economy_lowbest_sigmoid_result", &UtilityMagicConfig::economy_lowbest_sigmoid_result,
-        "military_highbest_sigmoid_result", &UtilityMagicConfig::military_highbest_sigmoid_result,
-        "military_lowbest_sigmoid_result", &UtilityMagicConfig::military_lowbest_sigmoid_result,
-        "environment_highbest_sigmoid_result", &UtilityMagicConfig::environment_highbest_sigmoid_result,
-        "environment_lowbest_sigmoid_result", &UtilityMagicConfig::environment_lowbest_sigmoid_result,
-        "diplomacy_highbest_sigmoid_result", &UtilityMagicConfig::diplomacy_highbest_sigmoid_result,
-        "diplomacy_lowbest_sigmoid_result", &UtilityMagicConfig::diplomacy_lowbest_sigmoid_result,
-        "culture_highbest_sigmoid_result", &UtilityMagicConfig::culture_highbest_sigmoid_result,
-        "infrastructure_highbest_sigmoid_result", &UtilityMagicConfig::infrastructure_highbest_sigmoid_result,
-        "infrastructure_lowbest_sigmoid_result", &UtilityMagicConfig::infrastructure_lowbest_sigmoid_result
-    );
-
-    lua.new_usertype<RootConfig>("RootConfig",
-        "uSA", &RootConfig::uSA,
-        "magic", &RootConfig::magic
     );
 
 }

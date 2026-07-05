@@ -35,6 +35,8 @@ add_executable(${PROJECT_NAME}
     "src/main/State/state.hpp"
     "src/main/State/state.cpp"
     src/main/vector/vector_init.hpp
+    src/main/LuaBind/AI/utilityai.cpp
+    src/main/LuaBind/AI/utilityai.hpp
 )
 
 file(GLOB ROOT_LUA_SOURCES
@@ -70,20 +72,6 @@ set(GLFW_BUILD_DOCS OFF CACHE INTERNAL "")
 set(GLFW_BUILD_TESTS OFF CACHE INTERNAL "")
 set(GLFW_BUILD_EXAMPLES OFF CACHE INTERNAL "")
 FetchContent_MakeAvailable(glfw)
-
-FetchContent_Declare(
-  json
-  GIT_REPOSITORY https://github.com/nlohmann/json.git
-  GIT_TAG master # Use a specific commit hash or tag for stability
-)
-FetchContent_MakeAvailable(json)
-
-FetchContent_Declare(
-    httplib
-    GIT_REPOSITORY https://github.com/yhirose/cpp-httplib.git
-    GIT_TAG        v0.47.0
-)
-FetchContent_MakeAvailable(httplib)
 
 FetchContent_Declare(
     imgui
@@ -128,8 +116,6 @@ endif()
 set(HTTPLIB_REQUIRE_OPENSSL OFF CACHE INTERNAL "Disable OpenSSL")
 set(HTTPLIB_USE_OPENSSL_IF_AVAILABLE OFF CACHE INTERNAL "Disable OpenSSL")
 
-target_link_libraries(${PROJECT_NAME} PRIVATE nlohmann_json::nlohmann_json)
-target_link_libraries(${PROJECT_NAME} PRIVATE httplib)
 target_link_libraries(${PROJECT_NAME} PRIVATE lua_lib)
 target_link_libraries(${PROJECT_NAME} PRIVATE pybind11::embed)
 
