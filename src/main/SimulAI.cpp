@@ -42,11 +42,6 @@ int main()
     //std::cout << "[Start] Hello Engine!" << std::endl;
     //MIG.GUIMain(WS);
     //std::cout << "[DEBUG] GUI Main Success!" << std::endl;
-
-    //UtilityAI::GetValueLua(lua, "economy_highbest_sigmoid_result", "gdp_current", T default_value)
-
     LB.BindindToLua("C:/Users/kym10/Documents/VSCodeProj/SimulAI/src/ini_fld/DebugTestINI/main.lua", WS, lua);
-    std::cout << "[Log] BindindToLua Success!" << std::endl;
-
     return 0;
 }

@@ -12,7 +12,7 @@
 //=====================
 //Normal API Area
 //=====================
-bool LuaBinding::BernouliLua(double percentage)
+bool LuaBinding::BernoulliLua(double percentage)
 {
     static std::random_device rd;
     static std::mt19937 gen(rd());
@@ -26,7 +26,7 @@ bool LuaBinding::BernouliLua(double percentage)
     return bernoulli(gen);
 }
 
-bool LuaBinding::BernouliLuaRange(double first, double end)
+bool LuaBinding::BernoulliLuaRange(double first, double end)
 {
     static std::random_device rd;
     static std::mt19937 gen(rd());
@@ -39,7 +39,6 @@ bool LuaBinding::BernouliLuaRange(double first, double end)
 RootConfig& LuaBinding::GetRoot(WorldState& WS, size_t index)
 {
     return WS.Countries[1].Root.at(index);
-    //DEBUG WS.Countries[1].Root[0].uSA;
 }
 
 void LuaBinding::BindindToLua(std::string filepath, WorldState &worldstate, sol::state& lua)
@@ -64,9 +63,15 @@ void LuaBinding::BindindToLua(std::string filepath, WorldState &worldstate, sol:
     //=====================
     //Normal API
     //=====================
-    lua.set_function("BernouliLua", &LuaBinding::BernouliLua, this);
-    lua.set_function("BernouliLuaRange", &LuaBinding::BernouliLuaRange, this);
-    lua.set_function("GetRoot", &LuaBinding::GetRoot, this);
+    lua.set_function("BernouliLua", &LuaBinding::BernoulliLua, this);
+    lua.set_function("BernouliLuaRange", &LuaBinding::BernoulliLuaRange, this);
+
+    lua.set_function(
+        "GetRoot", 
+    [](WorldState& world, size_t index) -> RootConfig& {
+            return world.Countries[1].Root.at(index);
+        }
+    );
     //lua.set_function("SetUtilityParam", &AIAPI::SetUtilityParam, this);
 
     //=====================

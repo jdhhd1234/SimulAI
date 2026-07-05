@@ -8,10 +8,15 @@ T UtilityAI::GetValueLua(
     T& object
 )
 {
-    sol::function func = lua[func_name];
+    sol::protected_function func = lua[func_name];
 
     if (!func.valid())
         return;
 
     func(object);
+}
+
+double UtilityAI::NormalizeMinMax(double minV, double maxV, double value)
+{
+    return (value - minV) / (maxV - minV);
 }

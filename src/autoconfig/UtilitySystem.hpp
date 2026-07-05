@@ -512,6 +512,7 @@ struct education_HighBest_sigmoid_resultUSA {
     float stem_graduates_yearly_norm = 0.164f;
     float stem_graduates_yearly_sigmoid = 0.5409f;
 };
+
 struct UtilityUSAConfig {
     countryUSA country; 
     government_sigmoid_resultUSA government_sigmoid_result; 

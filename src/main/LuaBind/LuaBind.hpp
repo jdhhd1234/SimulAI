@@ -7,16 +7,10 @@ struct RootConfig;
 class LuaBinding
 {
 public:
-    bool BernouliLua(double r);
-    bool BernouliLuaRange(double first, double end);
+    bool BernoulliLua(double r);
+    bool BernoulliLuaRange(double first, double end);
 
     void BindindToLua(std::string filepath, WorldState &worldstate, sol::state& lua);
-
-    //==============================
-    //C++ Utility API
-    //==============================
-
-
 
     RootConfig& GetRoot(WorldState& WS, size_t index);
 };

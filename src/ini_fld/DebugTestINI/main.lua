@@ -5,7 +5,17 @@ if current_dir then
 end
 
 local superevent = require("Lua.Event.superevent")
+local Zombie = require("Lua.Event.zombie.zombie")
 
 function MainRunningEvent(world)
-    print(superevent.EcnomicCrisis(world)) -- 이제 정상 작동합니다.
+    local usaRoot = GetRoot(world, 0)
+    local result = Zombie.update(world)
+
+    print("[DEBUG Lua] infection.total_zombies: ", result.infection.total_zombies)
+    print("[DEBUG Lua] zombie_power: ", result.zombie_power)
+
+    local supevent = superevent.SimpleEcnomicCrisis(world)
+
+    print("[DEBUG Lua] gdp_current: ", supevent[1])
+    print("[DEBUG Lua] gdp_real_growth: ", supevent[2])
 end
