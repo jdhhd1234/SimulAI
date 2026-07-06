@@ -8,6 +8,6 @@
 struct RootConfig {
     UtilityUSAConfig uSA;
     UtilityMagicConfig magic;
-};
 
-static constexpr size_t member_count = 2;
+    static constexpr size_t member_count = 2;
+};

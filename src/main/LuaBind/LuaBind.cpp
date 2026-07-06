@@ -72,15 +72,6 @@ void LuaBinding::BindindToLua(std::string filepath, WorldState &worldstate, sol:
             return world.Countries[1].Root.at(index);
         }
     );
-    //lua.set_function("SetUtilityParam", &AIAPI::SetUtilityParam, this);
-
-    //=====================
-    //Utility AI API
-    //=====================
-    /*lua.set_function("Normalize", &AIAPI::Normalize, this);
-    lua.set_function("ApplyCurve", &AIAPI::ApplyCurve, this);
-    lua.set_function("ApplyWeight", &AIAPI::ApplyWeight, this);
-    lua.set_function("Evaluate", &AIAPI::Evaluate, this);*/
 
     try
     {
