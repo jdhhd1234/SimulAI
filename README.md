@@ -1,12 +1,21 @@
 # Korean Language
 
-llama.cpp랑 build는 용량이 너무 커서 알아서 해야함
+## INI 문법
 
-하는법 Vulkan기준(그전에 Vulkan SDK는 설치 해야함)
-1. llama.cpp를 git clone한다
-2 .cd llama.cpp를 하고 mkdir build를 한다
-3. cd build를 한다
-4. cmake .. -DGGML_VULKAN=ON를 한다
-5. cmake --build build --config Release를 한다
-6. 테스트로 일단 int main hello world부터 하나만 실행한다
-7. 
+- 무조껀 USE와 AutoFind 그리고 Formula는 들어가야한다
+
+### USE
+- index에 있는거중에서 어떤걸 action에 사용할것인가?
+
+### AutoFind = true/false
+- 실험기능
+- 자동으로 index안에 있는걸 찾아낸다 변수와 가중치만 쓰면
+
+### Formula
+- 이 Action은 어떤 공식을 사용할것인지 적는다
+- 공식은 정해져있다
+    - 제곱
+    - log
+    - sqrt
+    - 등등...
+

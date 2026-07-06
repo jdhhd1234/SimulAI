@@ -8,6 +8,7 @@ from os import PathLike
 import configparser
 import CppHeaderParser
 import json
+import math
 
 #======================================
 #DATA
@@ -147,3 +148,14 @@ class ParserJob:
     @property
     def tree_json(self) -> Path:
         return self.write_files.outjson
+    
+#======================================
+#action to lua
+#======================================
+@dataclass(config=ConfigDict(arbitrary_types_allowed=True))
+class ReadActionINI:
+    action_path: Path
+    
+@dataclass(config=ConfigDict(arbitrary_types_allowed=True))
+class ReadActionConfig:
+    action_path_cfg: configparser.ConfigParser

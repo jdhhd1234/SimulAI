@@ -166,7 +166,7 @@ def CppCodeGenHpp(paths: datacls.ReadFileList, writeini: datacls.WriteFileList):
 def ToLuaName(name: str) -> str:
     name = re.sub(r"[^a-zA-Z0-9_]", "_", name)
     return name.strip("_")
-
+            
 
 def ActionAutoLua(action_ini: Path, output: Path):
     config = configparser.ConfigParser()

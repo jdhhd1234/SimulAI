@@ -117,6 +117,9 @@ def ParseDataINI(paths: datacls.ReadFileList, onoff: bool = False):
         action_enums=action_enums
     )
     
+def ActionINIParse(act_path: datacls.ReadActionINI):
+    pass
+    
     
 def LoadTreeJson(path: Path) -> datacls.JsonTree:
     with open(path, "r", encoding="utf-8-sig") as f:

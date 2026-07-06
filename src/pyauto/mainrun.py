@@ -85,7 +85,10 @@ def RunParserJob(job: datacls.ParserJob):
     cppGenUtily.MakeJsonToHpp(job.tree_json, job.utility_out, job.utility_spec)
     
     print(f"[{job.name}] Json To Hpp Generate!")
+
     print(f"[{job.name}] Done")
+
+print("Root Hpp Generate!")
 
 for job in jobs:
     RunParserJob(job)
@@ -95,10 +98,14 @@ cppGenUtily.MakeInteIncludeAuto(
     root_output=Path("src/autoconfig/Root.hpp"),
     bind_output=Path("src/autoconfig/RootLua.hpp")
 )
+    
+print("MakeInteIncludeAuto Complete")
 
 cppGenUtily.MakeRootImGuiAuto(
     sources=root_piece,
     output=Path("src/autoconfig/RootImGuiAuto.hpp")
 )
 
-print("Root Hpp Generate!")
+print("MakeRootImGuiAuto Complete")
+
+#cppGen.INICustomParser(Path("src/ini_fld/DebugTestINI/action.ini"), dat)
