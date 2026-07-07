@@ -49,8 +49,8 @@ struct government_sigmoid_resultUSA {
     float supreme_court_justices_norm = 0.3333f;
     float supreme_court_justices_sigmoid = 0.5826f;
 };
- //structName demography_HighBest_sigmoid_resultUSA
-struct demography_HighBest_sigmoid_resultUSA {
+ //structName demography_HighBestUSA
+struct demography_HighBestUSA {
     int population = 341784857;
     float population_min = 0.0f;
     float population_max = 1000000000.0f;
@@ -67,8 +67,8 @@ struct demography_HighBest_sigmoid_resultUSA {
     float population_density_norm = 0.0747f;
     float population_density_sigmoid = 0.5187f;
 };
- //structName demography_LowBest_sigmoid_resultUSA
-struct demography_LowBest_sigmoid_resultUSA {
+ //structName demography_LowBestUSA
+struct demography_LowBestUSA {
     int deaths = 3090000;
     float deaths_min = 1000000.0f;
     float deaths_max = 5000000.0f;
@@ -90,8 +90,8 @@ struct demography_LowBest_sigmoid_resultUSA {
     float infant_mortality_norm = 0.3667f;
     float infant_mortality_sigmoid = 0.5907f;
 };
- //structName economy_HighBest_sigmoid_resultUSA
-struct economy_HighBest_sigmoid_resultUSA {
+ //structName economy_HighBestUSA
+struct economy_HighBestUSA {
     double gdp_current = 29184000000000;
     float gdp_current_min = 0.0f;
     float gdp_current_max = 100000000000000.0f;
@@ -133,8 +133,8 @@ struct economy_HighBest_sigmoid_resultUSA {
     float federal_revenue_norm = 0.246f;
     float federal_revenue_sigmoid = 0.5612f;
 };
- //structName economy_LowBest_sigmoid_resultUSA
-struct economy_LowBest_sigmoid_resultUSA {
+ //structName economy_LowBestUSA
+struct economy_LowBestUSA {
     float inflation_rate = 2.90;
     float inflation_rate_min = -10.0f;
     float inflation_rate_max = 100.0f;
@@ -211,24 +211,24 @@ struct economy_LowBest_sigmoid_resultUSA {
     float policy_rate_norm = 0.2714f;
     float policy_rate_sigmoid = 0.5674f;
 };
- //structName government_HighBest_sigmoid_resultUSA
-struct government_HighBest_sigmoid_resultUSA {
+ //structName government_HighBestUSA
+struct government_HighBestUSA {
     float approval_rating = 47.00;
     float approval_rating_min = 0.0f;
     float approval_rating_max = 100.0f;
     float approval_rating_norm = 0.47f;
     float approval_rating_sigmoid = 0.6154f;
 };
- //structName government_LowBest_sigmoid_resultUSA
-struct government_LowBest_sigmoid_resultUSA {
+ //structName government_LowBestUSA
+struct government_LowBestUSA {
     int federal_employees = 2300000;
     float federal_employees_min = 0.0f;
     float federal_employees_max = 10000000.0f;
     float federal_employees_norm = 0.23f;
     float federal_employees_sigmoid = 0.5572f;
 };
- //structName military_HighBest_sigmoid_resultUSA
-struct military_HighBest_sigmoid_resultUSA {
+ //structName military_HighBestUSA
+struct military_HighBestUSA {
     double defense_budget = 877000000000;
     float defense_budget_min = 0.0f;
     float defense_budget_max = 3000000000000.0f;
@@ -330,8 +330,8 @@ struct military_HighBest_sigmoid_resultUSA {
     float military_bases_overseas_norm = 0.128f;
     float military_bases_overseas_sigmoid = 0.532f;
 };
- //structName resources_HighBest_sigmoid_resultUSA
-struct resources_HighBest_sigmoid_resultUSA {
+ //structName resources_HighBestUSA
+struct resources_HighBestUSA {
     float oil_reserves_billion_barrels = 46.00;
     float oil_reserves_billion_barrels_min = 0.0f;
     float oil_reserves_billion_barrels_max = 500.0f;
@@ -388,8 +388,8 @@ struct resources_HighBest_sigmoid_resultUSA {
     float farmland_million_acres_norm = 0.438f;
     float farmland_million_acres_sigmoid = 0.6078f;
 };
- //structName resources_LowBest_sigmoid_resultUSA
-struct resources_LowBest_sigmoid_resultUSA {
+ //structName resources_LowBestUSA
+struct resources_LowBestUSA {
     float freshwater_withdrawal_bcm = 444.00;
     float freshwater_withdrawal_bcm_min = 0.0f;
     float freshwater_withdrawal_bcm_max = 2000.0f;
@@ -401,8 +401,8 @@ struct resources_LowBest_sigmoid_resultUSA {
     float co2_emissions_mt_norm = 0.32f;
     float co2_emissions_mt_sigmoid = 0.5793f;
 };
- //structName infrastructure_HighBest_sigmoid_resultUSA
-struct infrastructure_HighBest_sigmoid_resultUSA {
+ //structName infrastructure_HighBestUSA
+struct infrastructure_HighBestUSA {
     int land_area_km2 = 9147420;
     float land_area_km2_min = 0.0f;
     float land_area_km2_max = 20000000.0f;
@@ -469,8 +469,8 @@ struct infrastructure_HighBest_sigmoid_resultUSA {
     float data_centers_norm = 0.27f;
     float data_centers_sigmoid = 0.5671f;
 };
- //structName education_HighBest_sigmoid_resultUSA
-struct education_HighBest_sigmoid_resultUSA {
+ //structName education_HighBestUSA
+struct education_HighBestUSA {
     float literacy_rate = 99.00;
     float literacy_rate_min = 0.0f;
     float literacy_rate_max = 100.0f;
@@ -515,16 +515,197 @@ struct education_HighBest_sigmoid_resultUSA {
 struct UtilityUSAConfig {
     countryUSA country; 
     government_sigmoid_resultUSA government_sigmoid_result; 
-    demography_HighBest_sigmoid_resultUSA demography_highbest_sigmoid_result; 
-    demography_LowBest_sigmoid_resultUSA demography_lowbest_sigmoid_result; 
-    economy_HighBest_sigmoid_resultUSA economy_highbest_sigmoid_result; 
-    economy_LowBest_sigmoid_resultUSA economy_lowbest_sigmoid_result; 
-    government_HighBest_sigmoid_resultUSA government_highbest_sigmoid_result; 
-    government_LowBest_sigmoid_resultUSA government_lowbest_sigmoid_result; 
-    military_HighBest_sigmoid_resultUSA military_highbest_sigmoid_result; 
-    resources_HighBest_sigmoid_resultUSA resources_highbest_sigmoid_result; 
-    resources_LowBest_sigmoid_resultUSA resources_lowbest_sigmoid_result; 
-    infrastructure_HighBest_sigmoid_resultUSA infrastructure_highbest_sigmoid_result; 
-    education_HighBest_sigmoid_resultUSA education_highbest_sigmoid_result; 
+    demography_HighBestUSA demography_highbest; 
+    demography_LowBestUSA demography_lowbest; 
+    economy_HighBestUSA economy_highbest; 
+    economy_LowBestUSA economy_lowbest; 
+    government_HighBestUSA government_highbest; 
+    government_LowBestUSA government_lowbest; 
+    military_HighBestUSA military_highbest; 
+    resources_HighBestUSA resources_highbest; 
+    resources_LowBestUSA resources_lowbest; 
+    infrastructure_HighBestUSA infrastructure_highbest; 
+    education_HighBestUSA education_highbest; 
 };
+
+namespace USA_Set {
+    namespace countryUSA_ID {
+        enum class country {
+            COUNTRY_NAME,
+            YEAR,
+            CAPITAL,
+            CURRENCY,
+            STATES,
+            TERRITORIES,
+            TIME_ZONES,
+            USACount
+        };
+    }
+
+    namespace government_sigmoid_resultUSA_ID {
+        enum class government_sigmoid_result {
+            PRESIDENT,
+            VICE_PRESIDENT,
+            RULING_PARTY,
+            EXECUTIVE_DEPARTMENTS,
+            HOUSE_SEATS,
+            SENATE_SEATS,
+            SUPREME_COURT_JUSTICES,
+            USACount
+        };
+    }
+
+    namespace demography_HighBestUSA_ID {
+        enum class demography_HighBest {
+            POPULATION,
+            POPULATION_GROWTH_RATE,
+            POPULATION_DENSITY,
+            USACount
+        };
+    }
+
+    namespace demography_LowBestUSA_ID {
+        enum class demography_LowBest {
+            DEATHS,
+            DEATH_RATE,
+            MEDIAN_AGE,
+            INFANT_MORTALITY,
+            USACount
+        };
+    }
+
+    namespace economy_HighBestUSA_ID {
+        enum class economy_HighBest {
+            GDP_CURRENT,
+            GDP_REAL_GROWTH,
+            GDP_PER_CAPITA,
+            LABOR_FORCE,
+            LABOR_FORCE_PARTICIPATION,
+            EMPLOYED,
+            MEDIAN_HOUSEHOLD_INCOME,
+            FEDERAL_REVENUE,
+            USACount
+        };
+    }
+
+    namespace economy_LowBestUSA_ID {
+        enum class economy_LowBest {
+            INFLATION_RATE,
+            UNEMPLOYMENT_RATE,
+            UNEMPLOYED,
+            POVERTY_RATE,
+            GINI_INDEX,
+            FEDERAL_SPENDING,
+            BUDGET_BALANCE,
+            PUBLIC_DEBT,
+            HOUSEHOLD_DEBT,
+            EXPORTS,
+            IMPORTS,
+            TRADE_BALANCE,
+            CORPORATE_TAX_RATE,
+            PERSONAL_TAX_TOP_RATE,
+            POLICY_RATE,
+            USACount
+        };
+    }
+
+    namespace government_HighBestUSA_ID {
+        enum class government_HighBest {
+            APPROVAL_RATING,
+            USACount
+        };
+    }
+
+    namespace government_LowBestUSA_ID {
+        enum class government_LowBest {
+            FEDERAL_EMPLOYEES,
+            USACount
+        };
+    }
+
+    namespace military_HighBestUSA_ID {
+        enum class military_HighBest {
+            DEFENSE_BUDGET,
+            ACTIVE_PERSONNEL,
+            RESERVE_PERSONNEL,
+            NATIONAL_GUARD_PERSONNEL,
+            ARMY_PERSONNEL,
+            NAVY_PERSONNEL,
+            AIR_FORCE_PERSONNEL,
+            MARINE_PERSONNEL,
+            SPACE_FORCE_PERSONNEL,
+            NUCLEAR_WARHEADS,
+            CARRIERS,
+            DESTROYERS,
+            SUBMARINES,
+            TANKS,
+            ARMORED_VEHICLES,
+            FIGHTER_AIRCRAFT,
+            BOMBERS,
+            ATTACK_HELICOPTERS,
+            TRANSPORT_AIRCRAFT,
+            MILITARY_BASES_OVERSEAS,
+            USACount
+        };
+    }
+
+    namespace resources_HighBestUSA_ID {
+        enum class resources_HighBest {
+            OIL_RESERVES_BILLION_BARRELS,
+            GAS_RESERVES_TCF,
+            COAL_RESERVES_BILLION_SHORT_TONS,
+            OIL_PRODUCTION_BPD,
+            NATURAL_GAS_PRODUCTION_BCF_DAY,
+            COAL_PRODUCTION_MILLION_SHORT_TONS,
+            ELECTRICITY_GENERATION_TWH,
+            RENEWABLE_SHARE,
+            NUCLEAR_SHARE,
+            FOREST_AREA_KM2,
+            FARMLAND_MILLION_ACRES,
+            USACount
+        };
+    }
+
+    namespace resources_LowBestUSA_ID {
+        enum class resources_LowBest {
+            FRESHWATER_WITHDRAWAL_BCM,
+            CO2_EMISSIONS_MT,
+            USACount
+        };
+    }
+
+    namespace infrastructure_HighBestUSA_ID {
+        enum class infrastructure_HighBest {
+            LAND_AREA_KM2,
+            TOTAL_AREA_KM2,
+            COASTLINE_KM,
+            ROAD_KM,
+            RAIL_KM,
+            AIRPORTS,
+            MAJOR_PORTS,
+            ELECTRICITY_ACCESS_PCT,
+            SAFE_WATER_ACCESS_PCT,
+            FIXED_BROADBAND_SUBSCRIPTIONS,
+            MOBILE_SUBSCRIPTIONS,
+            HOUSING_UNITS,
+            DATA_CENTERS,
+            USACount
+        };
+    }
+
+    namespace education_HighBestUSA_ID {
+        enum class education_HighBest {
+            LITERACY_RATE,
+            EDUCATION_SPENDING_PCT_GDP,
+            SCHOOL_LIFE_EXPECTANCY,
+            HIGH_SCHOOL_GRADUATION_RATE,
+            TERTIARY_ATTAINMENT_PCT,
+            PUBLIC_SCHOOL_STUDENTS,
+            COLLEGE_STUDENTS,
+            STEM_GRADUATES_YEARLY,
+            USACount
+        };
+    }
+
+}
 

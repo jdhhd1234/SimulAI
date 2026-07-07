@@ -40,7 +40,21 @@ def MakeJsonToHpp(path: Path, output: Path, name: datacls.UtilityGenSpec):
     for struct in data.children:
         cpp_code.append(f"    {struct.name}{name.prefix} {struct.name.lower()}; \n")
     cpp_code.append("};\n\n")
-                
+    
+    cpp_code.append(f"namespace {name.prefix}_Set {{\n")
+    
+    for struct in data.children:
+        cpp_code.append(f"    namespace {struct.name}{name.prefix}_ID {{\n")
+        cpp_code.append(f"        enum class {struct.name} {{\n")
+        
+        for field in struct.children:
+            cpp_code.append(f"            {field.key.upper()},\n")
+            
+        cpp_code.append(f"            {name.prefix}Count\n")
+        cpp_code.append("        };\n")
+        cpp_code.append("    }\n\n")
+        
+    cpp_code.append("}\n\n")
     
     with output.open("w", encoding="utf-8-sig") as f:
         f.writelines(cpp_code)

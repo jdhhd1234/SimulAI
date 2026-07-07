@@ -225,7 +225,7 @@
             }
         },
         {
-            "name": "demography_HighBest_sigmoid_result",
+            "name": "demography_HighBest",
             "type": "struct",
             "children": [
                 {
@@ -299,7 +299,7 @@
             }
         },
         {
-            "name": "demography_LowBest_sigmoid_result",
+            "name": "demography_LowBest",
             "type": "struct",
             "children": [
                 {
@@ -391,7 +391,7 @@
             }
         },
         {
-            "name": "economy_HighBest_sigmoid_result",
+            "name": "economy_HighBest",
             "type": "struct",
             "children": [
                 {
@@ -555,7 +555,7 @@
             }
         },
         {
-            "name": "economy_LowBest_sigmoid_result",
+            "name": "economy_LowBest",
             "type": "struct",
             "children": [
                 {
@@ -845,7 +845,7 @@
             }
         },
         {
-            "name": "government_HighBest_sigmoid_result",
+            "name": "government_HighBest",
             "type": "struct",
             "children": [
                 {
@@ -883,7 +883,7 @@
             }
         },
         {
-            "name": "government_LowBest_sigmoid_result",
+            "name": "government_LowBest",
             "type": "struct",
             "children": [
                 {
@@ -921,7 +921,7 @@
             }
         },
         {
-            "name": "military_HighBest_sigmoid_result",
+            "name": "military_HighBest",
             "type": "struct",
             "children": [
                 {
@@ -1301,7 +1301,7 @@
             }
         },
         {
-            "name": "resources_HighBest_sigmoid_result",
+            "name": "resources_HighBest",
             "type": "struct",
             "children": [
                 {
@@ -1519,7 +1519,7 @@
             }
         },
         {
-            "name": "resources_LowBest_sigmoid_result",
+            "name": "resources_LowBest",
             "type": "struct",
             "children": [
                 {
@@ -1575,7 +1575,7 @@
             }
         },
         {
-            "name": "infrastructure_HighBest_sigmoid_result",
+            "name": "infrastructure_HighBest",
             "type": "struct",
             "children": [
                 {
@@ -1829,7 +1829,7 @@
             }
         },
         {
-            "name": "education_HighBest_sigmoid_result",
+            "name": "education_HighBest",
             "type": "struct",
             "children": [
                 {

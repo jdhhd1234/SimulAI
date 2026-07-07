@@ -35,7 +35,7 @@ struct government_sigmoid_resultConfig {
      int supreme_court_justices_max = 0;
  };
 
-struct demography_HighBest_sigmoid_resultConfig {
+struct demography_HighBestConfig {
     int population = 0;
      int population_min = 0;
      int population_max = 0;
@@ -47,7 +47,7 @@ struct demography_HighBest_sigmoid_resultConfig {
      float population_density_max = 0;
  };
 
-struct demography_LowBest_sigmoid_resultConfig {
+struct demography_LowBestConfig {
     int deaths = 0;
      int deaths_min = 0;
      int deaths_max = 0;
@@ -62,7 +62,7 @@ struct demography_LowBest_sigmoid_resultConfig {
      float infant_mortality_max = 0;
  };
 
-struct economy_HighBest_sigmoid_resultConfig {
+struct economy_HighBestConfig {
     double gdp_current = 0;
      int gdp_current_min = 0;
      double gdp_current_max = 0;
@@ -89,7 +89,7 @@ struct economy_HighBest_sigmoid_resultConfig {
      double federal_revenue_max = 0;
  };
 
-struct economy_LowBest_sigmoid_resultConfig {
+struct economy_LowBestConfig {
     float inflation_rate = 0;
      float inflation_rate_min = 0;
      float inflation_rate_max = 0;
@@ -137,19 +137,19 @@ struct economy_LowBest_sigmoid_resultConfig {
      float policy_rate_max = 0;
  };
 
-struct government_HighBest_sigmoid_resultConfig {
+struct government_HighBestConfig {
     float approval_rating = 0;
      float approval_rating_min = 0;
      float approval_rating_max = 0;
  };
 
-struct government_LowBest_sigmoid_resultConfig {
+struct government_LowBestConfig {
     int federal_employees = 0;
      int federal_employees_min = 0;
      int federal_employees_max = 0;
  };
 
-struct military_HighBest_sigmoid_resultConfig {
+struct military_HighBestConfig {
     double defense_budget = 0;
      int defense_budget_min = 0;
      double defense_budget_max = 0;
@@ -212,7 +212,7 @@ struct military_HighBest_sigmoid_resultConfig {
      int military_bases_overseas_max = 0;
  };
 
-struct resources_HighBest_sigmoid_resultConfig {
+struct resources_HighBestConfig {
     float oil_reserves_billion_barrels = 0;
      float oil_reserves_billion_barrels_min = 0;
      float oil_reserves_billion_barrels_max = 0;
@@ -248,7 +248,7 @@ struct resources_HighBest_sigmoid_resultConfig {
      float farmland_million_acres_max = 0;
  };
 
-struct resources_LowBest_sigmoid_resultConfig {
+struct resources_LowBestConfig {
     float freshwater_withdrawal_bcm = 0;
      float freshwater_withdrawal_bcm_min = 0;
      float freshwater_withdrawal_bcm_max = 0;
@@ -257,7 +257,7 @@ struct resources_LowBest_sigmoid_resultConfig {
      float co2_emissions_mt_max = 0;
  };
 
-struct infrastructure_HighBest_sigmoid_resultConfig {
+struct infrastructure_HighBestConfig {
     int land_area_km2 = 0;
      int land_area_km2_min = 0;
      int land_area_km2_max = 0;
@@ -299,7 +299,7 @@ struct infrastructure_HighBest_sigmoid_resultConfig {
      int data_centers_max = 0;
  };
 
-struct education_HighBest_sigmoid_resultConfig {
+struct education_HighBestConfig {
     float literacy_rate = 0;
      float literacy_rate_min = 0;
      float literacy_rate_max = 0;
@@ -329,17 +329,17 @@ struct education_HighBest_sigmoid_resultConfig {
 struct MainConfig {
     countryConfig country;
     government_sigmoid_resultConfig government_sigmoid_result;
-    demography_HighBest_sigmoid_resultConfig demography_highbest_sigmoid_result;
-    demography_LowBest_sigmoid_resultConfig demography_lowbest_sigmoid_result;
-    economy_HighBest_sigmoid_resultConfig economy_highbest_sigmoid_result;
-    economy_LowBest_sigmoid_resultConfig economy_lowbest_sigmoid_result;
-    government_HighBest_sigmoid_resultConfig government_highbest_sigmoid_result;
-    government_LowBest_sigmoid_resultConfig government_lowbest_sigmoid_result;
-    military_HighBest_sigmoid_resultConfig military_highbest_sigmoid_result;
-    resources_HighBest_sigmoid_resultConfig resources_highbest_sigmoid_result;
-    resources_LowBest_sigmoid_resultConfig resources_lowbest_sigmoid_result;
-    infrastructure_HighBest_sigmoid_resultConfig infrastructure_highbest_sigmoid_result;
-    education_HighBest_sigmoid_resultConfig education_highbest_sigmoid_result;
+    demography_HighBestConfig demography_highbest;
+    demography_LowBestConfig demography_lowbest;
+    economy_HighBestConfig economy_highbest;
+    economy_LowBestConfig economy_lowbest;
+    government_HighBestConfig government_highbest;
+    government_LowBestConfig government_lowbest;
+    military_HighBestConfig military_highbest;
+    resources_HighBestConfig resources_highbest;
+    resources_LowBestConfig resources_lowbest;
+    infrastructure_HighBestConfig infrastructure_highbest;
+    education_HighBestConfig education_highbest;
 };
 
 // --- [ 2. Action enum class ] ---

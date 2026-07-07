@@ -2,6 +2,7 @@
 #include "src/autoconfig/Root.hpp"
 #include "src/autoconfig/RootLua.hpp"
 #include "src/main/State/state.hpp"
+#include <vector>
 
 template <typename T>
 T UtilityAI::GetValueLua(
@@ -21,10 +22,7 @@ T UtilityAI::GetValueLua(
 template <typename T>
 void UtilityAI::ReadWorldState(RootConfig& rootConfig, T& value)
 {
-    for (size_t i = 0; i < rootConfig.member_count; ++i)
-    {
-        
-    }
+    
 }
 
 double UtilityAI::NormalizeMinMax(double minV, double maxV, double value)
