@@ -3,8 +3,9 @@
 #include <iostream>
 #include <sol/sol.hpp>
 
+struct UtilityInfo;
 struct WorldState;
-struct RootConfig;
+struct UtilityID;
 
 namespace UtilityAI
 {
@@ -14,9 +15,8 @@ namespace UtilityAI
         const std::string& func_name, 
         T& object
     );
-
-    template <typename T>
-    void ReadWorldState(RootConfig& rootConfig, T& value);
+    
+    void* GetData(WorldState& WS, UtilityID id);
 
     double NormalizeMinMax(double minV, double maxV, double value);
 

@@ -1,7 +1,5 @@
 #pragma once
 #include <vector>
-#include <string.h>
-
 #include "src/autoconfig/Root.hpp"
 
 struct Country

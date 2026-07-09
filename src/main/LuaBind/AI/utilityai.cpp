@@ -19,10 +19,9 @@ T UtilityAI::GetValueLua(
     func(object);
 }
 
-template <typename T>
-void UtilityAI::ReadWorldState(RootConfig& rootConfig, T& value)
+void* UtilityAI::GetData(WorldState& WS, UtilityID id)
 {
-    
+
 }
 
 double UtilityAI::NormalizeMinMax(double minV, double maxV, double value)

@@ -16,6 +16,7 @@ def MakeJsonToHpp(path: Path, output: Path, name: datacls.UtilityGenSpec):
     cpp_code.append("#include <iostream>\n")
     
     for struct in data.children:
+        
         cpp_code.append(f' //structName {struct.name}{name.prefix}\n')
         cpp_code.append(f'struct {struct.name}{name.prefix} {{\n')
         
@@ -41,20 +42,12 @@ def MakeJsonToHpp(path: Path, output: Path, name: datacls.UtilityGenSpec):
         cpp_code.append(f"    {struct.name}{name.prefix} {struct.name.lower()}; \n")
     cpp_code.append("};\n\n")
     
-    cpp_code.append(f"namespace {name.prefix}_Set {{\n")
-    
+    cpp_code.append(f"enum class {name.prefix.upper()}_ID {{\n")
     for struct in data.children:
-        cpp_code.append(f"    namespace {struct.name}{name.prefix}_ID {{\n")
-        cpp_code.append(f"        enum class {struct.name} {{\n")
-        
         for field in struct.children:
-            cpp_code.append(f"            {field.key.upper()},\n")
-            
-        cpp_code.append(f"            {name.prefix}Count\n")
-        cpp_code.append("        };\n")
-        cpp_code.append("    }\n\n")
-        
-    cpp_code.append("}\n\n")
+            cpp_code.append(f"    {field.key.upper()},\n")
+    cpp_code.append("    Count\n")
+    cpp_code.append("};\n\n")
     
     with output.open("w", encoding="utf-8-sig") as f:
         f.writelines(cpp_code)
@@ -82,44 +75,114 @@ def FindRootStructName(hpp_path: Path) -> str:
 
     return candidates[0]
 
+
 def ToMemberName(struct_name: str) -> str:
     name = struct_name.removesuffix("Config")
     name = name.removeprefix("Utility")
     return name[:1].lower() + name[1:]
     
-def ExtractAllStructMembers(hpp_path: Path) -> dict[str, list[tuple[str, str]]]:
-    text = hpp_path.read_text(encoding="utf-8-sig")
-
-    struct_members = {}
-
-    struct_pattern = r"struct\s+([A-Za-z_][A-Za-z0-9_]*)\s*\{(.*?)\};"
-
-    for struct_name, body in re.findall(struct_pattern, text, re.DOTALL):
+def ExtractAllEnumMembers(file_path: Path) -> dict[str, list[str]]:
+    if not file_path.exists():
+        return {}
+        
+    content = file_path.read_text(encoding="utf-8-sig")
+    
+    # 주석 제거 (단일행 // 및 다중행 /* */)
+    content = re.sub(r'//.*', '', content)
+    content = re.sub(r'/\*.*?\*/', '', content, flags=re.DOTALL)
+    
+    # enum class 또는 enum 매칭 정규식
+    # 예: enum class USA_ID : int { ... } 또는 enum class USA_ID { ... }
+    enum_pattern = re.compile(
+        r'enum\s+(?:class\s+)?(\w+)(?:\s*:\s*\w+)?\s*\{([^}]*)\}', 
+        re.DOTALL
+    )
+    
+    found_enums = {}
+    
+    for match in enum_pattern.finditer(content):
+        enum_name = match.group(1)
+        enum_body = match.group(2)
+        
+        # 내부 멤버 분리 (쉼표 기준)
         members = []
+        for line in enum_body.split(','):
+            member = line.strip()
+            # 값 할당이 있는 경우 (예: MEMBER = 1) 대입 연산자 앞만 추출
+            if '=' in member:
+                member = member.split('=')[0].strip()
+            if member: # 빈 줄 제외
+                members.append(member)
+                
+        if members:
+            found_enums[enum_name] = members
+            
+    return found_enums
 
-        for line in body.splitlines():
+def ExtractAllStructMembers(file_path: Path) -> dict[str, list[tuple[str, str]]]:
+    if not file_path.exists():
+        return {}
+        
+    content = file_path.read_text(encoding="utf-8-sig")
+    
+    # 주석 제거 (단일행 // 및 다중행 /* */)
+    content = re.sub(r'//.*', '', content)
+    content = re.sub(r'/\*.*?\*/', '', content, flags=re.DOTALL)
+    
+    # struct 매칭 정규식
+    # 예: struct PlayerInfo { ... };
+    struct_pattern = re.compile(
+        r'struct\s+(\w+)\s*\{([^}]*)\}', 
+        re.DOTALL
+    )
+    
+    found_structs = {}
+    
+    for match in struct_pattern.finditer(content):
+        struct_name = match.group(1)
+        struct_body = match.group(2)
+        
+        # 내부 멤버 분리 (세미콜론 기준)
+        members = []
+        for line in struct_body.split(';'):
             line = line.strip()
-
-            if not line or line.startswith("//"):
+            if not line:
                 continue
+                
+            # 기본값 대입이 있는 경우 (예: int level = 1;) 대입 연산자 앞만 추출
+            if '=' in line:
+                line = line.split('=')[0].strip()
+                
+            # 타입과 변수명 분리 (가장 마지막 공백을 기준으로 쪼갬)
+            # 예: "unsigned int max_hp" -> ["unsigned int", "max_hp"]
+            # 예: "std::string name" -> ["std::string", "name"]
+            parts = line.rsplit(maxsplit=1)
+            if len(parts) == 2:
+                var_type = parts[0].strip()
+                var_name = parts[1].strip().lstrip("*&")
 
-            line = line.split("//")[0].strip()
-            line = line.rstrip(";").strip()
-            line = line.split("=")[0].strip()
+                members.append((var_type, var_name))
+                
+        if members:
+            found_structs[struct_name] = members
+            
+    return found_structs
 
-            parts = line.split()
+def FindEnumClassNames(hpp_path: Path) -> str:
+    text = read_clean_hpp_text(hpp_path)
 
-            if len(parts) < 2:
-                continue
+    candidates = re.findall(
+        r'\benum\s+class\s+([A-Za-z_]\w*)',
+        text,
+    )
 
-            member_type = " ".join(parts[:-1])
-            member_name = parts[-1]
+    if not candidates:
+        raise ValueError(f"Not Found Enum Class: {hpp_path}")
 
-            members.append((member_type, member_name))
+    if len(candidates) > 1:
+        raise ValueError(f"Enum Class a lot: {hpp_path} / {candidates}")
 
-        struct_members[struct_name] = members
-
-    return struct_members
+    return candidates[0]
     
     
 def MakeInteIncludeAuto(
@@ -129,6 +192,8 @@ def MakeInteIncludeAuto(
     root_struct_name: str = "RootConfig",
 ):
     root_members = []
+    root_enum_members = []
+    
     struct_members = {}
 
     cpp_code = ["#pragma once", ""]
@@ -143,17 +208,28 @@ def MakeInteIncludeAuto(
     cpp_code.append('#include <cstddef>')
     cpp_code.append("")
     cpp_code.append(f"struct {root_struct_name} {{")
-
+    
+    #===============================
+    #extract Root struct
+    #===============================
     for src in sources:
         struct_name = FindRootStructName(src.include_path)
+        enum_name = FindEnumClassNames(src.include_path)
+        
         member_name = ToMemberName(struct_name)
-
+        enum_member_name = ToMemberName(enum_name)
+        
         root_members.append((struct_name, member_name))
+        root_enum_members.append((enum_name, enum_member_name))
+        
+        cpp_code.append(f"    {enum_name} {enum_member_name.lower()};")
         cpp_code.append(f"    {struct_name} {member_name};")
+        
 
     cpp_code.append("};")
     cpp_code.append("")
-    cpp_code.append(f"static constexpr size_t member_count = {len(root_members)};")
+    
+    cpp_code.append(f"static constexpr size_t struct_member_count = {len(root_members) + len(root_enum_members)};")
 
     root_output.write_text("\n".join(cpp_code), encoding="utf-8-sig")
     
@@ -247,7 +323,6 @@ def MakeInteIncludeAuto(
             "\n".join(part_cpp_code),
             encoding="utf-8-sig"
         )
-    
     
     
 def ImGuiWidgetByType(cpp_type: str, label: str, access_path: str) -> str:

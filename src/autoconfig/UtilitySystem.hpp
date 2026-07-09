@@ -528,184 +528,107 @@ struct UtilityUSAConfig {
     education_HighBestUSA education_highbest; 
 };
 
-namespace USA_Set {
-    namespace countryUSA_ID {
-        enum class country {
-            COUNTRY_NAME,
-            YEAR,
-            CAPITAL,
-            CURRENCY,
-            STATES,
-            TERRITORIES,
-            TIME_ZONES,
-            USACount
-        };
-    }
-
-    namespace government_sigmoid_resultUSA_ID {
-        enum class government_sigmoid_result {
-            PRESIDENT,
-            VICE_PRESIDENT,
-            RULING_PARTY,
-            EXECUTIVE_DEPARTMENTS,
-            HOUSE_SEATS,
-            SENATE_SEATS,
-            SUPREME_COURT_JUSTICES,
-            USACount
-        };
-    }
-
-    namespace demography_HighBestUSA_ID {
-        enum class demography_HighBest {
-            POPULATION,
-            POPULATION_GROWTH_RATE,
-            POPULATION_DENSITY,
-            USACount
-        };
-    }
-
-    namespace demography_LowBestUSA_ID {
-        enum class demography_LowBest {
-            DEATHS,
-            DEATH_RATE,
-            MEDIAN_AGE,
-            INFANT_MORTALITY,
-            USACount
-        };
-    }
-
-    namespace economy_HighBestUSA_ID {
-        enum class economy_HighBest {
-            GDP_CURRENT,
-            GDP_REAL_GROWTH,
-            GDP_PER_CAPITA,
-            LABOR_FORCE,
-            LABOR_FORCE_PARTICIPATION,
-            EMPLOYED,
-            MEDIAN_HOUSEHOLD_INCOME,
-            FEDERAL_REVENUE,
-            USACount
-        };
-    }
-
-    namespace economy_LowBestUSA_ID {
-        enum class economy_LowBest {
-            INFLATION_RATE,
-            UNEMPLOYMENT_RATE,
-            UNEMPLOYED,
-            POVERTY_RATE,
-            GINI_INDEX,
-            FEDERAL_SPENDING,
-            BUDGET_BALANCE,
-            PUBLIC_DEBT,
-            HOUSEHOLD_DEBT,
-            EXPORTS,
-            IMPORTS,
-            TRADE_BALANCE,
-            CORPORATE_TAX_RATE,
-            PERSONAL_TAX_TOP_RATE,
-            POLICY_RATE,
-            USACount
-        };
-    }
-
-    namespace government_HighBestUSA_ID {
-        enum class government_HighBest {
-            APPROVAL_RATING,
-            USACount
-        };
-    }
-
-    namespace government_LowBestUSA_ID {
-        enum class government_LowBest {
-            FEDERAL_EMPLOYEES,
-            USACount
-        };
-    }
-
-    namespace military_HighBestUSA_ID {
-        enum class military_HighBest {
-            DEFENSE_BUDGET,
-            ACTIVE_PERSONNEL,
-            RESERVE_PERSONNEL,
-            NATIONAL_GUARD_PERSONNEL,
-            ARMY_PERSONNEL,
-            NAVY_PERSONNEL,
-            AIR_FORCE_PERSONNEL,
-            MARINE_PERSONNEL,
-            SPACE_FORCE_PERSONNEL,
-            NUCLEAR_WARHEADS,
-            CARRIERS,
-            DESTROYERS,
-            SUBMARINES,
-            TANKS,
-            ARMORED_VEHICLES,
-            FIGHTER_AIRCRAFT,
-            BOMBERS,
-            ATTACK_HELICOPTERS,
-            TRANSPORT_AIRCRAFT,
-            MILITARY_BASES_OVERSEAS,
-            USACount
-        };
-    }
-
-    namespace resources_HighBestUSA_ID {
-        enum class resources_HighBest {
-            OIL_RESERVES_BILLION_BARRELS,
-            GAS_RESERVES_TCF,
-            COAL_RESERVES_BILLION_SHORT_TONS,
-            OIL_PRODUCTION_BPD,
-            NATURAL_GAS_PRODUCTION_BCF_DAY,
-            COAL_PRODUCTION_MILLION_SHORT_TONS,
-            ELECTRICITY_GENERATION_TWH,
-            RENEWABLE_SHARE,
-            NUCLEAR_SHARE,
-            FOREST_AREA_KM2,
-            FARMLAND_MILLION_ACRES,
-            USACount
-        };
-    }
-
-    namespace resources_LowBestUSA_ID {
-        enum class resources_LowBest {
-            FRESHWATER_WITHDRAWAL_BCM,
-            CO2_EMISSIONS_MT,
-            USACount
-        };
-    }
-
-    namespace infrastructure_HighBestUSA_ID {
-        enum class infrastructure_HighBest {
-            LAND_AREA_KM2,
-            TOTAL_AREA_KM2,
-            COASTLINE_KM,
-            ROAD_KM,
-            RAIL_KM,
-            AIRPORTS,
-            MAJOR_PORTS,
-            ELECTRICITY_ACCESS_PCT,
-            SAFE_WATER_ACCESS_PCT,
-            FIXED_BROADBAND_SUBSCRIPTIONS,
-            MOBILE_SUBSCRIPTIONS,
-            HOUSING_UNITS,
-            DATA_CENTERS,
-            USACount
-        };
-    }
-
-    namespace education_HighBestUSA_ID {
-        enum class education_HighBest {
-            LITERACY_RATE,
-            EDUCATION_SPENDING_PCT_GDP,
-            SCHOOL_LIFE_EXPECTANCY,
-            HIGH_SCHOOL_GRADUATION_RATE,
-            TERTIARY_ATTAINMENT_PCT,
-            PUBLIC_SCHOOL_STUDENTS,
-            COLLEGE_STUDENTS,
-            STEM_GRADUATES_YEARLY,
-            USACount
-        };
-    }
-
-}
+enum class USA_ID {
+    COUNTRY_NAME,
+    YEAR,
+    CAPITAL,
+    CURRENCY,
+    STATES,
+    TERRITORIES,
+    TIME_ZONES,
+    PRESIDENT,
+    VICE_PRESIDENT,
+    RULING_PARTY,
+    EXECUTIVE_DEPARTMENTS,
+    HOUSE_SEATS,
+    SENATE_SEATS,
+    SUPREME_COURT_JUSTICES,
+    POPULATION, 
+    POPULATION_GROWTH_RATE,
+    POPULATION_DENSITY,
+    DEATHS,
+    DEATH_RATE,
+    MEDIAN_AGE,
+    INFANT_MORTALITY,
+    GDP_CURRENT,
+    GDP_REAL_GROWTH,
+    GDP_PER_CAPITA,
+    LABOR_FORCE,
+    LABOR_FORCE_PARTICIPATION,
+    EMPLOYED,
+    MEDIAN_HOUSEHOLD_INCOME,
+    FEDERAL_REVENUE,
+    INFLATION_RATE,
+    UNEMPLOYMENT_RATE,
+    UNEMPLOYED,
+    POVERTY_RATE,
+    GINI_INDEX,
+    FEDERAL_SPENDING,
+    BUDGET_BALANCE,
+    PUBLIC_DEBT,
+    HOUSEHOLD_DEBT,
+    EXPORTS,
+    IMPORTS,
+    TRADE_BALANCE,
+    CORPORATE_TAX_RATE,
+    PERSONAL_TAX_TOP_RATE,
+    POLICY_RATE,
+    APPROVAL_RATING,
+    FEDERAL_EMPLOYEES,
+    DEFENSE_BUDGET,
+    ACTIVE_PERSONNEL,
+    RESERVE_PERSONNEL,
+    NATIONAL_GUARD_PERSONNEL,
+    ARMY_PERSONNEL,
+    NAVY_PERSONNEL,
+    AIR_FORCE_PERSONNEL,
+    MARINE_PERSONNEL,
+    SPACE_FORCE_PERSONNEL,
+    NUCLEAR_WARHEADS,
+    CARRIERS,
+    DESTROYERS,
+    SUBMARINES,
+    TANKS,
+    ARMORED_VEHICLES,
+    FIGHTER_AIRCRAFT,
+    BOMBERS,
+    ATTACK_HELICOPTERS,
+    TRANSPORT_AIRCRAFT,
+    MILITARY_BASES_OVERSEAS,
+    OIL_RESERVES_BILLION_BARRELS,
+    GAS_RESERVES_TCF,
+    COAL_RESERVES_BILLION_SHORT_TONS,
+    OIL_PRODUCTION_BPD,
+    NATURAL_GAS_PRODUCTION_BCF_DAY,
+    COAL_PRODUCTION_MILLION_SHORT_TONS,
+    ELECTRICITY_GENERATION_TWH,
+    RENEWABLE_SHARE,
+    NUCLEAR_SHARE,
+    FOREST_AREA_KM2,
+    FARMLAND_MILLION_ACRES,
+    FRESHWATER_WITHDRAWAL_BCM,
+    CO2_EMISSIONS_MT,
+    LAND_AREA_KM2,
+    TOTAL_AREA_KM2,
+    COASTLINE_KM,
+    ROAD_KM,
+    RAIL_KM,
+    AIRPORTS,
+    MAJOR_PORTS,
+    ELECTRICITY_ACCESS_PCT,
+    SAFE_WATER_ACCESS_PCT,
+    FIXED_BROADBAND_SUBSCRIPTIONS,
+    MOBILE_SUBSCRIPTIONS,
+    HOUSING_UNITS,
+    DATA_CENTERS,
+    LITERACY_RATE,
+    EDUCATION_SPENDING_PCT_GDP,
+    SCHOOL_LIFE_EXPECTANCY,
+    HIGH_SCHOOL_GRADUATION_RATE,
+    TERTIARY_ATTAINMENT_PCT,
+    PUBLIC_SCHOOL_STUDENTS,
+    COLLEGE_STUDENTS,
+    STEM_GRADUATES_YEARLY,
+    Count
+};
 

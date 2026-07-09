@@ -167,137 +167,30 @@ struct UtilityMagicConfig {
     infrastructure_LowBest_sigmoid_resultMagic infrastructure_lowbest_sigmoid_result; 
 };
 
-namespace Magic_Set {
-    namespace kingdom_infoMagic_ID {
-        enum class kingdom_info {
-            NAME,
-            FOUNDED_YEAR,
-            CAPITAL,
-            RULING_HOUSE,
-            CURRENT_MONARCH,
-            GOVERNMENT_TYPE,
-            MagicCount
-        };
-    }
-
-    namespace government_HighBest_sigmoid_resultMagic_ID {
-        enum class government_HighBest_sigmoid_result {
-            APPROVAL_RATING,
-            MagicCount
-        };
-    }
-
-    namespace government_LowBest_sigmoid_resultMagic_ID {
-        enum class government_LowBest_sigmoid_result {
-            TAX_BURDEN_INDEX,
-            MagicCount
-        };
-    }
-
-    namespace magic_HighBest_sigmoid_resultMagic_ID {
-        enum class magic_HighBest_sigmoid_result {
-            MANA_SATURATION,
-            MagicCount
-        };
-    }
-
-    namespace magic_LowBest_sigmoid_resultMagic_ID {
-        enum class magic_LowBest_sigmoid_result {
-            FORBIDDEN_MAGIC_INCIDENTS,
-            MagicCount
-        };
-    }
-
-    namespace population_LowBest_sigmoid_resultMagic_ID {
-        enum class population_LowBest_sigmoid_result {
-            TOTAL_POPULATION,
-            MagicCount
-        };
-    }
-
-    namespace population_HighBest_sigmoid_resultMagic_ID {
-        enum class population_HighBest_sigmoid_result {
-            MAGE_POPULATION_RATIO,
-            MagicCount
-        };
-    }
-
-    namespace economy_HighBest_sigmoid_resultMagic_ID {
-        enum class economy_HighBest_sigmoid_result {
-            GDP_GOLD_STANDARD,
-            MagicCount
-        };
-    }
-
-    namespace economy_LowBest_sigmoid_resultMagic_ID {
-        enum class economy_LowBest_sigmoid_result {
-            INFLATION_RATE,
-            MagicCount
-        };
-    }
-
-    namespace military_HighBest_sigmoid_resultMagic_ID {
-        enum class military_HighBest_sigmoid_result {
-            ROYAL_BATTLEMAGE_CORPS_STRENGTH,
-            MagicCount
-        };
-    }
-
-    namespace military_LowBest_sigmoid_resultMagic_ID {
-        enum class military_LowBest_sigmoid_result {
-            BORDER_CONFLICT_FREQUENCY,
-            MagicCount
-        };
-    }
-
-    namespace environment_HighBest_sigmoid_resultMagic_ID {
-        enum class environment_HighBest_sigmoid_result {
-            STARWOOD_FOREST_HEALTH,
-            MagicCount
-        };
-    }
-
-    namespace environment_LowBest_sigmoid_resultMagic_ID {
-        enum class environment_LowBest_sigmoid_result {
-            LEYLINE_INSTABILITY,
-            MagicCount
-        };
-    }
-
-    namespace diplomacy_HighBest_sigmoid_resultMagic_ID {
-        enum class diplomacy_HighBest_sigmoid_result {
-            NEIGHBORING_REALMS_RELATIONS,
-            MagicCount
-        };
-    }
-
-    namespace diplomacy_LowBest_sigmoid_resultMagic_ID {
-        enum class diplomacy_LowBest_sigmoid_result {
-            ACTIVE_TRADE_DISPUTES,
-            MagicCount
-        };
-    }
-
-    namespace culture_HighBest_sigmoid_resultMagic_ID {
-        enum class culture_HighBest_sigmoid_result {
-            FESTIVAL_OF_STARS_ATTENDANCE,
-            MagicCount
-        };
-    }
-
-    namespace infrastructure_HighBest_sigmoid_resultMagic_ID {
-        enum class infrastructure_HighBest_sigmoid_result {
-            TELEPORTATION_NETWORK_COVERAGE,
-            MagicCount
-        };
-    }
-
-    namespace infrastructure_LowBest_sigmoid_resultMagic_ID {
-        enum class infrastructure_LowBest_sigmoid_result {
-            CRUMBLING_WARD_SITES,
-            MagicCount
-        };
-    }
-
-}
+enum class MAGIC_ID {
+    NAME,
+    FOUNDED_YEAR,
+    CAPITAL,
+    RULING_HOUSE,
+    CURRENT_MONARCH,
+    GOVERNMENT_TYPE,
+    APPROVAL_RATING,
+    TAX_BURDEN_INDEX,
+    MANA_SATURATION,
+    FORBIDDEN_MAGIC_INCIDENTS,
+    TOTAL_POPULATION,
+    MAGE_POPULATION_RATIO,
+    GDP_GOLD_STANDARD,
+    INFLATION_RATE,
+    ROYAL_BATTLEMAGE_CORPS_STRENGTH,
+    BORDER_CONFLICT_FREQUENCY,
+    STARWOOD_FOREST_HEALTH,
+    LEYLINE_INSTABILITY,
+    NEIGHBORING_REALMS_RELATIONS,
+    ACTIVE_TRADE_DISPUTES,
+    FESTIVAL_OF_STARS_ATTENDANCE,
+    TELEPORTATION_NETWORK_COVERAGE,
+    CRUMBLING_WARD_SITES,
+    Count
+};
 
