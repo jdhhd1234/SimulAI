@@ -1,8 +1,8 @@
 #include "utilityai.hpp"
 #include "src/autoconfig/Root.hpp"
 #include "src/autoconfig/RootLua.hpp"
+#include "src/main/LuaBind/AI/utilityai.hpp"
 #include "src/main/State/state.hpp"
-#include <vector>
 
 template <typename T>
 T UtilityAI::GetValueLua(
@@ -19,9 +19,13 @@ T UtilityAI::GetValueLua(
     func(object);
 }
 
-void* UtilityAI::GetData(WorldState& WS, UtilityID id)
+template <typename T>
+constexpr T UtilityAI::VecIndexWrapper(WorldState& WS, UtilityID& id)
 {
-
+    switch (id)
+    {
+        
+    }
 }
 
 double UtilityAI::NormalizeMinMax(double minV, double maxV, double value)

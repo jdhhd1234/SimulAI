@@ -109,4 +109,16 @@ cppGenUtily.MakeRootImGuiAuto(
 
 print("MakeRootImGuiAuto Complete")
 
+cppGenred.UtilityAIReadHpp(
+    sources=root_piece,
+    output=Path("src/autoconfig/TestUtil.hpp")
+)
+
+cppGenred.UtilityAIReadCpp(
+    sources=root_piece,
+    output=Path("src/autoconfig/TestUtil.cpp")
+)
+
+print("UtilityAIRead Complete")
+
 #cppGen.INICustomParser(Path("src/ini_fld/DebugTestINI/action.ini"), dat)

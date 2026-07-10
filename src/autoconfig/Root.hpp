@@ -2,7 +2,7 @@
 
 #include "src/autoconfig/UtilitySystem.hpp"
 #include "src/autoconfig/UtilitySystemMagic.hpp"
-#include <variant>
+#include <vector>
 #include <cstddef>
 
 struct RootConfig {
@@ -14,8 +14,9 @@ struct RootConfig {
 
 enum class UtilityID
 {
-    USA,
-    Magic
+    USA_ID,
+    MAGIC_ID,
+    COUNT
 };
 
 static constexpr size_t struct_member_count = 4;

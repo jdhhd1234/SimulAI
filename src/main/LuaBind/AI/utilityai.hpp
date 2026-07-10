@@ -3,9 +3,10 @@
 #include <iostream>
 #include <sol/sol.hpp>
 
+#include "src/autoconfig/Root.hpp"
+
 struct UtilityInfo;
 struct WorldState;
-struct UtilityID;
 
 namespace UtilityAI
 {
@@ -15,8 +16,9 @@ namespace UtilityAI
         const std::string& func_name, 
         T& object
     );
-    
-    void* GetData(WorldState& WS, UtilityID id);
+
+    template <typename T>
+    constexpr T VecIndexWrapper(WorldState& WS, UtilityID& id);
 
     double NormalizeMinMax(double minV, double maxV, double value);
 

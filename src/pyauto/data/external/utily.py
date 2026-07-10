@@ -224,10 +224,18 @@ def MakeInteIncludeAuto(
         
         cpp_code.append(f"    {enum_name} {enum_member_name.lower()};")
         cpp_code.append(f"    {struct_name} {member_name};")
-        
 
     cpp_code.append("};")
     cpp_code.append("")
+    
+    '''cpp_code.append(f'enum class UtilityID {{')
+    for src in sources:
+        enum_name = FindEnumClassNames(src.include_path)
+        enum_member_name = ToMemberName(enum_name)
+        cpp_code.append(f'    {enum_name},')
+    
+    cpp_code.append(f'    COUNT')
+    cpp_code.append('};')'''
     
     cpp_code.append(f"static constexpr size_t struct_member_count = {len(root_members) + len(root_enum_members)};")
 
