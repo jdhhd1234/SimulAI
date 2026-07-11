@@ -12,11 +12,4 @@ struct RootConfig {
     UtilityMagicConfig magic;
 };
 
-enum class UtilityID
-{
-    USA_ID,
-    MAGIC_ID,
-    COUNT
-};
-
 static constexpr size_t struct_member_count = 4;

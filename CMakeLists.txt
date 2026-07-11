@@ -11,6 +11,11 @@ file(GLOB LUA_SRC
     ${CMAKE_CURRENT_SOURCE_DIR}/src/external/Lua/*.c
 )
 
+file(GLOB AUTOCONFIG_SOURCE
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/autoconfig/*.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/autoconfig/*.hpp"
+)
+
 list(REMOVE_ITEM LUA_SRC
     ${CMAKE_CURRENT_SOURCE_DIR}/src/external/Lua/lua.c
     ${CMAKE_CURRENT_SOURCE_DIR}/src/external/Lua/luac.c
@@ -22,7 +27,7 @@ target_include_directories(lua_lib PUBLIC
     "${CMAKE_CURRENT_SOURCE_DIR}/src/external/Lua"
 )
 
-add_executable(${PROJECT_NAME}
+add_executable(${PROJECT_NAME} ${AUTOCONFIG_SOURCE}
     "src/main/SimulAI.cpp"
     "src/main/SimulAI.hpp"
     "src/main/cppGUI/gui_main.cpp"

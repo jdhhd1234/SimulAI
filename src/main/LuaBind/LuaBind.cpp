@@ -2,6 +2,7 @@
 #include "src/main/LuaBind/LuaBind.hpp"
 #include "src/autoconfig/RootLua.hpp"
 #include "src/main/State/state.hpp"
+#include "src/autoconfig/LuaModder.hpp"
 #include <random>
 
 //=====================
@@ -44,6 +45,7 @@ RootConfig& LuaBinding::GetRoot(WorldState& WS, size_t index)
 void LuaBinding::BindindToLua(std::string filepath, WorldState &worldstate, sol::state& lua)
 {
     LuaAuto lua_auto;
+    LuaAlias lua_alias;
 
     lua.open_libraries(
         sol::lib::base,
@@ -59,6 +61,19 @@ void LuaBinding::BindindToLua(std::string filepath, WorldState &worldstate, sol:
     );
 
     lua_auto.BindRootConfig(lua);
+
+    //=====BindLuaAlias=====
+    /*
+    How To Use this BindLuaAlias function in Lua?
+    example:
+        - USA.country.country_name
+
+    Role:
+        - Modder Use Data More Easy
+        - Use Struct Data
+        - Real Time Value
+    */
+    lua_alias.BindLuaAlias(lua, worldstate);
 
     //=====================
     //Normal API

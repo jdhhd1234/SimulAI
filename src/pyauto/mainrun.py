@@ -121,4 +121,10 @@ cppGenred.UtilityAIReadCpp(
 
 print("UtilityAIRead Complete")
 
-#cppGen.INICustomParser(Path("src/ini_fld/DebugTestINI/action.ini"), dat)
+cppGenred.MakeLuaAliasAuto(
+    sources=root_piece,
+    root_hpp=root_pth,
+    output=Path("src/autoconfig/LuaModder.hpp")
+)
+
+print("MakeLuaAliasAuto Complete")

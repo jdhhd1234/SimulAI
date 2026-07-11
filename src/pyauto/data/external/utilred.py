@@ -5,7 +5,7 @@ import data.filesys.filesystem_manage as fileman
 from pathlib import Path
 
 import re
-
+import glob
 #Not Running This is Test File
 
 def read_clean_hpp_text(hpp_path: Path) -> str:
@@ -102,50 +102,108 @@ Important role
     - Easy value index for lua
     - Wrapper
 '''
-def UtilityAIReadCpp(sources: list[datacls.MainConfigSource], output: Path):
+def UtilityAIReadCpp():
+    pass
+
+
+ 
+
+
+'''
+This Function Role is Only Find
+    Utility{name}Config Pattern
+    
+Flow
+    - Read Hpp File
+    - Find Utility{name}Config Pattern
+        - use Regex
+'''
+def FindOnlyConfig(root_hpp: Path) -> list[int]:
+    pattern = re.compile(r"\bUtility\w+Config\b")
+    
+    results = []
+
+    if not root_hpp.is_file():
+        return results
+
+    content = root_hpp.read_text(encoding="utf-8-sig")
+
+    lines = [
+        line.strip()
+        for line in content.splitlines()
+        if ";" in line
+    ]
+
+    for index, line in enumerate(lines):
+        match = pattern.search(line)
+
+        if match:
+            print(
+                f"[{root_hpp.name}] "
+                f"{index}번째 멤버에서 발견 : {match.group()}"
+            )
+
+            results.append(index)
+
+    return results
+
+
+
+'''
+This Code Role is
+    - For Modder
+    - Not Access Vector Index
+    
+-- Auto Generate result -- 
+lua["USA"] = &WS.Countries[0].Root[0].uSA;
+USA.states
+USA.population
+
+Simple Architect
+    - Read Hpp file (UtilitySystem{name}.hpp)
+    - Extract Only Value
+        - Not include Min Max Sigmoid Norm
+        - Min Max Sigmoid Norm Data Only Use C++ CalCulate Engine
+    
+    - Make This = lua["USA"] = &WS.Countries[0].Root[0].uSA;
+'''
+def MakeLuaAliasAuto(
+    sources: list[datacls.MainConfigSource],
+    root_hpp: Path,
+    output: Path,
+):
+    
+    find_config = FindOnlyConfig(root_hpp)
     
     cpp_code = []
-    cpp_code.append('#include "src/autoconfig/TestUtil.hpp" ')
-    cpp_code.append('#include "src/autoconfig/Root.hpp" ')
-    cpp_code.append('')
-    
-    root_enum_members = []
-        
-    for src in sources:
-        if not src.include_path.exists():
-            raise FileNotFoundError(f"Not Found include file: {src.include_path}")
 
-        enum_name = FindEnumClassNames(src.include_path)
-        enum_member_name = ToMemberName(enum_name)
-
-        root_enum_members.append((enum_name, enum_member_name))
-
-        cpp_code.append(f'#include "{src.include_path.as_posix()}"')
-        
-    cpp_code.append('template <typename T>')
-    cpp_code.append('constexpr T UtiliRead::VecIndexWrapper(WorldState& WS, UtilityID& id) {')
+    cpp_code.append("#pragma once\n")
+    cpp_code.append('#include <sol/sol.hpp>\n')
+    cpp_code.append('#include "src/main/State/state.hpp"\n\n')
     
-    cpp_code.append('    switch (id) {')
-    
-    for src in sources:
+    cpp_code.append("class LuaAlias {\n")
+    cpp_code.append("public:")
+    cpp_code.append("    inline void BindLuaAlias(sol::state& lua, WorldState& WS)\n")
+    cpp_code.append("    {\n")
+
+    for src, root_index in zip(sources, find_config):
+
         struct_name = FindRootStructName(src.include_path)
         member_name = ToMemberName(struct_name)
-        
-        enum_name = FindEnumClassNames(src.include_path)
-        enum_member_name = ToMemberName(enum_name)
-        
-        '''print(f"[STRUCT_NAME]: {struct_name}")
-        print(f"[MEMBER_NAME]: {member_name}")
-        print(f"[ENUM_NAME]: {enum_name}")
-        print(f"[ENUM_MEMBER_NAME]: {enum_member_name}")
 
-        cpp_code.append(f'    case UtilityID::{enum_member_name}:')
-        cpp_code.append(f'        return WS.Countries[1]. ;')
-        cpp_code.append('')
-        
-        cpp_code.append(f'    ')'''
-        
-    cpp_code.append('    }')
-        
+        label = (
+            struct_name
+            .removeprefix("Utility")
+            .removesuffix("Config")
+        )
 
-    output.write_text("\n".join(cpp_code), encoding="utf-8-sig")
+        cpp_code.append(
+            f'        lua["{label}"] = '
+            f'&WS.Countries[1].Root[{root_index}].{member_name};\n'
+        )
+
+    cpp_code.append("    }\n")
+    cpp_code.append("};")
+
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text("".join(cpp_code), encoding="utf-8-sig")

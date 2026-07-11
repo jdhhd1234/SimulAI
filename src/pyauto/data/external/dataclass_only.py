@@ -7,8 +7,6 @@ from os import PathLike
 
 import configparser
 import CppHeaderParser
-import json
-import math
 
 #======================================
 #DATA
@@ -136,6 +134,10 @@ class WriteFileList:
 @dataclass(frozen=True)
 class MainConfigSource:
     include_path: Path
+    
+@dataclass(config=ConfigDict(arbitrary_types_allowed=True))
+class MainConfigSourceHppLst:
+    include_pth_list_hpp: CppHeaderParser.CppHeader
     
 @dataclass
 class ParserJob:

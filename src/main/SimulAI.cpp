@@ -1,4 +1,4 @@
-#include "LuaBind/AI/utilityai.hpp"
+
 #ifdef _WIN32
 #include <windows.h>
 #endif
@@ -13,7 +13,6 @@
 #include "src/main/cppGUI/gui_main.hpp"
 #include "src/main/vector/vector_init.hpp"
 #include "src/main/LuaBind/LuaBind.hpp"
-#include "src/main/LuaBind/AI/utilityai.hpp"
 
 void InitConsole()
 {
